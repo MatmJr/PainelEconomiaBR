@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block pagina %}checar-indice{% endblock %}
+{% block titulo %}Checar uma afirmação | Economia por presidente{% endblock %}
+{% block conteudo %}
+<h1>Checar uma afirmação</h1>
+<p class="lead">Escolha um mandato e um indicador para ver o resultado, o cálculo passo a passo e os dados usados.</p>
+<form class="controles" id="escolha">
+  <label class="campo">
+    <span class="campo-rotulo">Mandato</span>
+    <select id="sel-mandato" autocomplete="off">
+      <option value="" disabled selected>Escolha…</option>
+      {%- for m in mandatos %}<option value="{{ m.id }}">{{ m.rotulo }}</option>{% endfor %}
+    </select>
+  </label>
+  <label class="campo campo-largo">
+    <span class="campo-rotulo">Indicador</span>
+    <select id="sel-serie" autocomplete="off">
+      {%- for grupo in meta.grupos %}
+      <optgroup label="{{ grupo }}">
+        {%- for x in ordem if series[x].grupo == grupo %}<option value="{{ x }}"{% if x == ordem[0] %} selected{% endif %}>{{ series[x].nome }}</option>{% endfor %}
+      </optgroup>
+      {%- endfor %}
+    </select>
+  </label>
+  <button class="botao botao-primario" type="submit">Ver checagem</button>
+</form>
+<p class="nota" id="aviso-escolha" hidden>Escolha um mandato para ver a checagem.</p>
+
+<h2>Todas as checagens</h2>
+<div class="indice-checagens">
+  {%- for m in mandatos %}
+  <details>
+    <summary>{{ m.rotulo }} <span class="nota">({{ m.inicio | data_br }} a {{ m.fim | data_br }})</span></summary>
+    <ul>{% for x in ordem %}<li><a href="/checar/{{ m.id }}/{{ x }}/">{{ series[x].nome }}</a></li>{% endfor %}</ul>
+  </details>
+  {%- endfor %}
+</div>
+{% endblock %}
+{% block scripts %}
+<script type="module" src="{{ static }}/js/checar_indice.js"></script>
+{% endblock %}

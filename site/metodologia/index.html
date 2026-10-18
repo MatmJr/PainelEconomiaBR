@@ -1,0 +1,576 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Metodologia | Economia por presidente</title>
+  <meta name="description" content="Como cada dado é atribuído a um mandato, como os indicadores são resumidos e os cuidados ao comparar governos.">
+  <meta name="author" content="Marco Mialaret Júnior">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="Economia por presidente">
+  <meta property="og:title" content="Metodologia | Economia por presidente">
+  <meta property="og:description" content="Como cada dado é atribuído a um mandato, como os indicadores são resumidos e os cuidados ao comparar governos.">
+  <meta name="theme-color" content="#0b2a5e" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0a1d3d" media="(prefers-color-scheme: dark)">
+  <script src="/static/51df70e7b1/js/tema.js"></script>
+  <link rel="icon" href="/static/51df70e7b1/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/static/51df70e7b1/css/estilo.css">
+</head>
+<body data-pagina="metodologia">
+  <a class="pular" href="#conteudo">Pular para o conteúdo</a>
+  <header class="topo">
+    <div class="topo-interno">
+      <a class="marca" href="/" aria-label="Economia por presidente — início">
+        <svg viewBox="0 0 32 32" aria-hidden="true">
+          <path d="M10.3 15.2 11.7 15.7 11.8 16.6 11.6 16.6 11.9 17.5 13.2 17.5 13.2 18.2 13.6 18.5 13.8 19.0 13.4 20.1 13.6 20.3 13.3 20.4 13.6 21.0 13.5 21.8 15.0 22.0 15.3 23.2 16.1 23.3 15.9 24.3 16.5 24.5 16.6 25.4 15.1 26.4 13.7 27.8 14.4 27.9 14.9 28.5 15.2 28.3 16.9 29.7 17.3 29.3 17.2 29.9 16.7 30.1 16.8 30.5 17.7 29.3 18.3 27.8 18.5 28.0 18.8 27.9 17.7 29.3 18.6 28.6 20.1 26.7 20.4 25.8 20.2 24.7 20.7 24.0 23.2 22.5 24.1 22.5 24.3 22.3 24.3 22.5 25.0 22.5 25.7 21.7 27.1 18.6 27.2 15.2 27.7 15.0 30.0 12.0 30.1 10.2 29.8 9.3 28.5 9.1 26.5 7.5 25.4 7.6 24.0 7.1 23.5 7.5 23.4 7.2 23.1 7.7 23.3 7.1 22.6 6.4 21.2 5.9 20.4 6.1 20.4 5.6 19.7 5.5 19.5 5.1 19.1 5.1 19.3 4.1 18.7 3.8 18.0 2.0 17.1 3.8 14.9 3.5 14.9 4.0 14.1 3.9 12.8 4.5 12.2 4.1 12.0 3.4 12.4 2.5 11.9 2.0 12.0 1.6 11.5 1.5 11.3 2.0 10.0 2.4 9.9 2.7 9.7 2.5 8.5 2.3 9.2 3.6 9.6 3.7 8.1 4.9 8.0 4.6 7.5 4.8 6.9 4.5 6.7 3.7 6.1 4.1 4.9 4.1 4.9 4.6 5.3 4.6 5.4 4.9 4.8 5.0 4.8 5.5 5.2 6.1 4.8 8.6 4.2 8.5 2.7 9.2 2.5 10.2 1.9 11.0 2.7 12.1 2.5 12.4 3.1 12.5 3.2 12.8 3.8 12.8 4.4 12.4 4.3 13.6 5.7 13.7 7.2 12.8 8.1 12.6 8.4 14.3Z" fill="#ffffff"/>
+          <path d="M13.08 12.61h1.90v3.60h-1.90Z M15.73 9.61h1.90v6.60h-1.90Z M18.38 7.81h1.90v8.40h-1.90Z M21.03 11.01h1.90v5.20h-1.90Z" fill="#0b2a5e"/><path d="M12.28 17.11H23.73" stroke="#0b2a5e" stroke-width="1.1" stroke-linecap="round"/>
+        </svg>
+        <span><span class="marca-nome">Economia por presidente</span><span class="marca-sub">Dados oficiais do Brasil, mandato a mandato</span></span>
+      </a>
+      <nav class="menu" aria-label="Principal">
+        <a href="/">Resumo</a>
+        <a href="/comparar/">Comparar</a>
+        <a href="/checar/">Checar</a>
+        <a href="/series/">Séries</a>
+        <a href="/metodologia/" aria-current="page">Metodologia</a>
+        <a href="/dados/">Dados</a>
+      </nav>
+      <button type="button" class="botao-tema" id="tema" data-tema="auto" aria-label="Tema: automático. Clique para trocar.">
+        <svg class="icone icone-auto" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 4a8 8 0 0 1 0 16Z" fill="currentColor"/></svg>
+        <svg class="icone icone-claro" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.5" fill="currentColor"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1 7 17M17 7l2.1-2.1" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <svg class="icone icone-escuro" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z" fill="currentColor"/></svg>
+        <span class="tema-rotulo">Automático</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="conteudo" class="conteudo">
+    
+<h1>Metodologia</h1>
+<nav class="sumario" aria-label="Nesta página">
+  <a href="#atribuicao">1. Que governo recebe cada dado</a>
+  <a href="#metricas">2. Como cada indicador é resumido</a>
+  <a href="#status">3. Status dos dados</a>
+  <a href="#noticiado">4. Diferenças com o noticiado</a>
+  <a href="#erros">5. Erros comuns</a>
+  <a href="#mandatos">6. Mandatos</a>
+  <a href="#eventos">7. Eventos de contexto</a>
+  <a href="#series">8. Séries</a>
+  <a href="#reproduzir">9. Como reproduzir</a>
+</nav>
+
+<section id="atribuicao">
+  <h2>1. Que governo recebe cada dado</h2>
+  <p>Cada dado cobre um intervalo: um mês, um trimestre, um trimestre móvel (média de três meses) ou um ano.
+    Ele é atribuído ao governo que estava no cargo no <strong>ponto médio</strong> do intervalo — ou seja, ao governo que governou
+    <strong>a maior parte</strong> do período.</p>
+  <p class="formula">mandato(p) = M &nbsp;⇔&nbsp; ponto médio(p) − <var>d</var> está entre a posse e a saída de M</p>
+  <p>onde <var>d</var> é a <strong>defasagem</strong> (0, 3, 6 ou 12 meses). Exemplos sem defasagem:</p>
+  <ul>
+    <li><strong>maio/2016</strong>: Dilma foi afastada em 12/05; o ponto médio (16/05) cai com Temer, que governou 20 dos 31 dias;</li>
+    <li><strong>PIB de 2016</strong>: ponto médio em 02/07/2016 → Temer. Com defasagem de 6 meses → Dilma;</li>
+  </ul>
+  <p><strong>Exceção: trimestres móveis</strong> (desocupação, nível da ocupação e renda da PNAD Contínua) são atribuídos pelo
+    <strong>mês final</strong>, que é como o IBGE identifica cada trimestre e como ele é noticiado. Assim, out-nov-dez/2018 é de Temer
+    (a herança de Bolsonaro) e nov-dez-jan/2019 já é de Bolsonaro. Isso também faz o início e o fim de cada mandato caírem
+    no mesmo trimestre do ano, sem misturar estações.</p>
+  <p>Por que oferecer defasagem? Juros, programas e reformas levam meses para afetar a economia. Não existe um valor “certo”:
+    a recomendação é verificar se a conclusão se mantém com várias defasagens — cada página de checagem mostra isso automaticamente.</p>
+</section>
+
+<section id="metricas">
+  <h2>2. Como cada indicador é resumido</h2>
+  <h3>Séries de nível</h3>
+  <p>Desocupação, informalidade, dívida/PIB, Selic, dólar, rendimento, salário mínimo.</p>
+  <p class="formula">herança = valor do último período atribuído ao governo anterior</p>
+  <p class="formula">variação = x<sub>fim</sub> − x<sub>herança</sub> (em pontos percentuais) &nbsp; ou &nbsp; (x<sub>fim</sub> ÷ x<sub>herança</sub> − 1) × 100 (em %)</p>
+  <p class="formula">média = (x<sub>1</sub> + x<sub>2</sub> + … + x<sub>n</sub>) ÷ n</p>
+  <p>Comparar o fim com a herança mostra <strong>o que mudou durante o governo</strong>; a média mostra <strong>como foi viver</strong> naquele período.
+    As duas respostas podem divergir: um governo que herda desemprego alto e o reduz pode ter média alta e variação muito boa.</p>
+  <h3>Séries de variação</h3>
+  <p>IPCA mensal e PIB anual: os percentuais são compostos, não somados.</p>
+  <p class="formula">acumulado = (1 + v<sub>1</sub>/100) × (1 + v<sub>2</sub>/100) × … × (1 + v<sub>n</sub>/100) − 1</p>
+  <p class="formula">média anual = (1 + acumulado)<sup>k/n</sup> − 1</p>
+  <p>onde <var>k</var> é o número de períodos por ano (12 para mensal, 1 para anual).</p>
+  <h3>Conferência da conta de acumulação</h3>
+  <div class="metricas">
+    <div class="metrica"><span class="metrica-rotulo">Maior diferença desde 1995</span><span class="metrica-valor">0,019 p.p.</span></div>
+    <div class="metrica"><span class="metrica-rotulo">Maior diferença na série toda</span><span class="metrica-valor">0,138 p.p.</span></div>
+  </div>
+  <p class="nota">IPCA em 12 meses calculado pelo painel a partir das variações mensais, comparado com o publicado pelo IBGE
+    (tabela 1737, variável 2265). As diferenças vêm do arredondamento das variações mensais a duas casas e são maiores na hiperinflação.</p>
+</section>
+
+<section id="status">
+  <h2>3. Status dos dados</h2>
+  <ul>
+    <li><strong>completo</strong>: a série cobre todos os períodos do mandato e existe valor herdado;</li>
+    <li><strong>mandato em curso</strong>: o governo ainda não terminou — os números são parciais;</li>
+    <li><strong>dados parciais</strong>: a série começou ou terminou no meio do mandato (ex.: PME encerrada em 2016);</li>
+    <li><strong>sem valor herdado</strong>: a série começa depois da posse, então não há com o que comparar o fim;</li>
+    <li><strong>sem dados</strong>: a série não cobre o mandato.</li>
+  </ul>
+  <p>Os rankings só incluem mandatos com status <strong>completo</strong>.</p>
+</section>
+
+<section id="noticiado">
+  <h2>4. Por que um número pode diferir do que foi noticiado</h2>
+  <ul>
+    <li><strong>Revisões oficiais.</strong> O IBGE revisa o PIB por anos depois da primeira divulgação, e as razões em % do PIB
+      (dívida, resultado primário) mudam junto. Exemplos: o PIB de 2020 foi divulgado como −4,1% e hoje é −3,3%; a dívida bruta de
+      dez/2018 foi noticiada como 76,7% do PIB e hoje aparece como 75,3% na série do Banco Central. O site usa sempre a versão mais
+      recente de cada série, com a data da extração.</li>
+    <li><strong>Reponderação da PNAD Contínua.</strong> O IBGE recalcula a série quando atualiza as projeções de população, e taxas
+      antigas podem mudar em alguns décimos (o desemprego do 4º trimestre de 2018 foi divulgado como 11,6% e hoje é 11,7%).</li>
+    <li><strong>Anos de troca de governo.</strong> A imprensa costuma contar anos inteiros; o site atribui cada ano a quem governou
+      a maior parte dele (o PIB de 2016 fica com Temer). Use a defasagem para ver a outra leitura: com 6 meses, 2016 vai para Dilma.</li>
+    <li><strong>Acumulado ou média por ano.</strong> “A inflação no governo X” pode ser o acumulado do mandato (26,9% em quatro anos)
+      ou a média anual (6,1% ao ano). O site mostra os dois e diz qual é qual.</li>
+    <li><strong>Qual Selic.</strong> O site usa a meta definida pelo Copom, a que é anunciada e noticiada, e não a taxa efetiva do
+      dia a dia, que costuma ficar um pouco abaixo.</li>
+  </ul>
+  <p>Se encontrar um número que não bate e não se explica por estes motivos, confira a fonte original pelo link em cada série e <a href="https://github.com/MatmJr/PainelEconomiaBR/issues">avise</a>.</p>
+</section>
+
+<section id="erros">
+  <h2>5. Erros comuns ao comparar governos</h2>
+  <ol>
+    <li><strong>Escolher a dedo o ponto de partida.</strong> Comparar o pior mês de um governo com o melhor de outro. O painel usa sempre a herança e o último dado do mandato, e mostra a média.</li>
+    <li><strong>Confundir nível com variação.</strong> “O desemprego era alto no governo X” pode ser herança do governo anterior.</li>
+    <li><strong>Ignorar choques externos.</strong> Crise de 2008, pandemia, guerra, preço de commodities. Veja os eventos de contexto.</li>
+    <li><strong>Ignorar defasagens.</strong> Use o seletor de defasagem e veja se a conclusão se mantém.</li>
+    <li><strong>Emendar séries com metodologias diferentes.</strong> A PME (até 2016) e a PNAD Contínua (desde 2012) não são comparáveis em nível.</li>
+    <li><strong>Comparar valores nominais.</strong> Dólar e salário de décadas diferentes só se comparam descontada a inflação.</li>
+    <li><strong>Comparar mandato incompleto com completo.</strong> Veja o status de cada número.</li>
+    <li><strong>Confundir correlação com causa.</strong> O painel descreve o que aconteceu durante cada governo; não mede o efeito de cada política.
+      Congresso, Banco Central (autônomo desde 2021), estados e a economia mundial também influenciam.</li>
+  </ol>
+</section>
+
+<section id="mandatos">
+  <h2>6. Mandatos</h2>
+  <div class="tabela-rolagem">
+    <table>
+      <thead><tr><th>Mandato</th><th>Presidente</th><th>Início</th><th>Fim</th><th>Observação</th></tr></thead>
+      <tbody>
+        <tr><td>Sarney</td><td>José Sarney</td><td>15/03/1985</td><td>14/03/1990</td><td>Assumiu como vice de Tancredo Neves, que morreu antes da posse.</td></tr>
+        <tr><td>Collor</td><td>Fernando Collor</td><td>15/03/1990</td><td>01/10/1992</td><td>Afastado em 02/10/1992 pela abertura do impeachment; renunciou em 29/12/1992.</td></tr>
+        <tr><td>Itamar</td><td>Itamar Franco</td><td>02/10/1992</td><td>31/12/1994</td><td>Interino de 02/10/1992 a 29/12/1992, efetivado após a renúncia de Collor.</td></tr>
+        <tr><td>FHC 1</td><td>Fernando Henrique Cardoso</td><td>01/01/1995</td><td>31/12/1998</td><td></td></tr>
+        <tr><td>FHC 2</td><td>Fernando Henrique Cardoso</td><td>01/01/1999</td><td>31/12/2002</td><td></td></tr>
+        <tr><td>Lula 1</td><td>Luiz Inácio Lula da Silva</td><td>01/01/2003</td><td>31/12/2006</td><td></td></tr>
+        <tr><td>Lula 2</td><td>Luiz Inácio Lula da Silva</td><td>01/01/2007</td><td>31/12/2010</td><td></td></tr>
+        <tr><td>Dilma 1</td><td>Dilma Rousseff</td><td>01/01/2011</td><td>31/12/2014</td><td></td></tr>
+        <tr><td>Dilma 2</td><td>Dilma Rousseff</td><td>01/01/2015</td><td>11/05/2016</td><td>Afastada em 12/05/2016 pela abertura do impeachment; cassada em 31/08/2016.</td></tr>
+        <tr><td>Temer</td><td>Michel Temer</td><td>12/05/2016</td><td>31/12/2018</td><td>Interino de 12/05/2016 a 31/08/2016, efetivado após o impeachment.</td></tr>
+        <tr><td>Bolsonaro</td><td>Jair Bolsonaro</td><td>01/01/2019</td><td>31/12/2022</td><td></td></tr>
+        <tr><td>Lula 3</td><td>Luiz Inácio Lula da Silva</td><td>01/01/2023</td><td>04/01/2027</td><td>Mandato em curso: os resultados são parciais. Pela EC 111/2021, o próximo mandato começa em 05/01/2027.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="nota">Nos impeachments, o vice é considerado no cargo desde o afastamento do titular, quando passa a exercer a Presidência.</p>
+</section>
+
+<section id="eventos">
+  <h2>7. Eventos de contexto</h2>
+  <div class="tabela-rolagem">
+    <table>
+      <thead><tr><th>Data</th><th>Evento</th></tr></thead>
+      <tbody><tr><td>28/02/1986</td><td>Plano Cruzado</td></tr><tr><td>16/03/1990</td><td>Plano Collor (bloqueio da poupança)</td></tr><tr><td>01/07/1994</td><td>Plano Real</td></tr><tr><td>02/07/1997</td><td>Crise asiática</td></tr><tr><td>17/08/1998</td><td>Crise russa</td></tr><tr><td>15/01/1999</td><td>Câmbio flutuante</td></tr><tr><td>21/06/1999</td><td>Início do regime de metas de inflação</td></tr><tr><td>01/06/2001</td><td>Racionamento de energia</td></tr><tr><td>01/06/2002</td><td>Crise de confiança pré-eleitoral</td></tr><tr><td>15/09/2008</td><td>Crise financeira global</td></tr><tr><td>01/04/2014</td><td>Início da recessão de 2014-16</td></tr><tr><td>15/12/2016</td><td>Teto de gastos (EC 95)</td></tr><tr><td>21/05/2018</td><td>Greve dos caminhoneiros</td></tr><tr><td>11/03/2020</td><td>Pandemia de Covid-19</td></tr><tr><td>24/02/2021</td><td>Autonomia do Banco Central</td></tr><tr><td>24/02/2022</td><td>Guerra na Ucrânia</td></tr><tr><td>30/08/2023</td><td>Novo arcabouço fiscal</td></tr></tbody>
+    </table>
+  </div>
+</section>
+
+<section id="series">
+  <h2>8. Séries</h2>
+  <details class="ficha">
+    <summary>Atividade · PIB – crescimento real anual</summary>
+    <p class="nota">Unidade: <strong>% a.a.</strong> · Frequência: <strong>anual</strong> ·
+      Resumo por mandato: <strong>variacao anual</strong> ·
+      Direção: <strong>maior é melhor</strong></p>
+    <section class="cartao cartao-serie" data-serie="pib_anual">
+  <h3>PIB – crescimento real anual</h3>
+  <p><strong>O que mede.</strong> Variação real (descontada a inflação) do Produto Interno Bruto de um ano em relação ao ano anterior.</p>
+  <p><strong>Fonte e método.</strong> Dado produzido pelo IBGE (Sistema de Contas Nacionais) e republicado pelo Banco Central na série SGS 7326, que tem a vantagem de cobrir desde 1962 em uma única série. A partir de 1996 coincide com a &#39;taxa acumulada em quatro trimestres&#39; do 4º trimestre da tabela SIDRA 5932.</p>
+  <p><strong>Cuidados ao interpretar:</strong></p>
+  <ul><li>Os últimos anos são preliminares e costumam ser revisados pelo IBGE.</li><li>Um ano inteiro é atribuído a um único governo (ver regra de atribuição): em anos de troca no meio do ano (1992, 2016) o resultado muda conforme a defasagem escolhida.</li></ul>
+  <p><strong>Conferir na fonte:</strong> <a href="https://www3.bcb.gov.br/sgspub/consultarvalores/telaCvsSelecionarSeries.paint" rel="noopener">Banco Central – SGS, série 7326</a></p>
+  <p class="nota">Extraído em 18/10/2026 · 46 períodos (1980 a 2025) ·
+    <a href="/dados/bronze/pib_anual.json">resposta bruta da API (JSON)</a></p>
+  <details class="urls">
+    <summary>URL(s) exata(s) consultada(s) na API</summary>
+    <pre>https://api.bcb.gov.br/dados/serie/bcdata.sgs.7326/dados?formato=json&amp;dataInicial=01/01/1980&amp;dataFinal=31/12/1989
+https://api.bcb.gov.br/dados/serie/bcdata.sgs.7326/dados?formato=json&amp;dataInicial=01/01/1990&amp;dataFinal=31/12/1999
+https://api.bcb.gov.br/dados/serie/bcdata.sgs.7326/dados?formato=json&amp;dataInicial=01/01/2000&amp;dataFinal=31/12/2009
+https://api.bcb.gov.br/dados/serie/bcdata.sgs.7326/dados?formato=json&amp;dataInicial=01/01/2010&amp;dataFinal=31/12/2019
+https://api.bcb.gov.br/dados/serie/bcdata.sgs.7326/dados?formato=json&amp;dataInicial=01/01/2020&amp;dataFinal=31/12/2026</pre>
+  </details>
+</section>
+  </details>
+  <details class="ficha">
+    <summary>Atividade · PIB per capita – crescimento real anual</summary>
+    <p class="nota">Unidade: <strong>% a.a.</strong> · Frequência: <strong>anual</strong> ·
+      Resumo por mandato: <strong>variacao anual</strong> ·
+      Direção: <strong>maior é melhor</strong></p>
+    <section class="cartao cartao-serie" data-serie="pib_per_capita">
+  <h3>PIB per capita – crescimento real anual</h3>
+  <p><strong>O que mede.</strong> Variação real do PIB dividido pela população. Desconta o crescimento populacional, por isso é melhor que o PIB total para comparar o ganho médio por pessoa.</p>
+  <p><strong>Fonte e método.</strong> Tabela SIDRA 6784 (Contas Nacionais anuais), variável 9814, Brasil.</p>
+  <p><strong>Cuidados ao interpretar:</strong></p>
+  <ul><li>As contas anuais definitivas saem com cerca de dois anos de atraso, então os anos mais recentes ainda não aparecem.</li></ul>
+  <p><strong>Conferir na fonte:</strong> <a href="https://sidra.ibge.gov.br/tabela/6784" rel="noopener">IBGE – SIDRA, tabela 6784, variável 9814</a></p>
+  <p class="nota">Extraído em 18/10/2026 · 28 períodos (1996 a 2023) ·
+    <a href="/dados/bronze/pib_per_capita.json">resposta bruta da API (JSON)</a></p>
+  <details class="urls">
+    <summary>URL(s) exata(s) consultada(s) na API</summary>
+    <pre>https://servicodados.ibge.gov.br/api/v3/agregados/6784/periodos/all/variaveis/9814?localidades=N1[all]</pre>
+  </details>
+</section>
+  </details>
+  <details class="ficha">
+    <summary>Atividade · PIB trimestral (índice dessazonalizado)</summary>
+    <p class="nota">Unidade: <strong>índice (média 1995 = 100)</strong> · Frequência: <strong>trimestral</strong> ·
+      Resumo por mandato: <strong>nivel</strong> ·
+      Direção: <strong>maior é melhor</strong> · a média não é usada para comparar governos (o índice cresce com o tempo)</p>
+    <section class="cartao cartao-serie" data-serie="pib_trimestral">
+  <h3>PIB trimestral (índice dessazonalizado)</h3>
+  <p><strong>O que mede.</strong> Volume do PIB a preços de mercado em cada trimestre, com ajuste sazonal. Como é um índice de volume, a variação entre dois trimestres mostra o crescimento real acumulado.</p>
+  <p><strong>Fonte e método.</strong> Tabela SIDRA 1621, variável 584, categoria 90707 (PIB a preços de mercado), Brasil. A variação no mandato compara o último trimestre do governo com o último trimestre atribuído ao governo anterior. A média do índice no mandato não é usada para comparar governos, porque o índice cresce com o tempo.</p>
+  <p><strong>Cuidados ao interpretar:</strong></p>
+  <ul><li>O ajuste sazonal é recalculado a cada divulgação, então toda a série pode mudar levemente de uma extração para outra.</li></ul>
+  <p><strong>Conferir na fonte:</strong> <a href="https://sidra.ibge.gov.br/tabela/1621" rel="noopener">IBGE – SIDRA, tabela 1621, variável 584, classificação 11255[90707]</a></p>
+  <p class="nota">Extraído em 18/10/2026 · 122 períodos (1º tri/1996 a 2º tri/2026) ·
+    <a href="/dados/bronze/pib_trimestral.json">resposta bruta da API (JSON)</a></p>
+  <details class="urls">
+    <summary>URL(s) exata(s) consultada(s) na API</summary>
+    <pre>https://servicodados.ibge.gov.br/api/v3/agregados/1621/periodos/all/variaveis/584?localidades=N1[all]&amp;classificacao=11255[90707]</pre>
+  </details>
+</section>
+  </details>
+  <details class="ficha">
+    <summary>Mercado de trabalho · Taxa de desocupação (PNAD Contínua)</summary>
+    <p class="nota">Unidade: <strong>%</strong> · Frequência: <strong>trimestral movel</strong> ·
+      Resumo por mandato: <strong>nivel</strong> ·
+      Direção: <strong>menor é melhor</strong></p>
+    <section class="cartao cartao-serie" data-serie="desocupacao">
+  <h3>Taxa de desocupação (PNAD Contínua)</h3>
+  <p><strong>O que mede.</strong> Percentual das pessoas de 14 anos ou mais na força de trabalho que estavam sem trabalho, disponíveis e procurando emprego na semana de referência.</p>
+  <p><strong>Fonte e método.</strong> Tabela SIDRA 6381, variável 4099, Brasil. Cada valor é um trimestre móvel: o dado de &#39;ago/2026&#39; é a média de jun, jul e ago/2026, e é atribuído ao governo do mês final (agosto), como o IBGE identifica o trimestre. A série começa no trimestre jan-mar/2012.</p>
+  <p><strong>Cuidados ao interpretar:</strong></p>
+  <ul><li>Não existe PNAD Contínua antes de 2012. Para anos anteriores, veja a série da PME, que tem metodologia diferente e NÃO deve ser emendada a esta.</li><li>Quem desiste de procurar emprego sai da força de trabalho e deixa de contar como desocupado: olhe junto o nível da ocupação.</li></ul>
+  <p><strong>Conferir na fonte:</strong> <a href="https://sidra.ibge.gov.br/tabela/6381" rel="noopener">IBGE – SIDRA, tabela 6381, variável 4099</a></p>
+  <p class="nota">Extraído em 18/10/2026 · 174 períodos (jan-fev-mar/2012 a jun-jul-ago/2026) ·
+    <a href="/dados/bronze/desocupacao.json">resposta bruta da API (JSON)</a></p>
+  <details class="urls">
+    <summary>URL(s) exata(s) consultada(s) na API</summary>
+    <pre>https://servicodados.ibge.gov.br/api/v3/agregados/6381/periodos/all/variaveis/4099?localidades=N1[all]</pre>
+  </details>
+</section>
+  </details>
+  <details class="ficha">
+    <summary>Mercado de trabalho · Taxa de desemprego (PME – 6 regiões metropolitanas)</summary>
+    <p class="nota">Unidade: <strong>%</strong> · Frequência: <strong>mensal</strong> ·
+      Resumo por mandato: <strong>nivel</strong> ·
+      Direção: <strong>menor é melhor</strong></p>
+    <section class="cartao cartao-serie" data-serie="desemprego_pme">
+  <h3>Taxa de desemprego (PME – 6 regiões metropolitanas)</h3>
+  <p><strong>O que mede.</strong> Taxa de desocupação da antiga Pesquisa Mensal de Emprego do IBGE, que cobria apenas as regiões metropolitanas de Recife, Salvador, Belo Horizonte, Rio de Janeiro, São Paulo e Porto Alegre.</p>
+  <p><strong>Fonte e método.</strong> Série SGS 10777 do Banco Central (dado do IBGE/PME), mensal, de nov/2001 até o encerramento da pesquisa em fev/2016.</p>
+  <p><strong>Cuidados ao interpretar:</strong></p>
+  <ul><li>Cobre só 6 regiões metropolitanas (a PNAD Contínua cobre o país todo) e usa idade mínima de 10 anos (a PNAD Contínua usa 14). Os níveis das duas pesquisas não são comparáveis: compare tendências, não valores.</li></ul>
+  <p><strong>Conferir na fonte:</strong> <a href="https://www3.bcb.gov.br/sgspub/consultarvalores/telaCvsSelecionarSeries.paint" rel="noopener">Banco Central – SGS, série 10777</a></p>
+  <p class="nota">Extraído em 18/10/2026 · 172 períodos (nov/2001 a fev/2016) ·
+    <a href="/dados/bronze/desemprego_pme.json">resposta bruta da API (JSON)</a></p>
+  <details class="urls">
+    <summary>URL(s) exata(s) consultada(s) na API</summary>
+    <pre>https://api.bcb.gov.br/dados/serie/bcdata.sgs.10777/dados?formato=json&amp;dataInicial=01/01/1980&amp;dataFinal=31/12/1989
+https://api.bcb.gov.br/dados/serie/bcdata.sgs.10777/dados?formato=json&amp;dataInicial=01/01/1990&amp;dataFinal=31/12/1999
+https://api.bcb.gov.br/dados/serie/bcdata.sgs.10777/dados?formato=json&amp;dataInicial=01/01/2000&amp;dataFinal=31/12/2009
+https://api.bcb.gov.br/dados/serie/bcdata.sgs.10777/dados?formato=json&amp;dataInicial=01/01/2010&amp;dataFinal=31/12/2019
+https://api.bcb.gov.br/dados/serie/bcdata.sgs.10777/dados?formato=json&amp;dataInicial=01/01/2020&amp;dataFinal=31/12/2026</pre>
+  </details>
+</section>
+  </details>
+  <details class="ficha">
+    <summary>Mercado de trabalho · Taxa de informalidade</summary>
+    <p class="nota">Unidade: <strong>%</strong> · Frequência: <strong>trimestral</strong> ·
+      Resumo por mandato: <strong>nivel</strong> ·
+      Direção: <strong>menor é melhor</strong></p>
+    <section class="cartao cartao-serie" data-serie="informalidade">
+  <h3>Taxa de informalidade</h3>
+  <p><strong>O que mede.</strong> Percentual dos ocupados em situação de informalidade: empregados sem carteira (inclusive domésticos), empregadores e trabalhadores por conta própria sem CNPJ e trabalhadores familiares auxiliares.</p>
+  <p><strong>Fonte e método.</strong> Tabela SIDRA 8529, variável 12466, Brasil, trimestral.</p>
+  <p><strong>Cuidados ao interpretar:</strong></p>
+  <ul><li>O IBGE só calcula este indicador a partir do 4º trimestre de 2015, por isso governos anteriores não têm dado.</li></ul>
+  <p><strong>Conferir na fonte:</strong> <a href="https://sidra.ibge.gov.br/tabela/8529" rel="noopener">IBGE – SIDRA, tabela 8529, variável 12466</a></p>
+  <p class="nota">Extraído em 18/10/2026 · 43 períodos (4º tri/2015 a 2º tri/2026) ·
+    <a href="/dados/bronze/informalidade.json">resposta bruta da API (JSON)</a></p>
+  <details class="urls">
+    <summary>URL(s) exata(s) consultada(s) na API</summary>
+    <pre>https://servicodados.ibge.gov.br/api/v3/agregados/8529/periodos/all/variaveis/12466?localidades=N1[all]</pre>
+  </details>
+</section>
+  </details>
+  <details class="ficha">
+    <summary>Mercado de trabalho · Nível da ocupação</summary>
+    <p class="nota">Unidade: <strong>%</strong> · Frequência: <strong>trimestral movel</strong> ·
+      Resumo por mandato: <strong>nivel</strong> ·
+      Direção: <strong>maior é melhor</strong></p>
+    <section class="cartao cartao-serie" data-serie="nivel_ocupacao">
+  <h3>Nível da ocupação</h3>
+  <p><strong>O que mede.</strong> Percentual das pessoas de 14 anos ou mais que estão trabalhando. Complementa a taxa de desocupação, porque não é afetado por quem desiste de procurar emprego.</p>
+  <p><strong>Fonte e método.</strong> Tabela SIDRA 6379, variável 4097, Brasil, trimestre móvel desde 2012.</p>
+  <p><strong>Cuidados ao interpretar:</strong></p>
+  <ul><li>Mesma cobertura temporal da PNAD Contínua (desde 2012).</li></ul>
+  <p><strong>Conferir na fonte:</strong> <a href="https://sidra.ibge.gov.br/tabela/6379" rel="noopener">IBGE – SIDRA, tabela 6379, variável 4097</a></p>
+  <p class="nota">Extraído em 18/10/2026 · 174 períodos (jan-fev-mar/2012 a jun-jul-ago/2026) ·
+    <a href="/dados/bronze/nivel_ocupacao.json">resposta bruta da API (JSON)</a></p>
+  <details class="urls">
+    <summary>URL(s) exata(s) consultada(s) na API</summary>
+    <pre>https://servicodados.ibge.gov.br/api/v3/agregados/6379/periodos/all/variaveis/4097?localidades=N1[all]</pre>
+  </details>
+</section>
+  </details>
+  <details class="ficha">
+    <summary>Preços · Inflação (IPCA)</summary>
+    <p class="nota">Unidade: <strong>% no mês</strong> · Frequência: <strong>mensal</strong> ·
+      Resumo por mandato: <strong>variacao mensal</strong> ·
+      Direção: <strong>menor é melhor</strong></p>
+    <section class="cartao cartao-serie" data-serie="ipca">
+  <h3>Inflação (IPCA)</h3>
+  <p><strong>O que mede.</strong> Índice oficial de inflação do país, usado no sistema de metas: variação dos preços para famílias com renda de 1 a 40 salários mínimos.</p>
+  <p><strong>Fonte e método.</strong> Tabela SIDRA 1737, variável 63 (variação mensal), Brasil, desde dez/1979. A inflação acumulada no mandato é o produto dos fatores mensais: (1+i₁)×(1+i₂)×…×(1+iₙ) − 1.</p>
+  <p><strong>Cuidados ao interpretar:</strong></p>
+  <ul><li>Antes do Plano Real (jul/1994) o país viveu hiperinflação; para comparar governos posteriores, use a escala logarítmica ou filtre o período.</li><li>Inflação mais baixa não é sempre melhor: deflação persistente também é sinal ruim. Desde 1999 a referência é a meta definida pelo CMN.</li></ul>
+  <p><strong>Conferir na fonte:</strong> <a href="https://sidra.ibge.gov.br/tabela/1737" rel="noopener">IBGE – SIDRA, tabela 1737, variável 63</a></p>
+  <p class="nota">Extraído em 18/10/2026 · 561 períodos (jan/1980 a set/2026) ·
+    <a href="/dados/bronze/ipca.json">resposta bruta da API (JSON)</a></p>
+  <details class="urls">
+    <summary>URL(s) exata(s) consultada(s) na API</summary>
+    <pre>https://servicodados.ibge.gov.br/api/v3/agregados/1737/periodos/all/variaveis/63?localidades=N1[all]</pre>
+  </details>
+</section>
+  </details>
+  <details class="ficha">
+    <summary>Renda · Renda média real do trabalhador</summary>
+    <p class="nota">Unidade: <strong>R$ (preços do último trimestre)</strong> · Frequência: <strong>trimestral movel</strong> ·
+      Resumo por mandato: <strong>nivel</strong> ·
+      Direção: <strong>maior é melhor</strong></p>
+    <section class="cartao cartao-serie" data-serie="rendimento_real">
+  <h3>Renda média real do trabalhador</h3>
+  <p><strong>O que mede.</strong> Rendimento mensal habitual médio dos ocupados, de todos os trabalhos, já corrigido pela inflação para os preços do trimestre mais recente.</p>
+  <p><strong>Fonte e método.</strong> Tabela SIDRA 6390, variável 5933 (nome oficial: rendimento médio mensal real das pessoas ocupadas, habitualmente recebido em todos os trabalhos), Brasil, trimestre móvel desde 2012. É uma média por trabalhador, em reais.</p>
+  <p><strong>Cuidados ao interpretar:</strong></p>
+  <ul><li>O IBGE reajusta toda a série para os preços mais recentes a cada divulgação: os valores em reais mudam de uma extração para outra, mas as variações não.</li><li>É uma média: mudanças em quem está ocupado (ex.: perda de empregos de baixa renda na pandemia) elevam a média sem que ninguém tenha ganho aumento.</li></ul>
+  <p><strong>Conferir na fonte:</strong> <a href="https://sidra.ibge.gov.br/tabela/6390" rel="noopener">IBGE – SIDRA, tabela 6390, variável 5933</a></p>
+  <p class="nota">Extraído em 18/10/2026 · 174 períodos (jan-fev-mar/2012 a jun-jul-ago/2026) ·
+    <a href="/dados/bronze/rendimento_real.json">resposta bruta da API (JSON)</a></p>
+  <details class="urls">
+    <summary>URL(s) exata(s) consultada(s) na API</summary>
+    <pre>https://servicodados.ibge.gov.br/api/v3/agregados/6390/periodos/all/variaveis/5933?localidades=N1[all]</pre>
+  </details>
+</section>
+  </details>
+  <details class="ficha">
+    <summary>Renda · Salário mínimo real (poder de compra)</summary>
+    <p class="nota">Unidade: <strong>R$ (preços do último mês do IPCA)</strong> · Frequência: <strong>mensal</strong> ·
+      Resumo por mandato: <strong>nivel</strong> ·
+      Direção: <strong>maior é melhor</strong></p>
+    <section class="cartao cartao-serie" data-serie="salario_minimo_real">
+  <h3>Salário mínimo real (poder de compra)</h3>
+  <p><strong>O que mede.</strong> Poder de compra do salário mínimo nacional, descontada a inflação.</p>
+  <p><strong>Fonte e método.</strong> Salário mínimo nominal da série SGS 1619 dividido pelo número-índice do IPCA do mesmo mês e multiplicado pelo índice do mês mais recente: SM_real(t) = SM(t) × IPCA(último) / IPCA(t). Começa em jul/1994 porque antes disso os valores estão em moedas extintas.</p>
+  <p><strong>Cuidados ao interpretar:</strong></p>
+  <ul><li>O reajuste oficial do mínimo usa o INPC, não o IPCA; a escolha do IPCA aqui é para manter o mesmo deflator em todo o painel. A diferença entre os dois é pequena.</li></ul>
+  <p><strong>Conferir na fonte:</strong> <a href="https://www3.bcb.gov.br/sgspub/consultarvalores/telaCvsSelecionarSeries.paint" rel="noopener">Banco Central – SGS, série 1619</a></p>
+  <p class="nota">Extraído em 18/10/2026 · 387 períodos (jul/1994 a set/2026) ·
+    <a href="/dados/bronze/salario_minimo_real.json">resposta bruta da API (JSON)</a></p>
+  <details class="urls">
+    <summary>URL(s) exata(s) consultada(s) na API</summary>
+    <pre>https://api.bcb.gov.br/dados/serie/bcdata.sgs.1619/dados?formato=json&amp;dataInicial=01/01/1980&amp;dataFinal=31/12/1989
+https://api.bcb.gov.br/dados/serie/bcdata.sgs.1619/dados?formato=json&amp;dataInicial=01/01/1990&amp;dataFinal=31/12/1999
+https://api.bcb.gov.br/dados/serie/bcdata.sgs.1619/dados?formato=json&amp;dataInicial=01/01/2000&amp;dataFinal=31/12/2009
+https://api.bcb.gov.br/dados/serie/bcdata.sgs.1619/dados?formato=json&amp;dataInicial=01/01/2010&amp;dataFinal=31/12/2019
+https://api.bcb.gov.br/dados/serie/bcdata.sgs.1619/dados?formato=json&amp;dataInicial=01/01/2020&amp;dataFinal=31/12/2026</pre>
+  </details>
+</section>
+  </details>
+  <details class="ficha">
+    <summary>Fiscal · Resultado primário do setor público (ano fechado)</summary>
+    <p class="nota">Unidade: <strong>% do PIB</strong> · Frequência: <strong>anual</strong> ·
+      Resumo por mandato: <strong>nivel</strong> ·
+      Direção: <strong>maior é melhor</strong></p>
+    <section class="cartao cartao-serie" data-serie="resultado_primario">
+  <h3>Resultado primário do setor público (ano fechado)</h3>
+  <p><strong>O que mede.</strong> Receitas menos despesas do setor público consolidado (União, estados, municípios e estatais), sem contar os juros, em cada ano fechado (janeiro a dezembro). Positivo = superávit.</p>
+  <p><strong>Fonte e método.</strong> Série SGS 5793 (NFSP primária, acumulada em 12 meses, % do PIB), usando só o valor de dezembro, que é o resultado do ano fechado: assim cada ano conta inteiro para um governo, sem misturar meses do anterior. O ano corrente entra quando dezembro for divulgado. O Banco Central publica a NECESSIDADE de financiamento, em que déficit é positivo; o painel multiplica por −1 para que superávit apareça como positivo.</p>
+  <p><strong>Cuidados ao interpretar:</strong></p>
+  <ul><li>Receitas extraordinárias (concessões, dividendos) e despesas atípicas (pandemia em 2020) afetam muito o resultado de um único ano.</li></ul>
+  <p><strong>Conferir na fonte:</strong> <a href="https://www3.bcb.gov.br/sgspub/consultarvalores/telaCvsSelecionarSeries.paint" rel="noopener">Banco Central – SGS, série 5793</a></p>
+  <p class="nota">Extraído em 18/10/2026 · 24 períodos (2002 a 2025) ·
+    <a href="/dados/bronze/resultado_primario.json">resposta bruta da API (JSON)</a></p>
+  <details class="urls">
+    <summary>URL(s) exata(s) consultada(s) na API</summary>
+    <pre>https://api.bcb.gov.br/dados/serie/bcdata.sgs.5793/dados?formato=json&amp;dataInicial=01/01/1980&amp;dataFinal=31/12/1989
+https://api.bcb.gov.br/dados/serie/bcdata.sgs.5793/dados?formato=json&amp;dataInicial=01/01/1990&amp;dataFinal=31/12/1999
+https://api.bcb.gov.br/dados/serie/bcdata.sgs.5793/dados?formato=json&amp;dataInicial=01/01/2000&amp;dataFinal=31/12/2009
+https://api.bcb.gov.br/dados/serie/bcdata.sgs.5793/dados?formato=json&amp;dataInicial=01/01/2010&amp;dataFinal=31/12/2019
+https://api.bcb.gov.br/dados/serie/bcdata.sgs.5793/dados?formato=json&amp;dataInicial=01/01/2020&amp;dataFinal=31/12/2026</pre>
+  </details>
+</section>
+  </details>
+  <details class="ficha">
+    <summary>Fiscal · Dívida líquida do setor público</summary>
+    <p class="nota">Unidade: <strong>% do PIB</strong> · Frequência: <strong>mensal</strong> ·
+      Resumo por mandato: <strong>nivel</strong> ·
+      Direção: <strong>menor é melhor</strong> · atenção na média: dívida é um estoque acumulado ao longo de décadas: a média reflete sobretudo o nível herdado</p>
+    <section class="cartao cartao-serie" data-serie="divida_liquida">
+  <h3>Dívida líquida do setor público</h3>
+  <p><strong>O que mede.</strong> Dívida do setor público consolidado descontados os ativos (reservas internacionais, créditos), em proporção do PIB.</p>
+  <p><strong>Fonte e método.</strong> Série SGS 4513 do Banco Central, mensal, desde dez/2001.</p>
+  <p><strong>Cuidados ao interpretar:</strong></p>
+  <ul><li>Como as reservas são em dólar, uma alta do dólar REDUZ a dívida líquida. Olhe junto a dívida bruta.</li></ul>
+  <p><strong>Conferir na fonte:</strong> <a href="https://www3.bcb.gov.br/sgspub/consultarvalores/telaCvsSelecionarSeries.paint" rel="noopener">Banco Central – SGS, série 4513</a></p>
+  <p class="nota">Extraído em 18/10/2026 · 297 períodos (dez/2001 a ago/2026) ·
+    <a href="/dados/bronze/divida_liquida.json">resposta bruta da API (JSON)</a></p>
+  <details class="urls">
+    <summary>URL(s) exata(s) consultada(s) na API</summary>
+    <pre>https://api.bcb.gov.br/dados/serie/bcdata.sgs.4513/dados?formato=json&amp;dataInicial=01/01/1980&amp;dataFinal=31/12/1989
+https://api.bcb.gov.br/dados/serie/bcdata.sgs.4513/dados?formato=json&amp;dataInicial=01/01/1990&amp;dataFinal=31/12/1999
+https://api.bcb.gov.br/dados/serie/bcdata.sgs.4513/dados?formato=json&amp;dataInicial=01/01/2000&amp;dataFinal=31/12/2009
+https://api.bcb.gov.br/dados/serie/bcdata.sgs.4513/dados?formato=json&amp;dataInicial=01/01/2010&amp;dataFinal=31/12/2019
+https://api.bcb.gov.br/dados/serie/bcdata.sgs.4513/dados?formato=json&amp;dataInicial=01/01/2020&amp;dataFinal=31/12/2026</pre>
+  </details>
+</section>
+  </details>
+  <details class="ficha">
+    <summary>Fiscal · Dívida bruta do governo geral</summary>
+    <p class="nota">Unidade: <strong>% do PIB</strong> · Frequência: <strong>mensal</strong> ·
+      Resumo por mandato: <strong>nivel</strong> ·
+      Direção: <strong>menor é melhor</strong> · atenção na média: dívida é um estoque acumulado ao longo de décadas: a média reflete sobretudo o nível herdado</p>
+    <section class="cartao cartao-serie" data-serie="divida_bruta">
+  <h3>Dívida bruta do governo geral</h3>
+  <p><strong>O que mede.</strong> Dívida total do governo geral (sem estatais), em proporção do PIB.</p>
+  <p><strong>Fonte e método.</strong> Série SGS 13762 do Banco Central (metodologia vigente desde 2008), desde dez/2006.</p>
+  <p><strong>Cuidados ao interpretar:</strong></p>
+  <ul><li>Começa em dez/2006: o primeiro governo com dado completo é Lula 2.</li></ul>
+  <p><strong>Conferir na fonte:</strong> <a href="https://www3.bcb.gov.br/sgspub/consultarvalores/telaCvsSelecionarSeries.paint" rel="noopener">Banco Central – SGS, série 13762</a></p>
+  <p class="nota">Extraído em 18/10/2026 · 237 períodos (dez/2006 a ago/2026) ·
+    <a href="/dados/bronze/divida_bruta.json">resposta bruta da API (JSON)</a></p>
+  <details class="urls">
+    <summary>URL(s) exata(s) consultada(s) na API</summary>
+    <pre>https://api.bcb.gov.br/dados/serie/bcdata.sgs.13762/dados?formato=json&amp;dataInicial=01/01/1980&amp;dataFinal=31/12/1989
+https://api.bcb.gov.br/dados/serie/bcdata.sgs.13762/dados?formato=json&amp;dataInicial=01/01/1990&amp;dataFinal=31/12/1999
+https://api.bcb.gov.br/dados/serie/bcdata.sgs.13762/dados?formato=json&amp;dataInicial=01/01/2000&amp;dataFinal=31/12/2009
+https://api.bcb.gov.br/dados/serie/bcdata.sgs.13762/dados?formato=json&amp;dataInicial=01/01/2010&amp;dataFinal=31/12/2019
+https://api.bcb.gov.br/dados/serie/bcdata.sgs.13762/dados?formato=json&amp;dataInicial=01/01/2020&amp;dataFinal=31/12/2026</pre>
+  </details>
+</section>
+  </details>
+  <details class="ficha">
+    <summary>Juros e câmbio · Taxa Selic (meta do Copom)</summary>
+    <p class="nota">Unidade: <strong>% a.a.</strong> · Frequência: <strong>mensal</strong> ·
+      Resumo por mandato: <strong>nivel</strong> ·
+      Direção: <strong>menor é melhor</strong> (juro menor barateia o crédito; desde 2021 a Selic é decidida pelo Banco Central autônomo, não pelo presidente)</p>
+    <section class="cartao cartao-serie" data-serie="selic">
+  <h3>Taxa Selic (meta do Copom)</h3>
+  <p><strong>O que mede.</strong> Meta da taxa básica de juros definida pelo Copom, a que é anunciada nas reuniões e noticiada pela imprensa.</p>
+  <p><strong>Fonte e método.</strong> Série SGS 432 do Banco Central (meta Selic, diária). O painel usa a meta em vigor no último dia de cada mês. A meta existe desde mar/1999, quando o Copom passou a definir uma meta para a Selic; antes disso o painel não mostra a série.</p>
+  <p><strong>Cuidados ao interpretar:</strong></p>
+  <ul><li>Desde 2021 o Banco Central é formalmente autônomo e a Selic é decidida pelo Copom, não pelo presidente da República.</li><li>Juro menor é tratado como melhor porque barateia crédito e dívida, mas juro alto é a resposta do Banco Central à inflação: compare junto com o IPCA.</li></ul>
+  <p><strong>Conferir na fonte:</strong> <a href="https://www3.bcb.gov.br/sgspub/consultarvalores/telaCvsSelecionarSeries.paint" rel="noopener">Banco Central – SGS, série 432</a></p>
+  <p class="nota">Extraído em 18/10/2026 · 332 períodos (mar/1999 a out/2026) ·
+    <a href="/dados/bronze/selic.json">resposta bruta da API (JSON)</a></p>
+  <details class="urls">
+    <summary>URL(s) exata(s) consultada(s) na API</summary>
+    <pre>https://api.bcb.gov.br/dados/serie/bcdata.sgs.432/dados?formato=json&amp;dataInicial=01/01/1980&amp;dataFinal=31/12/1989
+https://api.bcb.gov.br/dados/serie/bcdata.sgs.432/dados?formato=json&amp;dataInicial=01/01/1990&amp;dataFinal=31/12/1999
+https://api.bcb.gov.br/dados/serie/bcdata.sgs.432/dados?formato=json&amp;dataInicial=01/01/2000&amp;dataFinal=31/12/2009
+https://api.bcb.gov.br/dados/serie/bcdata.sgs.432/dados?formato=json&amp;dataInicial=01/01/2010&amp;dataFinal=31/12/2019
+https://api.bcb.gov.br/dados/serie/bcdata.sgs.432/dados?formato=json&amp;dataInicial=01/01/2020&amp;dataFinal=31/12/2026</pre>
+  </details>
+</section>
+  </details>
+  <details class="ficha">
+    <summary>Juros e câmbio · Dólar comercial (média do mês)</summary>
+    <p class="nota">Unidade: <strong>R$/US$</strong> · Frequência: <strong>mensal</strong> ·
+      Resumo por mandato: <strong>nivel</strong> ·
+      Direção: <strong>menor é melhor</strong> (dólar mais barato preserva o poder de compra, mas prejudica exportadores) · atenção na média: valor nominal: entre décadas, pesa mais a inflação acumulada do que o governo</p>
+    <section class="cartao cartao-serie" data-serie="dolar">
+  <h3>Dólar comercial (média do mês)</h3>
+  <p><strong>O que mede.</strong> Taxa de câmbio nominal de venda (PTAX), média mensal.</p>
+  <p><strong>Fonte e método.</strong> Série SGS 3698 do Banco Central, a partir de jul/1994 (Plano Real).</p>
+  <p><strong>Cuidados ao interpretar:</strong></p>
+  <ul><li>Valor nominal: não desconta a inflação do Brasil nem a dos EUA, então não é comparável em nível entre décadas.</li><li>Dólar menor é tratado como melhor porque preserva o poder de compra e segura a inflação, mas favorece importações em vez de exportações. Por ser nominal, a média de governos de décadas diferentes reflete a inflação acumulada: confira também a variação durante o mandato.</li></ul>
+  <p><strong>Conferir na fonte:</strong> <a href="https://www3.bcb.gov.br/sgspub/consultarvalores/telaCvsSelecionarSeries.paint" rel="noopener">Banco Central – SGS, série 3698</a></p>
+  <p class="nota">Extraído em 18/10/2026 · 387 períodos (jul/1994 a set/2026) ·
+    <a href="/dados/bronze/dolar.json">resposta bruta da API (JSON)</a></p>
+  <details class="urls">
+    <summary>URL(s) exata(s) consultada(s) na API</summary>
+    <pre>https://api.bcb.gov.br/dados/serie/bcdata.sgs.3698/dados?formato=json&amp;dataInicial=01/01/1980&amp;dataFinal=31/12/1989
+https://api.bcb.gov.br/dados/serie/bcdata.sgs.3698/dados?formato=json&amp;dataInicial=01/01/1990&amp;dataFinal=31/12/1999
+https://api.bcb.gov.br/dados/serie/bcdata.sgs.3698/dados?formato=json&amp;dataInicial=01/01/2000&amp;dataFinal=31/12/2009
+https://api.bcb.gov.br/dados/serie/bcdata.sgs.3698/dados?formato=json&amp;dataInicial=01/01/2010&amp;dataFinal=31/12/2019
+https://api.bcb.gov.br/dados/serie/bcdata.sgs.3698/dados?formato=json&amp;dataInicial=01/01/2020&amp;dataFinal=31/12/2026</pre>
+  </details>
+</section>
+  </details>
+  <details class="ficha">
+    <summary>Preços · IPCA acumulado em 12 meses (divulgado pelo IBGE) (auxiliar)</summary>
+    <p class="nota">Unidade: <strong>%</strong> · Frequência: <strong>mensal</strong> ·
+      Resumo por mandato: <strong>nivel</strong> ·
+      Direção: <strong>contexto (sem direção)</strong></p>
+    <section class="cartao cartao-serie" data-serie="ipca_12m_ibge">
+  <h3>IPCA acumulado em 12 meses (divulgado pelo IBGE)</h3>
+  <p><strong>O que mede.</strong> Usado só para conferir o acumulado em 12 meses que o painel calcula.</p>
+  <p><strong>Fonte e método.</strong> Tabela SIDRA 1737, variável 2265, Brasil.</p>
+  <p><strong>Conferir na fonte:</strong> <a href="https://sidra.ibge.gov.br/tabela/1737" rel="noopener">IBGE – SIDRA, tabela 1737, variável 2265</a></p>
+  <p class="nota">Extraído em 18/10/2026 · 550 períodos (dez/1980 a set/2026) ·
+    <a href="/dados/bronze/ipca_12m_ibge.json">resposta bruta da API (JSON)</a></p>
+  <details class="urls">
+    <summary>URL(s) exata(s) consultada(s) na API</summary>
+    <pre>https://servicodados.ibge.gov.br/api/v3/agregados/1737/periodos/all/variaveis/2265?localidades=N1[all]</pre>
+  </details>
+</section>
+  </details>
+  <details class="ficha">
+    <summary>Preços · IPCA – número-índice (dez/1993 = 100) (auxiliar)</summary>
+    <p class="nota">Unidade: <strong>índice</strong> · Frequência: <strong>mensal</strong> ·
+      Resumo por mandato: <strong>nivel</strong> ·
+      Direção: <strong>contexto (sem direção)</strong></p>
+    <section class="cartao cartao-serie" data-serie="ipca_indice">
+  <h3>IPCA – número-índice (dez/1993 = 100)</h3>
+  <p><strong>O que mede.</strong> Usado para deflacionar o salário mínimo.</p>
+  <p><strong>Fonte e método.</strong> Tabela SIDRA 1737, variável 2266, Brasil.</p>
+  <p><strong>Conferir na fonte:</strong> <a href="https://sidra.ibge.gov.br/tabela/1737" rel="noopener">IBGE – SIDRA, tabela 1737, variável 2266</a></p>
+  <p class="nota">Extraído em 18/10/2026 · 562 períodos (dez/1979 a set/2026) ·
+    <a href="/dados/bronze/ipca_indice.json">resposta bruta da API (JSON)</a></p>
+  <details class="urls">
+    <summary>URL(s) exata(s) consultada(s) na API</summary>
+    <pre>https://servicodados.ibge.gov.br/api/v3/agregados/1737/periodos/all/variaveis/2266?localidades=N1[all]</pre>
+  </details>
+</section>
+  </details>
+</section>
+
+<section id="reproduzir">
+  <h2>9. Como reproduzir</h2>
+  <p>Todo o código é aberto (<a href="https://github.com/MatmJr/PainelEconomiaBR">repositório</a>). Para refazer os números do zero:</p>
+  <pre>pip install -r requirements.txt
+python run_etl.py
+python gerar_site.py</pre>
+  <p>As respostas brutas das APIs ficam em <code>data/bronze/</code>, e a mais recente de cada série está disponível na página <a href="/dados/">Dados</a>.
+    Os cálculos por mandato estão em <code>src/analise.py</code> e têm testes automatizados.</p>
+</section>
+
+  </main>
+
+  <footer class="rodape">
+    <p>Fontes: <a href="https://sidra.ibge.gov.br">IBGE (SIDRA)</a> e <a href="https://www3.bcb.gov.br/sgspub">Banco Central (SGS)</a>. Dados extraídos em 18/10/2026.</p>
+    <p>O painel descreve o que aconteceu durante cada mandato; não mede o efeito causal das políticas de cada governo. <a href="/metodologia/">Veja a metodologia</a> · <a href="https://github.com/MatmJr/PainelEconomiaBR">código aberto</a> · <a href="https://github.com/MatmJr/PainelEconomiaBR/issues">reportar um erro</a>.</p>
+    <p class="creditos">Desenvolvido por <strong>Marco Mialaret Júnior</strong> com <a href="https://claude.com/claude-code" rel="noopener">Claude Code</a>.</p>
+  </footer>
+  
+</body>
+</html>

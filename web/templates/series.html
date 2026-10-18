@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% from "_macros.html" import cartao_serie, plotly %}
+{% block pagina %}series{% endblock %}
+{% block titulo %}Séries históricas | Economia por presidente{% endblock %}
+{% block conteudo %}
+<h1>Séries históricas</h1>
+<p class="lead">Cada indicador completo, com os mandatos sombreados ao fundo e eventos de contexto.</p>
+
+<div class="controles">
+  <label class="campo campo-largo">
+    <span class="campo-rotulo">Indicador</span>
+    <select id="sel-serie">
+      {%- for grupo in meta.grupos %}
+      <optgroup label="{{ grupo }}">
+        {%- for x in ordem if series[x].grupo == grupo %}<option value="{{ x }}">{{ series[x].nome }}</option>{% endfor %}
+      </optgroup>
+      {%- endfor %}
+    </select>
+  </label>
+  <fieldset class="campo" id="campo-forma" hidden>
+    <legend class="campo-rotulo">Mostrar</legend>
+    <div class="segmentado">
+      <label><input type="radio" name="forma" value="12m" checked> Acumulado em 12 meses</label>
+      <label><input type="radio" name="forma" value="mensal"> Variação mensal</label>
+    </div>
+  </fieldset>
+  <label class="campo"><span class="campo-rotulo">De</span><select id="ano-ini"></select></label>
+  <label class="campo"><span class="campo-rotulo">Até</span><select id="ano-fim"></select></label>
+</div>
+<div class="controles">
+  <label class="interruptor"><input type="checkbox" id="eventos" checked> Eventos de contexto</label>
+  <label class="interruptor"><input type="checkbox" id="log"> Escala logarítmica</label>
+</div>
+
+<div class="grafico grafico-alto" id="grafico" role="img" aria-label="Série histórica"></div>
+<p class="nota">Faixas cinza alternadas: mandatos. Triângulos: eventos de contexto (passe o mouse ou toque).</p>
+<button type="button" class="botao" id="baixar">Baixar esta série (CSV)</button>
+
+{%- for x in ordem %}
+{{ cartao_serie(x, meta, series, oculto=not loop.first) }}
+{%- endfor %}
+{% endblock %}
+{% block scripts %}
+{{ plotly() }}
+<script type="module" src="{{ static }}/js/series.js"></script>
+{% endblock %}

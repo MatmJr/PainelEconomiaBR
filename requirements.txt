@@ -1,0 +1,11 @@
+black
+requests
+python-dotenv
+pandas
+sqlalchemy
+psycopg2-binary
+prefect
+streamlit
+plotly
+jinja2
+pytest

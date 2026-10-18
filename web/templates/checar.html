@@ -1,0 +1,87 @@
+{% extends "base.html" %}
+{% from "_macros.html" import seletor_defasagem, cartao_serie, plotly %}
+{% set s = series[sid] %}
+{% block pagina %}checar{% endblock %}
+{% block titulo %}{{ s.nome }} no mandato {{ mandato.rotulo }} | Economia por presidente{% endblock %}
+{% block descricao %}{{ r.frase | sem_marcacao }}{% endblock %}
+{% block conteudo %}
+<div id="checagem" data-mandato="{{ mandato.id }}" data-serie="{{ sid }}">
+  <h1>Checar uma afirmação</h1>
+  <p class="lead">Escolha um mandato e um indicador. A página mostra o resultado, compara com os outros governos,
+    explica a conta passo a passo e lista os dados usados, com o link da fonte.</p>
+
+  <form class="controles" id="escolha" action="/checar/" method="get">
+    <label class="campo">
+      <span class="campo-rotulo">Mandato</span>
+      <select id="sel-mandato" name="mandato">
+        {%- for m in mandatos %}
+        <option value="{{ m.id }}"{% if m.id == mandato.id %} selected{% endif %}>{{ m.rotulo }}</option>
+        {%- endfor %}
+      </select>
+    </label>
+    <label class="campo campo-largo">
+      <span class="campo-rotulo">Indicador</span>
+      <select id="sel-serie" name="serie">
+        {%- for grupo in meta.grupos %}
+        <optgroup label="{{ grupo }}">
+          {%- for x in ordem if series[x].grupo == grupo %}
+          <option value="{{ x }}"{% if x == sid %} selected{% endif %}>{{ series[x].nome }}</option>
+          {%- endfor %}
+        </optgroup>
+        {%- endfor %}
+      </select>
+    </label>
+    {{ seletor_defasagem() }}
+  </form>
+  <div id="aviso-defasagem" class="alerta alerta-info" hidden></div>
+
+  <article class="cartao destaque">
+    <h2 class="titulo-checagem">{{ s.nome }} · {{ mandato.rotulo }}</h2>
+    <p class="nota">{{ mandato.presidente }} · {{ mandato.inicio | data_br }} a {{ mandato.fim | data_br }}{% if mandato.nota %} · {{ mandato.nota }}{% endif %}</p>
+    <p class="frase" id="frase">{{ r.frase | negrito }}</p>
+    <div id="aviso-status" class="alerta alerta-aviso" hidden></div>
+    <div class="metricas" id="metricas"></div>
+    <p id="ranking">{% if r.ranking %}{{ r.ranking | negrito }}{% endif %}</p>
+  </article>
+
+  <div id="secoes-com-dados">
+    <details class="cartao" open>
+      <summary><h2>Como este número foi calculado</h2></summary>
+      <ul id="explicacao">
+        {%- for linha in r.explicacao %}<li>{{ linha | negrito }}</li>{% endfor %}
+      </ul>
+      <p id="regra" class="nota"></p>
+    </details>
+
+    <section>
+      <h2>A conclusão muda com a defasagem?</h2>
+      <p class="nota">Medidas de governo levam tempo para fazer efeito. Se o resultado muda muito com a defasagem, a afirmação é frágil.</p>
+      <div class="tabela-rolagem" id="robustez"></div>
+    </section>
+
+    <section>
+      <h2>Comparação com os outros governos, a partir da posse</h2>
+      <div class="grafico" id="grafico-trajetorias" role="img" aria-label="Trajetória de cada mandato desde a posse"></div>
+      <p class="nota" id="legenda-trajetorias"></p>
+    </section>
+
+    <section>
+      <h2>A série completa</h2>
+      <div class="grafico" id="grafico-serie" role="img" aria-label="Série histórica com o mandato em destaque"></div>
+    </section>
+
+    <section>
+      <h2>Dados usados no cálculo</h2>
+      <div class="tabela-rolagem" id="tabela-dados"></div>
+      <button type="button" class="botao" id="baixar">Baixar estes dados (CSV)</button>
+    </section>
+  </div>
+
+  <h2>Fonte e metodologia da série</h2>
+  {{ cartao_serie(sid, meta, series) }}
+</div>
+{% endblock %}
+{% block scripts %}
+{{ plotly() }}
+<script type="module" src="{{ static }}/js/checar.js"></script>
+{% endblock %}

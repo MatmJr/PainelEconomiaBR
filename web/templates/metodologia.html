@@ -1,0 +1,160 @@
+{% extends "base.html" %}
+{% from "_macros.html" import cartao_serie %}
+{% block pagina %}metodologia{% endblock %}
+{% block titulo %}Metodologia | Economia por presidente{% endblock %}
+{% block descricao %}Como cada dado é atribuído a um mandato, como os indicadores são resumidos e os cuidados ao comparar governos.{% endblock %}
+{% block conteudo %}
+<h1>Metodologia</h1>
+<nav class="sumario" aria-label="Nesta página">
+  <a href="#atribuicao">1. Que governo recebe cada dado</a>
+  <a href="#metricas">2. Como cada indicador é resumido</a>
+  <a href="#status">3. Status dos dados</a>
+  <a href="#noticiado">4. Diferenças com o noticiado</a>
+  <a href="#erros">5. Erros comuns</a>
+  <a href="#mandatos">6. Mandatos</a>
+  <a href="#eventos">7. Eventos de contexto</a>
+  <a href="#series">8. Séries</a>
+  <a href="#reproduzir">9. Como reproduzir</a>
+</nav>
+
+<section id="atribuicao">
+  <h2>1. Que governo recebe cada dado</h2>
+  <p>Cada dado cobre um intervalo: um mês, um trimestre, um trimestre móvel (média de três meses) ou um ano.
+    Ele é atribuído ao governo que estava no cargo no <strong>ponto médio</strong> do intervalo — ou seja, ao governo que governou
+    <strong>a maior parte</strong> do período.</p>
+  <p class="formula">mandato(p) = M &nbsp;⇔&nbsp; ponto médio(p) − <var>d</var> está entre a posse e a saída de M</p>
+  <p>onde <var>d</var> é a <strong>defasagem</strong> (0, 3, 6 ou 12 meses). Exemplos sem defasagem:</p>
+  <ul>
+    <li><strong>maio/2016</strong>: Dilma foi afastada em 12/05; o ponto médio (16/05) cai com Temer, que governou 20 dos 31 dias;</li>
+    <li><strong>PIB de 2016</strong>: ponto médio em 02/07/2016 → Temer. Com defasagem de 6 meses → Dilma;</li>
+  </ul>
+  <p><strong>Exceção: trimestres móveis</strong> (desocupação, nível da ocupação e renda da PNAD Contínua) são atribuídos pelo
+    <strong>mês final</strong>, que é como o IBGE identifica cada trimestre e como ele é noticiado. Assim, out-nov-dez/2018 é de Temer
+    (a herança de Bolsonaro) e nov-dez-jan/2019 já é de Bolsonaro. Isso também faz o início e o fim de cada mandato caírem
+    no mesmo trimestre do ano, sem misturar estações.</p>
+  <p>Por que oferecer defasagem? Juros, programas e reformas levam meses para afetar a economia. Não existe um valor “certo”:
+    a recomendação é verificar se a conclusão se mantém com várias defasagens — cada página de checagem mostra isso automaticamente.</p>
+</section>
+
+<section id="metricas">
+  <h2>2. Como cada indicador é resumido</h2>
+  <h3>Séries de nível</h3>
+  <p>Desocupação, informalidade, dívida/PIB, Selic, dólar, rendimento, salário mínimo.</p>
+  <p class="formula">herança = valor do último período atribuído ao governo anterior</p>
+  <p class="formula">variação = x<sub>fim</sub> − x<sub>herança</sub> (em pontos percentuais) &nbsp; ou &nbsp; (x<sub>fim</sub> ÷ x<sub>herança</sub> − 1) × 100 (em %)</p>
+  <p class="formula">média = (x<sub>1</sub> + x<sub>2</sub> + … + x<sub>n</sub>) ÷ n</p>
+  <p>Comparar o fim com a herança mostra <strong>o que mudou durante o governo</strong>; a média mostra <strong>como foi viver</strong> naquele período.
+    As duas respostas podem divergir: um governo que herda desemprego alto e o reduz pode ter média alta e variação muito boa.</p>
+  <h3>Séries de variação</h3>
+  <p>IPCA mensal e PIB anual: os percentuais são compostos, não somados.</p>
+  <p class="formula">acumulado = (1 + v<sub>1</sub>/100) × (1 + v<sub>2</sub>/100) × … × (1 + v<sub>n</sub>/100) − 1</p>
+  <p class="formula">média anual = (1 + acumulado)<sup>k/n</sup> − 1</p>
+  <p>onde <var>k</var> é o número de períodos por ano (12 para mensal, 1 para anual).</p>
+  <h3>Conferência da conta de acumulação</h3>
+  <div class="metricas">
+    <div class="metrica"><span class="metrica-rotulo">Maior diferença desde 1995</span><span class="metrica-valor">{{ conferencia.desde_1995 | num }} p.p.</span></div>
+    <div class="metrica"><span class="metrica-rotulo">Maior diferença na série toda</span><span class="metrica-valor">{{ conferencia.total | num }} p.p.</span></div>
+  </div>
+  <p class="nota">IPCA em 12 meses calculado pelo painel a partir das variações mensais, comparado com o publicado pelo IBGE
+    (tabela 1737, variável 2265). As diferenças vêm do arredondamento das variações mensais a duas casas e são maiores na hiperinflação.</p>
+</section>
+
+<section id="status">
+  <h2>3. Status dos dados</h2>
+  <ul>
+    <li><strong>completo</strong>: a série cobre todos os períodos do mandato e existe valor herdado;</li>
+    <li><strong>mandato em curso</strong>: o governo ainda não terminou — os números são parciais;</li>
+    <li><strong>dados parciais</strong>: a série começou ou terminou no meio do mandato (ex.: PME encerrada em 2016);</li>
+    <li><strong>sem valor herdado</strong>: a série começa depois da posse, então não há com o que comparar o fim;</li>
+    <li><strong>sem dados</strong>: a série não cobre o mandato.</li>
+  </ul>
+  <p>Os rankings só incluem mandatos com status <strong>completo</strong>.</p>
+</section>
+
+<section id="noticiado">
+  <h2>4. Por que um número pode diferir do que foi noticiado</h2>
+  <ul>
+    <li><strong>Revisões oficiais.</strong> O IBGE revisa o PIB por anos depois da primeira divulgação, e as razões em % do PIB
+      (dívida, resultado primário) mudam junto. Exemplos: o PIB de 2020 foi divulgado como −4,1% e hoje é −3,3%; a dívida bruta de
+      dez/2018 foi noticiada como 76,7% do PIB e hoje aparece como 75,3% na série do Banco Central. O site usa sempre a versão mais
+      recente de cada série, com a data da extração.</li>
+    <li><strong>Reponderação da PNAD Contínua.</strong> O IBGE recalcula a série quando atualiza as projeções de população, e taxas
+      antigas podem mudar em alguns décimos (o desemprego do 4º trimestre de 2018 foi divulgado como 11,6% e hoje é 11,7%).</li>
+    <li><strong>Anos de troca de governo.</strong> A imprensa costuma contar anos inteiros; o site atribui cada ano a quem governou
+      a maior parte dele (o PIB de 2016 fica com Temer). Use a defasagem para ver a outra leitura: com 6 meses, 2016 vai para Dilma.</li>
+    <li><strong>Acumulado ou média por ano.</strong> “A inflação no governo X” pode ser o acumulado do mandato (26,9% em quatro anos)
+      ou a média anual (6,1% ao ano). O site mostra os dois e diz qual é qual.</li>
+    <li><strong>Qual Selic.</strong> O site usa a meta definida pelo Copom, a que é anunciada e noticiada, e não a taxa efetiva do
+      dia a dia, que costuma ficar um pouco abaixo.</li>
+  </ul>
+  <p>Se encontrar um número que não bate e não se explica por estes motivos, confira a fonte original pelo link em cada série
+    {%- if repo_url %} e <a href="{{ repo_url }}/issues">avise</a>{% endif %}.</p>
+</section>
+
+<section id="erros">
+  <h2>5. Erros comuns ao comparar governos</h2>
+  <ol>
+    <li><strong>Escolher a dedo o ponto de partida.</strong> Comparar o pior mês de um governo com o melhor de outro. O painel usa sempre a herança e o último dado do mandato, e mostra a média.</li>
+    <li><strong>Confundir nível com variação.</strong> “O desemprego era alto no governo X” pode ser herança do governo anterior.</li>
+    <li><strong>Ignorar choques externos.</strong> Crise de 2008, pandemia, guerra, preço de commodities. Veja os eventos de contexto.</li>
+    <li><strong>Ignorar defasagens.</strong> Use o seletor de defasagem e veja se a conclusão se mantém.</li>
+    <li><strong>Emendar séries com metodologias diferentes.</strong> A PME (até 2016) e a PNAD Contínua (desde 2012) não são comparáveis em nível.</li>
+    <li><strong>Comparar valores nominais.</strong> Dólar e salário de décadas diferentes só se comparam descontada a inflação.</li>
+    <li><strong>Comparar mandato incompleto com completo.</strong> Veja o status de cada número.</li>
+    <li><strong>Confundir correlação com causa.</strong> O painel descreve o que aconteceu durante cada governo; não mede o efeito de cada política.
+      Congresso, Banco Central (autônomo desde 2021), estados e a economia mundial também influenciam.</li>
+  </ol>
+</section>
+
+<section id="mandatos">
+  <h2>6. Mandatos</h2>
+  <div class="tabela-rolagem">
+    <table>
+      <thead><tr><th>Mandato</th><th>Presidente</th><th>Início</th><th>Fim</th><th>Observação</th></tr></thead>
+      <tbody>
+        {%- for m in mandatos %}
+        <tr><td>{{ m.rotulo }}</td><td>{{ m.presidente }}</td><td>{{ m.inicio | data_br }}</td><td>{{ m.fim | data_br }}</td><td>{{ m.nota }}</td></tr>
+        {%- endfor %}
+      </tbody>
+    </table>
+  </div>
+  <p class="nota">Nos impeachments, o vice é considerado no cargo desde o afastamento do titular, quando passa a exercer a Presidência.</p>
+</section>
+
+<section id="eventos">
+  <h2>7. Eventos de contexto</h2>
+  <div class="tabela-rolagem">
+    <table>
+      <thead><tr><th>Data</th><th>Evento</th></tr></thead>
+      <tbody>{% for d, nome in eventos %}<tr><td>{{ d | data_br }}</td><td>{{ nome }}</td></tr>{% endfor %}</tbody>
+    </table>
+  </div>
+</section>
+
+<section id="series">
+  <h2>8. Séries</h2>
+  {%- for x in ordem + (series.keys() | reject("in", ordem) | list) %}
+  {%- set s = series[x] %}
+  <details class="ficha">
+    <summary>{{ s.grupo }} · {{ s.nome }}{% if s.auxiliar %} (auxiliar){% endif %}</summary>
+    <p class="nota">Unidade: <strong>{{ s.unidade }}</strong> · Frequência: <strong>{{ s.frequencia | replace("_", " ") }}</strong> ·
+      Resumo por mandato: <strong>{{ s.tipo | replace("_", " ") }}</strong> ·
+      Direção: <strong>{{ {"menor": "menor é melhor", "maior": "maior é melhor"}.get(s.direcao, "contexto (sem direção)") }}</strong>
+      {%- if s.ressalva_direcao %} ({{ s.ressalva_direcao }}){% endif %}
+      {%- if s.media_comparavel is false %} · a média não é usada para comparar governos ({{ s.motivo_media }}){% endif %}
+      {%- if s.aviso_media %} · atenção na média: {{ s.aviso_media }}{% endif %}</p>
+    {{ cartao_serie(x, meta, series) }}
+  </details>
+  {%- endfor %}
+</section>
+
+<section id="reproduzir">
+  <h2>9. Como reproduzir</h2>
+  <p>Todo o código é aberto{% if repo_url %} (<a href="{{ repo_url }}">repositório</a>){% endif %}. Para refazer os números do zero:</p>
+  <pre>pip install -r requirements.txt
+python run_etl.py
+python gerar_site.py</pre>
+  <p>As respostas brutas das APIs ficam em <code>data/bronze/</code>, e a mais recente de cada série está disponível na página <a href="/dados/">Dados</a>.
+    Os cálculos por mandato estão em <code>src/analise.py</code> e têm testes automatizados.</p>
+</section>
+{% endblock %}

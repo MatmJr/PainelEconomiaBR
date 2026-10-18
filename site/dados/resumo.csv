@@ -1,0 +1,721 @@
+﻿serie_id;mandato_id;rotulo;n;esperado;cobertura;status;acumulado;media;minimo;maximo;variacao;final;heranca;defasagem_meses
+pib_anual;sarney;Sarney;5;5;1,0;completo;23,738573468187262;4,352058593514574;-0,06;7,85;;;;0
+pib_anual;collor;Collor;3;3;1,0;completo;-3,8866350529999982;-1,3127014681902471;-4,35;1,03;;;;0
+pib_anual;itamar;Itamar;2;2;1,0;completo;11,057819999999996;5,383974113714274;4,92;5,85;;;;0
+pib_anual;fhc1;FHC 1;4;4;1,0;completo;10,508857543778127;2,5296021779319444;0,34;4,22;;;;0
+pib_anual;fhc2;FHC 2;4;4;1,0;completo;9,58179724956032;2,313891834697368;0,47;4,39;;;;0
+pib_anual;lula1;Lula 1;4;4;1,0;completo;14,759952431820844;3,501725456524185;1,14;5,76;;;;0
+pib_anual;lula2;Lula 2;4;4;1,0;completo;19,706754565211938;4,599513389617127;-0,13;7,53;;;;0
+pib_anual;dilma1;Dilma 1;4;4;1,0;completo;9,690936773600022;2,3393575635546338;0,5;3,97;;;;0
+pib_anual;dilma2;Dilma 2;1;1;1,0;completo;-3,5499999999999976;-3,5499999999999976;-3,55;-3,55;;;;0
+pib_anual;temer;Temer;3;3;1,0;completo;-0,2589546687999822;-0,08639283866531677;-3,28;1,78;;;;0
+pib_anual;bolsonaro;Bolsonaro;4;4;1,0;completo;5,6573359401996814;1,3852821291898243;-3,28;4,76;;;;0
+pib_anual;lula3;Lula 3;3;4;0,75;mandato em curso;9,215859503200008;2,9821376959050516;2,29;3,42;;;;0
+pib_per_capita;sarney;Sarney;0;5;0,0;sem dados;;;;;;;;0
+pib_per_capita;collor;Collor;0;3;0,0;sem dados;;;;;;;;0
+pib_per_capita;itamar;Itamar;0;2;0,0;sem dados;;;;;;;;0
+pib_per_capita;fhc1;FHC 1;3;4;0,75;dados parciais;1,4845536999999798;0,49242245451177613;-1,1;1,9;;;;0
+pib_per_capita;fhc2;FHC 2;4;4;1,0;completo;3,1022032039999647;0,7666884794424345;-1,0;2,2;;;;0
+pib_per_capita;lula1;Lula 1;4;4;1,0;completo;9,677117895199983;2,3361342298970467;-0,1;4,6;;;;0
+pib_per_capita;lula2;Lula 2;4;4;1,0;completo;15,345522214999985;3,6335045649771303;-1,1;6,7;;;;0
+pib_per_capita;dilma1;Dilma 1;4;4;1,0;completo;6,310682676799995;1,5416524686610478;-0,3;3,2;;;;0
+pib_per_capita;dilma2;Dilma 2;1;1;1,0;completo;-4,300000000000004;-4,300000000000004;-4,3;-4,3;;;;0
+pib_per_capita;temer;Temer;3;3;1,0;completo;-2,4582400000000004;-0,8262209433953838;-4,0;1,0;;;;0
+pib_per_capita;bolsonaro;Bolsonaro;4;4;1,0;completo;3,455369838799993;0,8528694952238958;-3,9;4,3;;;;0
+pib_per_capita;lula3;Lula 3;1;4;0,25;mandato em curso;2,8000000000000025;2,8000000000000025;2,8;2,8;;;;0
+pib_trimestral;sarney;Sarney;0;20;0,0;sem dados;;;;;;;;0
+pib_trimestral;collor;Collor;0;10;0,0;sem dados;;;;;;;;0
+pib_trimestral;itamar;Itamar;0;9;0,0;sem dados;;;;;;;;0
+pib_trimestral;fhc1;FHC 1;12;16;0,75;sem valor herdado;;104,55999999999999;99,41;107,16;;105,59;;0
+pib_trimestral;fhc2;FHC 2;16;16;1,0;completo;;111,691875;105,78;117,99;11,743536319727244;117,99;105,59;0
+pib_trimestral;lula1;Lula 1;16;16;1,0;completo;;125,884375;116,48;135,93;15,204678362573109;135,93;117,99;0
+pib_trimestral;lula2;Lula 2;16;16;1,0;completo;;149,48499999999999;138,48;162,63;19,642463032443167;162,63;135,93;0
+pib_trimestral;dilma1;Dilma 1;16;16;1,0;completo;;171,19562499999998;164,81;177,04;7,75379696243006;175,24;162,63;0
+pib_trimestral;dilma2;Dilma 2;5;5;1,0;completo;;167,908;163,3;173,85;-6,81351289659895;163,3;175,24;0
+pib_trimestral;temer;Temer;11;11;1,0;completo;;166,07545454545456;162,68;169,44;3,5027556644213087;169,02;163,3;0
+pib_trimestral;bolsonaro;Bolsonaro;16;16;1,0;completo;;171,619375;153,17;180,35;6,703348716128255;180,35;169,02;0
+pib_trimestral;lula3;Lula 3;14;16;0,875;mandato em curso;;190,6321428571428;182,75;198,24;9,919600776268368;198,24;180,35;0
+desocupacao;sarney;Sarney;0;60;0,0;sem dados;;;;;;;;0
+desocupacao;collor;Collor;0;31;0,0;sem dados;;;;;;;;0
+desocupacao;itamar;Itamar;0;27;0,0;sem dados;;;;;;;;0
+desocupacao;fhc1;FHC 1;0;48;0,0;sem dados;;;;;;;;0
+desocupacao;fhc2;FHC 2;0;48;0,0;sem dados;;;;;;;;0
+desocupacao;lula1;Lula 1;0;48;0,0;sem dados;;;;;;;;0
+desocupacao;lula2;Lula 2;0;48;0,0;sem dados;;;;;;;;0
+desocupacao;dilma1;Dilma 1;34;48;0,7083333333333334;sem valor herdado;;7,147058823529412;6,2;8,0;;6,6;;0
+desocupacao;dilma2;Dilma 2;16;16;1,0;completo;;8,9375;6,9;11,3;4,700000000000001;11,3;6,6;0
+desocupacao;temer;Temer;32;32;1,0;completo;;12,409375;11,3;13,9;0,3999999999999986;11,7;11,3;0
+desocupacao;bolsonaro;Bolsonaro;48;48;1,0;completo;;12,129166666666668;7,9;14,9;-3,799999999999999;7,9;11,7;0
+desocupacao;lula3;Lula 3;44;48;0,9166666666666666;mandato em curso;;6,720454545454547;5,1;8,8;-2,6000000000000005;5,3;7,9;0
+desemprego_pme;sarney;Sarney;0;60;0,0;sem dados;;;;;;;;0
+desemprego_pme;collor;Collor;0;31;0,0;sem dados;;;;;;;;0
+desemprego_pme;itamar;Itamar;0;27;0,0;sem dados;;;;;;;;0
+desemprego_pme;fhc1;FHC 1;0;48;0,0;sem dados;;;;;;;;0
+desemprego_pme;fhc2;FHC 2;14;48;0,2916666666666667;sem valor herdado;;11,571428571428573;10,6;12,5;;11,9;;0
+desemprego_pme;lula1;Lula 1;48;48;1,0;completo;;10,914583333333333;9,2;13,1;-2,200000000000001;9,7;11,9;0
+desemprego_pme;lula2;Lula 2;48;48;1,0;completo;;7,997916666666666;6,2;9,7;-3,499999999999999;6,2;9,7;0
+desemprego_pme;dilma1;Dilma 1;48;48;1,0;completo;;5,40625;4,6;6,1;-1,2000000000000002;5,0;6,2;0
+desemprego_pme;dilma2;Dilma 2;14;16;0,875;dados parciais;;6,999999999999999;5,4;8,1;3,0;8,0;5,0;0
+desemprego_pme;temer;Temer;0;32;0,0;sem dados;;;;;;;;0
+desemprego_pme;bolsonaro;Bolsonaro;0;48;0,0;sem dados;;;;;;;;0
+desemprego_pme;lula3;Lula 3;0;48;0,0;sem dados;;;;;;;;0
+informalidade;sarney;Sarney;0;20;0,0;sem dados;;;;;;;;0
+informalidade;collor;Collor;0;10;0,0;sem dados;;;;;;;;0
+informalidade;itamar;Itamar;0;9;0,0;sem dados;;;;;;;;0
+informalidade;fhc1;FHC 1;0;16;0,0;sem dados;;;;;;;;0
+informalidade;fhc2;FHC 2;0;16;0,0;sem dados;;;;;;;;0
+informalidade;lula1;Lula 1;0;16;0,0;sem dados;;;;;;;;0
+informalidade;lula2;Lula 2;0;16;0,0;sem dados;;;;;;;;0
+informalidade;dilma1;Dilma 1;0;16;0,0;sem dados;;;;;;;;0
+informalidade;dilma2;Dilma 2;2;5;0,4;sem valor herdado;;38,3;38,3;38,3;;38,3;;0
+informalidade;temer;Temer;11;11;1,0;completo;;39,800000000000004;38,4;40,8;2,5;40,8;38,3;0
+informalidade;bolsonaro;Bolsonaro;16;16;1,0;completo;;39,74375;36,6;41,0;-1,8999999999999986;38,9;40,8;0
+informalidade;lula3;Lula 3;14;16;0,875;mandato em curso;;38,38571428571429;37,3;39,2;-1,5;37,4;38,9;0
+nivel_ocupacao;sarney;Sarney;0;60;0,0;sem dados;;;;;;;;0
+nivel_ocupacao;collor;Collor;0;31;0,0;sem dados;;;;;;;;0
+nivel_ocupacao;itamar;Itamar;0;27;0,0;sem dados;;;;;;;;0
+nivel_ocupacao;fhc1;FHC 1;0;48;0,0;sem dados;;;;;;;;0
+nivel_ocupacao;fhc2;FHC 2;0;48;0,0;sem dados;;;;;;;;0
+nivel_ocupacao;lula1;Lula 1;0;48;0,0;sem dados;;;;;;;;0
+nivel_ocupacao;lula2;Lula 2;0;48;0,0;sem dados;;;;;;;;0
+nivel_ocupacao;dilma1;Dilma 1;34;48;0,7083333333333334;sem valor herdado;;58,09411764705883;57,3;58,5;;58,2;;0
+nivel_ocupacao;dilma2;Dilma 2;16;16;1,0;completo;;57,06875;55,7;58,0;-2,5;55,7;58,2;0
+nivel_ocupacao;temer;Temer;32;32;1,0;completo;;55,103125;54,1;55,9;0,09999999999999432;55,8;55,7;0
+nivel_ocupacao;bolsonaro;Bolsonaro;48;48;1,0;completo;;54,07916666666667;48,4;57,4;1,3000000000000043;57,1;55,8;0
+nivel_ocupacao;lula3;Lula 3;44;48;0,9166666666666666;mandato em curso;;57,88863636363637;56,1;59,0;1,7999999999999972;58,9;57,1;0
+ipca;sarney;Sarney;60;60;1,0;completo;1516029,7426607548;585,7207216532759;0,78;75,73;;;;0
+ipca;collor;Collor;31;31;1,0;completo;21139,678543215097;695,8504395279328;4,99;82,39;;;;0
+ipca;itamar;Itamar;27;27;1,0;completo;50227,43725387296;1487,8231899504156;1,53;47,43;;;;0
+ipca;fhc1;FHC 1;48;48;1,0;completo;43,459514804720236;9,44157625009947;-0,51;2,67;;;;0
+ipca;fhc2;FHC 2;48;48;1,0;completo;39,883123766030295;8,753021165655461;0,01;3,02;;;;0
+ipca;lula1;Lula 1;48;48;1,0;completo;28,20419465479407;6,408313194526172;-0,21;2,25;;;;0
+ipca;lula2;Lula 2;48;48;1,0;completo;22,21145307839578;5,142422001145186;0,0;0,83;;;;0
+ipca;dilma1;Dilma 1;48;48;1,0;completo;27,033798240629526;6,16462275292593;0,01;0,92;;;;0
+ipca;dilma2;Dilma 2;16;16;1,0;completo;14,266841908950623;10,519819874844515;0,22;1,32;;;;0
+ipca;temer;Temer;32;32;1,0;completo;9,949241282495013;3,620835285128865;-0,23;1,26;;;;0
+ipca;bolsonaro;Bolsonaro;48;48;1,0;completo;26,927265760803376;6,142357932067033;-0,68;1,62;;;;0
+ipca;lula3;Lula 3;45;48;0,9375;mandato em curso;18,87109782938945;4,717759014785572;-0,32;1,31;;;;0
+rendimento_real;sarney;Sarney;0;60;0,0;sem dados;;;;;;;;0
+rendimento_real;collor;Collor;0;31;0,0;sem dados;;;;;;;;0
+rendimento_real;itamar;Itamar;0;27;0,0;sem dados;;;;;;;;0
+rendimento_real;fhc1;FHC 1;0;48;0,0;sem dados;;;;;;;;0
+rendimento_real;fhc2;FHC 2;0;48;0,0;sem dados;;;;;;;;0
+rendimento_real;lula1;Lula 1;0;48;0,0;sem dados;;;;;;;;0
+rendimento_real;lula2;Lula 2;0;48;0,0;sem dados;;;;;;;;0
+rendimento_real;dilma1;Dilma 1;34;48;0,7083333333333334;sem valor herdado;;3273,0588235294117;3173,0;3370,0;;3348,0;;0
+rendimento_real;dilma2;Dilma 2;16;16;1,0;completo;;3292,1875;3229,0;3353,0;-3,554360812425328;3229,0;3348,0;0
+rendimento_real;temer;Temer;32;32;1,0;completo;;3289,4375;3206,0;3351,0;3,7782595230721583;3351,0;3229,0;0
+rendimento_real;bolsonaro;Bolsonaro;48;48;1,0;completo;;3324,9375;3068,0;3588,0;-1,014622500746043;3317,0;3351,0;0
+rendimento_real;lula3;Lula 3;44;48;0,9166666666666666;mandato em curso;;3552,2954545454545;3322,0;3804,0;13,867952969550789;3777,0;3317,0;0
+salario_minimo_real;sarney;Sarney;0;60;0,0;sem dados;;;;;;;;0
+salario_minimo_real;collor;Collor;0;31;0,0;sem dados;;;;;;;;0
+salario_minimo_real;itamar;Itamar;6;27;0,2222222222222222;sem valor herdado;;545,1247463418922;529,9838655726738;568,7126810523205;;529,9838655726738;;0
+salario_minimo_real;fhc1;FHC 1;48;48;1,0;completo;;635,1840504617356;495,93773015171604;690,0595387539902;29,454905264807874;686,0901110958716;529,9838655726738;0
+salario_minimo_real;fhc2;FHC 2;48;48;1,0;completo;;729,7947317411157;652,5093484454586;830,0378034114748;9,981694858495294;754,573532439773;686,0901110958716;0
+salario_minimo_real;lula1;Lula 1;48;48;1,0;completo;;887,5418160856356;717,7296233603329;1046,281643418441;36,502743733389394;1030,0135752662472;754,573532439773;0
+salario_minimo_real;lula2;Lula 2;48;48;1,0;completo;;1160,4274834060145;1017,2428508844811;1290,9816394866161;19,231307353238947;1228,0986517057845;1030,0135752662472;0
+salario_minimo_real;dilma1;Dilma 1;48;48;1,0;completo;;1360,602844898962;1232,2428335972595;1452,3556591256838;11,750417743565578;1372,4053735843106;1228,0986517057845;0
+salario_minimo_real;dilma2;Dilma 2;16;16;1,0;completo;;1424,18526147564;1349,6720934217935;1488,3470945424738;6,3717024840947545;1459,8509608648321;1372,4053735843106;0
+salario_minimo_real;temer;Temer;32;32;1,0;completo;;1463,5152119627614;1418,0793600938082;1504,2154719067137;-1,4009710246777995;1439,3988718996354;1459,8509608648321;0
+salario_minimo_real;bolsonaro;Bolsonaro;48;48;1,0;completo;;1471,5290980132338;1383,22658021843;1518,5966787993161;0,0915997703511584;1440,7173579607327;1439,3988718996354;0
+salario_minimo_real;lula3;Lula 3;45;48;0,9375;mandato em curso;;1577,1512430483226;1499,7899685085638;1679,509219518237;12,51339418124655;1621,0;1440,7173579607327;0
+resultado_primario;sarney;Sarney;0;5;0,0;sem dados;;;;;;;;0
+resultado_primario;collor;Collor;0;3;0,0;sem dados;;;;;;;;0
+resultado_primario;itamar;Itamar;0;2;0,0;sem dados;;;;;;;;0
+resultado_primario;fhc1;FHC 1;0;4;0,0;sem dados;;;;;;;;0
+resultado_primario;fhc2;FHC 2;1;4;0,25;sem valor herdado;;3,19;3,19;3,19;;3,19;;0
+resultado_primario;lula1;Lula 1;4;4;1,0;completo;;3,455;3,15;3,74;-0,040000000000000036;3,15;3,19;0
+resultado_primario;lula2;Lula 2;4;4;1,0;completo;;2,7824999999999998;1,94;3,33;-0,5299999999999998;2,62;3,15;0
+resultado_primario;dilma1;Dilma 1;4;4;1,0;completo;;1,5675;-0,56;2,94;-3,18;-0,56;2,62;0
+resultado_primario;dilma2;Dilma 2;1;1;1,0;completo;;-1,86;-1,86;-1,86;-1,3;-1,86;-0,56;0
+resultado_primario;temer;Temer;3;3;1,0;completo;;-1,9033333333333333;-2,48;-1,55;0,31000000000000005;-1,55;-1,86;0
+resultado_primario;bolsonaro;Bolsonaro;4;4;1,0;completo;;-2,0275;-9,24;1,25;2,8;1,25;-1,55;0
+resultado_primario;lula3;Lula 3;3;4;0,75;mandato em curso;;-1,0366666666666666;-2,28;-0,4;-1,68;-0,43;1,25;0
+divida_liquida;sarney;Sarney;0;60;0,0;sem dados;;;;;;;;0
+divida_liquida;collor;Collor;0;31;0,0;sem dados;;;;;;;;0
+divida_liquida;itamar;Itamar;0;27;0,0;sem dados;;;;;;;;0
+divida_liquida;fhc1;FHC 1;0;48;0,0;sem dados;;;;;;;;0
+divida_liquida;fhc2;FHC 2;13;48;0,2708333333333333;sem valor herdado;;55,47692307692307;50,95;62,45;;59,93;;0
+divida_liquida;lula1;Lula 1;48;48;1,0;completo;;50,78874999999999;46,01;60,26;-13,439999999999998;46,49;59,93;0
+divida_liquida;lula2;Lula 2;48;48;1,0;completo;;41,26895833333334;36,95;45,95;-8,510000000000005;37,98;46,49;0
+divida_liquida;dilma1;Dilma 1;48;48;1,0;completo;;33,12625;30,01;37,57;-5,3899999999999935;32,59;37,98;0
+divida_liquida;dilma2;Dilma 2;16;16;1,0;completo;;33,948125;31,59;38,87;6,279999999999994;38,87;32,59;0
+divida_liquida;temer;Temer;32;32;1,0;completo;;48,408437500000005;39,08;52,77;13,900000000000006;52,77;38,87;0
+divida_liquida;bolsonaro;Bolsonaro;48;48;1,0;completo;;55,79;50,63;61,37;3,3599999999999994;56,13;52,77;0
+divida_liquida;lula3;Lula 3;44;48;0,9166666666666666;mandato em curso;;61,74659090909092;55,21;69,27;13,139999999999993;69,27;56,13;0
+divida_bruta;sarney;Sarney;0;60;0,0;sem dados;;;;;;;;0
+divida_bruta;collor;Collor;0;31;0,0;sem dados;;;;;;;;0
+divida_bruta;itamar;Itamar;0;27;0,0;sem dados;;;;;;;;0
+divida_bruta;fhc1;FHC 1;0;48;0,0;sem dados;;;;;;;;0
+divida_bruta;fhc2;FHC 2;0;48;0,0;sem dados;;;;;;;;0
+divida_bruta;lula1;Lula 1;1;48;0,020833333333333332;sem valor herdado;;55,48;55,48;55,48;;55,48;;0
+divida_bruta;lula2;Lula 2;48;48;1,0;completo;;56,988125000000004;51,77;61,0;-3,7099999999999937;51,77;55,48;0
+divida_bruta;dilma1;Dilma 1;48;48;1,0;completo;;53,13625;51,27;56,28;4,509999999999998;56,28;51,77;0
+divida_bruta;dilma2;Dilma 2;16;16;1,0;completo;;62,726875;57,16;66,66;10,340000000000003;66,62;56,28;0
+divida_bruta;temer;Temer;32;32;1,0;completo;;72,761875;67,51;76,13;8,649999999999991;75,27;66,62;0
+divida_bruta;bolsonaro;Bolsonaro;48;48;1,0;completo;;78,74145833333334;71,68;87,66;-3,589999999999989;71,68;75,27;0
+divida_bruta;lula3;Lula 3;44;48;0,9166666666666666;mandato em curso;;76,19772727272726;71,38;82,87;11,189999999999998;82,87;71,68;0
+selic;sarney;Sarney;0;60;0,0;sem dados;;;;;;;;0
+selic;collor;Collor;0;31;0,0;sem dados;;;;;;;;0
+selic;itamar;Itamar;0;27;0,0;sem dados;;;;;;;;0
+selic;fhc1;FHC 1;0;48;0,0;sem dados;;;;;;;;0
+selic;fhc2;FHC 2;46;48;0,9583333333333334;sem valor herdado;;19,304347826086957;15,25;42,0;;25,0;;0
+selic;lula1;Lula 1;48;48;1,0;completo;;18,442708333333332;13,25;26,5;-11,75;13,25;25,0;0
+selic;lula2;Lula 2;48;48;1,0;completo;;11,109375;8,75;13,75;-2,5;10,75;13,25;0
+selic;dilma1;Dilma 1;48;48;1,0;completo;;9,927083333333334;7,25;12,5;1,0;11,75;10,75;0
+selic;dilma2;Dilma 2;16;16;1,0;completo;;13,75;12,25;14,25;2,5;14,25;11,75;0
+selic;temer;Temer;32;32;1,0;completo;;9,7109375;6,5;14,25;-7,75;6,5;14,25;0
+selic;bolsonaro;Bolsonaro;48;48;1,0;completo;;6,552083333333333;2,0;13,75;7,25;13,75;6,5;0
+selic;lula3;Lula 3;46;48;0,9583333333333334;mandato em curso;;13,23913043478261;10,5;15,0;0,0;13,75;13,75;0
+dolar;sarney;Sarney;0;60;0,0;sem dados;;;;;;;;0
+dolar;collor;Collor;0;31;0,0;sem dados;;;;;;;;0
+dolar;itamar;Itamar;6;27;0,2222222222222222;sem valor herdado;;0,8725;0,8418;0,9333;;0,8501;;0
+dolar;fhc1;FHC 1;48;48;1,0;completo;;1,0402958333333334;0,8408;1,2054;41,79508293141985;1,2054;0,8501;0
+dolar;fhc2;FHC 2;48;48;1,0;completo;;2,2291291666666666;1,5019;3,8059;200,80471212875395;3,6259;1,2054;0
+dolar;lula1;Lula 1;48;48;1,0;completo;;2,6538791666666666;2,1293;3,5908;-40,7071347803304;2,1499;3,6259;0
+dolar;lula2;Lula 2;48;48;1,0;completo;;1,885035416666667;1,5914;2,3944;-21,233545746313787;1,6934;2,1499;0
+dolar;dilma1;Dilma 1;48;48;1,0;completo;;2,0351874999999997;1,5639;2,6394;55,86394236447385;2,6394;1,6934;0
+dolar;dilma2;Dilma 2;16;16;1,0;completo;;3,4546375;2,6342;4,0524;35,09888611047964;3,5658;2,6394;0
+dolar;temer;Temer;32;32;1,0;completo;;3,398221875;3,1042;4,1165;8,954512311402784;3,8851;3,5658;0
+dolar;bolsonaro;Bolsonaro;48;48;1,0;completo;;4,915179166666666;3,7236;5,6514;34,936037682427745;5,2424;3,8851;0
+dolar;lula3;Lula 3;45;48;0,9375;mandato em curso;;5,28878;4,8008;6,097;-1,8636502365328766;5,1447;5,2424;0
+pib_anual;sarney;Sarney;5;5;1,0;completo;23,738573468187262;4,352058593514574;-0,06;7,85;;;;3
+pib_anual;collor;Collor;3;3;1,0;completo;-3,8866350529999982;-1,3127014681902471;-4,35;1,03;;;;3
+pib_anual;itamar;Itamar;2;2;1,0;completo;11,057819999999996;5,383974113714274;4,92;5,85;;;;3
+pib_anual;fhc1;FHC 1;4;4;1,0;completo;10,508857543778127;2,5296021779319444;0,34;4,22;;;;3
+pib_anual;fhc2;FHC 2;4;4;1,0;completo;9,58179724956032;2,313891834697368;0,47;4,39;;;;3
+pib_anual;lula1;Lula 1;4;4;1,0;completo;14,759952431820844;3,501725456524185;1,14;5,76;;;;3
+pib_anual;lula2;Lula 2;4;4;1,0;completo;19,706754565211938;4,599513389617127;-0,13;7,53;;;;3
+pib_anual;dilma1;Dilma 1;4;4;1,0;completo;9,690936773600022;2,3393575635546338;0,5;3,97;;;;3
+pib_anual;dilma2;Dilma 2;2;2;1,0;completo;-6,713559999999996;-3,415094346994363;-3,55;-3,28;;;;3
+pib_anual;temer;Temer;2;2;1,0;completo;3,1234960000000145;1,5497395368397893;1,32;1,78;;;;3
+pib_anual;bolsonaro;Bolsonaro;4;4;1,0;completo;5,6573359401996814;1,3852821291898243;-3,28;4,76;;;;3
+pib_anual;lula3;Lula 3;3;4;0,75;mandato em curso;9,215859503200008;2,9821376959050516;2,29;3,42;;;;3
+pib_per_capita;sarney;Sarney;0;5;0,0;sem dados;;;;;;;;3
+pib_per_capita;collor;Collor;0;3;0,0;sem dados;;;;;;;;3
+pib_per_capita;itamar;Itamar;0;2;0,0;sem dados;;;;;;;;3
+pib_per_capita;fhc1;FHC 1;3;4;0,75;dados parciais;1,4845536999999798;0,49242245451177613;-1,1;1,9;;;;3
+pib_per_capita;fhc2;FHC 2;4;4;1,0;completo;3,1022032039999647;0,7666884794424345;-1,0;2,2;;;;3
+pib_per_capita;lula1;Lula 1;4;4;1,0;completo;9,677117895199983;2,3361342298970467;-0,1;4,6;;;;3
+pib_per_capita;lula2;Lula 2;4;4;1,0;completo;15,345522214999985;3,6335045649771303;-1,1;6,7;;;;3
+pib_per_capita;dilma1;Dilma 1;4;4;1,0;completo;6,310682676799995;1,5416524686610478;-0,3;3,2;;;;3
+pib_per_capita;dilma2;Dilma 2;2;2;1,0;completo;-8,128000000000002;-4,15011737096388;-4,3;-4,0;;;;3
+pib_per_capita;temer;Temer;2;2;1,0;completo;1,6059999999999963;0,799801587106308;0,6;1,0;;;;3
+pib_per_capita;bolsonaro;Bolsonaro;4;4;1,0;completo;3,455369838799993;0,8528694952238958;-3,9;4,3;;;;3
+pib_per_capita;lula3;Lula 3;1;4;0,25;mandato em curso;2,8000000000000025;2,8000000000000025;2,8;2,8;;;;3
+pib_trimestral;sarney;Sarney;0;20;0,0;sem dados;;;;;;;;3
+pib_trimestral;collor;Collor;0;10;0,0;sem dados;;;;;;;;3
+pib_trimestral;itamar;Itamar;0;9;0,0;sem dados;;;;;;;;3
+pib_trimestral;fhc1;FHC 1;13;16;0,8125;sem valor herdado;;104,65384615384613;99,41;107,16;;105,78;;3
+pib_trimestral;fhc2;FHC 2;16;16;1,0;completo;;112,42250000000001;106,33;117,99;11,051238419360931;117,47;105,78;3
+pib_trimestral;lula1;Lula 1;16;16;1,0;completo;;127,1975;116,48;138,48;17,88541755341788;138,48;117,47;3
+pib_trimestral;lula2;Lula 2;16;16;1,0;completo;;151,130625;140,8;164,81;19,013575967648766;164,81;138,48;3
+pib_trimestral;dilma1;Dilma 1;16;16;1,0;completo;;171,760625;165,23;177,04;5,485104059219692;173,85;164,81;3
+pib_trimestral;dilma2;Dilma 2;5;5;1,0;completo;;165,888;163,3;169,75;-5,809605982168531;163,75;173,85;3
+pib_trimestral;temer;Temer;11;11;1,0;completo;;166,60000000000002;162,68;169,52;3,5236641221374043;169,52;163,75;3
+pib_trimestral;bolsonaro;Bolsonaro;16;16;1,0;completo;;172,44625;153,17;182,75;7,8043888626710745;182,75;169,52;3
+pib_trimestral;lula3;Lula 3;13;16;0,8125;mandato em curso;;191,2384615384615;184,2;198,24;8,476060191518474;198,24;182,75;3
+desocupacao;sarney;Sarney;0;60;0,0;sem dados;;;;;;;;3
+desocupacao;collor;Collor;0;31;0,0;sem dados;;;;;;;;3
+desocupacao;itamar;Itamar;0;27;0,0;sem dados;;;;;;;;3
+desocupacao;fhc1;FHC 1;0;48;0,0;sem dados;;;;;;;;3
+desocupacao;fhc2;FHC 2;0;48;0,0;sem dados;;;;;;;;3
+desocupacao;lula1;Lula 1;0;48;0,0;sem dados;;;;;;;;3
+desocupacao;lula2;Lula 2;0;48;0,0;sem dados;;;;;;;;3
+desocupacao;dilma1;Dilma 1;37;48;0,7708333333333334;sem valor herdado;;7,172972972972972;6,2;8,0;;8,0;;3
+desocupacao;dilma2;Dilma 2;16;16;1,0;completo;;9,6875;8,1;11,7;3,6999999999999993;11,7;8,0;3
+desocupacao;temer;Temer;32;32;1,0;completo;;12,506250000000001;11,7;13,9;1,1000000000000014;12,8;11,7;3
+desocupacao;bolsonaro;Bolsonaro;48;48;1,0;completo;;11,885416666666666;7,9;14,9;-4,0;8,8;12,8;3
+desocupacao;lula3;Lula 3;41;48;0,8541666666666666;mandato em curso;;6,582926829268294;5,1;8,5;-3,500000000000001;5,3;8,8;3
+desemprego_pme;sarney;Sarney;0;60;0,0;sem dados;;;;;;;;3
+desemprego_pme;collor;Collor;0;31;0,0;sem dados;;;;;;;;3
+desemprego_pme;itamar;Itamar;0;27;0,0;sem dados;;;;;;;;3
+desemprego_pme;fhc1;FHC 1;0;48;0,0;sem dados;;;;;;;;3
+desemprego_pme;fhc2;FHC 2;17;48;0,3541666666666667;sem valor herdado;;11,570588235294117;10,6;12,5;;11,5;;3
+desemprego_pme;lula1;Lula 1;48;48;1,0;completo;;10,793750000000001;9,2;13,1;-1,9000000000000004;9,6;11,5;3
+desemprego_pme;lula2;Lula 2;48;48;1,0;completo;;7,775000000000001;6,0;9,6;-3,5999999999999996;6,0;9,6;3
+desemprego_pme;dilma1;Dilma 1;48;48;1,0;completo;;5,379166666666666;4,6;6,0;-0,09999999999999964;5,9;6,0;3
+desemprego_pme;dilma2;Dilma 2;11;16;0,6875;dados parciais;;7,372727272727272;6,2;8,1;2,0999999999999996;8,0;5,9;3
+desemprego_pme;temer;Temer;0;32;0,0;sem dados;;;;;;;;3
+desemprego_pme;bolsonaro;Bolsonaro;0;48;0,0;sem dados;;;;;;;;3
+desemprego_pme;lula3;Lula 3;0;48;0,0;sem dados;;;;;;;;3
+informalidade;sarney;Sarney;0;20;0,0;sem dados;;;;;;;;3
+informalidade;collor;Collor;0;10;0,0;sem dados;;;;;;;;3
+informalidade;itamar;Itamar;0;9;0,0;sem dados;;;;;;;;3
+informalidade;fhc1;FHC 1;0;16;0,0;sem dados;;;;;;;;3
+informalidade;fhc2;FHC 2;0;16;0,0;sem dados;;;;;;;;3
+informalidade;lula1;Lula 1;0;16;0,0;sem dados;;;;;;;;3
+informalidade;lula2;Lula 2;0;16;0,0;sem dados;;;;;;;;3
+informalidade;dilma1;Dilma 1;0;16;0,0;sem dados;;;;;;;;3
+informalidade;dilma2;Dilma 2;3;5;0,6;sem valor herdado;;38,43333333333333;38,3;38,7;;38,7;;3
+informalidade;temer;Temer;11;11;1,0;completo;;39,96363636363637;38,4;40,8;1,7999999999999972;40,5;38,7;3
+informalidade;bolsonaro;Bolsonaro;16;16;1,0;completo;;39,65;36,6;41,0;-1,5;39,0;40,5;3
+informalidade;lula3;Lula 3;13;16;0,8125;mandato em curso;;38,338461538461544;37,3;39,2;-1,6000000000000014;37,4;39,0;3
+nivel_ocupacao;sarney;Sarney;0;60;0,0;sem dados;;;;;;;;3
+nivel_ocupacao;collor;Collor;0;31;0,0;sem dados;;;;;;;;3
+nivel_ocupacao;itamar;Itamar;0;27;0,0;sem dados;;;;;;;;3
+nivel_ocupacao;fhc1;FHC 1;0;48;0,0;sem dados;;;;;;;;3
+nivel_ocupacao;fhc2;FHC 2;0;48;0,0;sem dados;;;;;;;;3
+nivel_ocupacao;lula1;Lula 1;0;48;0,0;sem dados;;;;;;;;3
+nivel_ocupacao;lula2;Lula 2;0;48;0,0;sem dados;;;;;;;;3
+nivel_ocupacao;dilma1;Dilma 1;37;48;0,7708333333333334;sem valor herdado;;58,06216216216217;57,3;58,5;;57,4;;3
+nivel_ocupacao;dilma2;Dilma 2;16;16;1,0;completo;;56,68125;55,4;57,5;-2,0;55,4;57,4;3
+nivel_ocupacao;temer;Temer;32;32;1,0;completo;;55,0625;54,1;55,9;-0,29999999999999716;55,1;55,4;3
+nivel_ocupacao;bolsonaro;Bolsonaro;48;48;1,0;completo;;54,15;48,4;57,4;1,0;56,1;55,1;3
+nivel_ocupacao;lula3;Lula 3;41;48;0,8541666666666666;mandato em curso;;58,00243902439024;56,2;59,0;2,799999999999997;58,9;56,1;3
+ipca;sarney;Sarney;60;60;1,0;completo;2689703,1961237346;669,0314502874496;0,78;82,39;;;;3
+ipca;collor;Collor;31;31;1,0;completo;17901,329483241934;646,4850735057777;4,99;25,94;;;;3
+ipca;itamar;Itamar;27;27;1,0;completo;27229,16158034979;1110,444902766781;1,02;47,43;;;;3
+ipca;fhc1;FHC 1;48;48;1,0;completo;41,46143419523123;9,058498528160452;-0,51;2,67;;;;3
+ipca;fhc2;FHC 2;48;48;1,0;completo;42,95073216574694;9,34441263275052;0,01;3,02;;;;3
+ipca;lula1;Lula 1;48;48;1,0;completo;23,47571826360739;5,413295389019246;-0,21;0,97;;;;3
+ipca;lula2;Lula 2;48;48;1,0;completo;23,640946236892123;5,448542181260718;0,0;0,83;;;;3
+ipca;dilma1;Dilma 1;48;48;1,0;completo;28,755322065292187;6,522486986099674;0,01;1,32;;;;3
+ipca;dilma2;Dilma 2;16;16;1,0;completo;11,879569030123061;8,783515249052387;0,22;1,27;;;;3
+ipca;temer;Temer;32;32;1,0;completo;9,785268164861161;3,5628575438183097;-0,23;1,26;;;;3
+ipca;bolsonaro;Bolsonaro;48;48;1,0;completo;27,66151652107729;6,2955295333801065;-0,68;1,62;;;;3
+ipca;lula3;Lula 3;42;48;0,875;mandato em curso;16,432750809356534;4,442826531547794;-0,32;1,31;;;;3
+rendimento_real;sarney;Sarney;0;60;0,0;sem dados;;;;;;;;3
+rendimento_real;collor;Collor;0;31;0,0;sem dados;;;;;;;;3
+rendimento_real;itamar;Itamar;0;27;0,0;sem dados;;;;;;;;3
+rendimento_real;fhc1;FHC 1;0;48;0,0;sem dados;;;;;;;;3
+rendimento_real;fhc2;FHC 2;0;48;0,0;sem dados;;;;;;;;3
+rendimento_real;lula1;Lula 1;0;48;0,0;sem dados;;;;;;;;3
+rendimento_real;lula2;Lula 2;0;48;0,0;sem dados;;;;;;;;3
+rendimento_real;dilma1;Dilma 1;37;48;0,7708333333333334;sem valor herdado;;3279,2432432432433;3173,0;3370,0;;3348,0;;3
+rendimento_real;dilma2;Dilma 2;16;16;1,0;completo;;3267,5;3206,0;3340,0;-4,211469534050183;3207,0;3348,0;3
+rendimento_real;temer;Temer;32;32;1,0;completo;;3304,125;3232,0;3383,0;5,051449953227305;3369,0;3207,0;3
+rendimento_real;bolsonaro;Bolsonaro;48;48;1,0;completo;;3322,375;3068,0;3588,0;-0,9201543484713581;3338,0;3369,0;3
+rendimento_real;lula3;Lula 3;41;48;0,8541666666666666;mandato em curso;;3568,317073170732;3322,0;3804,0;13,15158777711205;3777,0;3338,0;3
+salario_minimo_real;sarney;Sarney;0;60;0,0;sem dados;;;;;;;;3
+salario_minimo_real;collor;Collor;0;31;0,0;sem dados;;;;;;;;3
+salario_minimo_real;itamar;Itamar;9;27;0,3333333333333333;sem valor herdado;;535,0808135690968;507,9892877686309;568,7126810523205;;507,9892877686309;;3
+salario_minimo_real;fhc1;FHC 1;48;48;1,0;completo;;645,1316454175762;495,93773015171604;690,0595387539902;31,283157398545836;666,9043762290437;507,9892877686309;3
+salario_minimo_real;fhc2;FHC 2;48;48;1,0;completo;;733,1237424567512;652,5093484454586;830,0378034114748;7,621069667989944;717,7296233603329;666,9043762290437;3
+salario_minimo_real;lula1;Lula 1;48;48;1,0;completo;;905,9062551450639;810,3884342847113;1046,281643418441;41,73064866987926;1017,2428508844811;717,7296233603329;3
+salario_minimo_real;lula2;Lula 2;48;48;1,0;completo;;1176,8109877495515;1059,6346876438042;1290,9816394866161;25,940859675472637;1281,1243913912017;1017,2428508844811;3
+salario_minimo_real;dilma1;Dilma 1;48;48;1,0;completo;;1371,468956557633;1232,2428335972595;1475,4284852318624;12,296301158651746;1438,6553047736081;1281,1243913912017;3
+salario_minimo_real;dilma2;Dilma 2;16;16;1,0;completo;;1421,4577284857169;1349,6720934217935;1488,3470945424738;-0,18221085467268194;1436,0339186469862;1438,6553047736081;3
+salario_minimo_real;temer;Temer;32;32;1,0;completo;;1468,2303442886328;1418,0793600938082;1504,2154719067137;3,3006736178796903;1483,432711343571;1436,0339186469862;3
+salario_minimo_real;bolsonaro;Bolsonaro;48;48;1,0;completo;;1473,679941663176;1383,22658021843;1539,5423821522954;2,1923195890318325;1515,9542972644624;1483,432711343571;3
+salario_minimo_real;lula3;Lula 3;42;48;0,875;mandato em curso;;1580,7045518125783;1499,7899685085638;1679,509219518237;6,929344962779704;1621,0;1515,9542972644624;3
+resultado_primario;sarney;Sarney;0;5;0,0;sem dados;;;;;;;;3
+resultado_primario;collor;Collor;0;3;0,0;sem dados;;;;;;;;3
+resultado_primario;itamar;Itamar;0;2;0,0;sem dados;;;;;;;;3
+resultado_primario;fhc1;FHC 1;0;4;0,0;sem dados;;;;;;;;3
+resultado_primario;fhc2;FHC 2;1;4;0,25;sem valor herdado;;3,19;3,19;3,19;;3,19;;3
+resultado_primario;lula1;Lula 1;4;4;1,0;completo;;3,455;3,15;3,74;-0,040000000000000036;3,15;3,19;3
+resultado_primario;lula2;Lula 2;4;4;1,0;completo;;2,7824999999999998;1,94;3,33;-0,5299999999999998;2,62;3,15;3
+resultado_primario;dilma1;Dilma 1;4;4;1,0;completo;;1,5675;-0,56;2,94;-3,18;-0,56;2,62;3
+resultado_primario;dilma2;Dilma 2;2;2;1,0;completo;;-2,17;-2,48;-1,86;-1,92;-2,48;-0,56;3
+resultado_primario;temer;Temer;2;2;1,0;completo;;-1,615;-1,68;-1,55;0,9299999999999999;-1,55;-2,48;3
+resultado_primario;bolsonaro;Bolsonaro;4;4;1,0;completo;;-2,0275;-9,24;1,25;2,8;1,25;-1,55;3
+resultado_primario;lula3;Lula 3;3;4;0,75;mandato em curso;;-1,0366666666666666;-2,28;-0,4;-1,68;-0,43;1,25;3
+divida_liquida;sarney;Sarney;0;60;0,0;sem dados;;;;;;;;3
+divida_liquida;collor;Collor;0;31;0,0;sem dados;;;;;;;;3
+divida_liquida;itamar;Itamar;0;27;0,0;sem dados;;;;;;;;3
+divida_liquida;fhc1;FHC 1;0;48;0,0;sem dados;;;;;;;;3
+divida_liquida;fhc2;FHC 2;16;48;0,3333333333333333;sem valor herdado;;56,243125;50,95;62,45;;58,46;;3
+divida_liquida;lula1;Lula 1;48;48;1,0;completo;;49,933125;45,81;55,49;-12,649999999999999;45,81;58,46;3
+divida_liquida;lula2;Lula 2;48;48;1,0;completo;;40,7475;36,95;45,23;-8,280000000000001;37,53;45,81;3
+divida_liquida;dilma1;Dilma 1;48;48;1,0;completo;;32,78875;30,01;37,42;-5,940000000000001;31,59;37,53;3
+divida_liquida;dilma2;Dilma 2;16;16;1,0;completo;;35,571250000000006;32,02;41,93;10,34;41,93;31,59;3
+divida_liquida;temer;Temer;32;32;1,0;completo;;49,5615625;42,81;53,11;11,11;53,04;41,93;3
+divida_liquida;bolsonaro;Bolsonaro;48;48;1,0;completo;;55,94916666666666;50,63;61,37;2,9399999999999977;55,98;53,04;3
+divida_liquida;lula3;Lula 3;41;48;0,8541666666666666;mandato em curso;;62,1939024390244;55,92;69,27;13,29;69,27;55,98;3
+divida_bruta;sarney;Sarney;0;60;0,0;sem dados;;;;;;;;3
+divida_bruta;collor;Collor;0;31;0,0;sem dados;;;;;;;;3
+divida_bruta;itamar;Itamar;0;27;0,0;sem dados;;;;;;;;3
+divida_bruta;fhc1;FHC 1;0;48;0,0;sem dados;;;;;;;;3
+divida_bruta;fhc2;FHC 2;0;48;0,0;sem dados;;;;;;;;3
+divida_bruta;lula1;Lula 1;4;48;0,08333333333333333;sem valor herdado;;56,447500000000005;55,48;57,24;;57,24;;3
+divida_bruta;lula2;Lula 2;48;48;1,0;completo;;56,71875;51,77;61,0;-4,630000000000003;52,61;57,24;3
+divida_bruta;dilma1;Dilma 1;48;48;1,0;completo;;53,501875000000005;51,27;59,49;6,880000000000003;59,49;52,61;3
+divida_bruta;dilma2;Dilma 2;16;16;1,0;completo;;64,530625;59,11;68,7;9,21;68,7;59,49;3
+divida_bruta;temer;Temer;32;32;1,0;completo;;73,508125;69,34;76,71;8,009999999999991;76,71;68,7;3
+divida_bruta;bolsonaro;Bolsonaro;48;48;1,0;completo;;78,47104166666666;71,38;87,66;-5,1699999999999875;71,54;76,71;3
+divida_bruta;lula3;Lula 3;41;48;0,8541666666666666;mandato em curso;;76,53682926829268;71,57;82,87;11,329999999999998;82,87;71,54;3
+selic;sarney;Sarney;0;60;0,0;sem dados;;;;;;;;3
+selic;collor;Collor;0;31;0,0;sem dados;;;;;;;;3
+selic;itamar;Itamar;0;27;0,0;sem dados;;;;;;;;3
+selic;fhc1;FHC 1;1;48;0,020833333333333332;sem valor herdado;;42,0;42,0;42,0;;42,0;;3
+selic;fhc2;FHC 2;48;48;1,0;completo;;19,260416666666668;15,25;32,0;-15,5;26,5;42,0;3
+selic;lula1;Lula 1;48;48;1,0;completo;;17,614583333333332;12,75;26,5;-13,75;12,75;26,5;3
+selic;lula2;Lula 2;48;48;1,0;completo;;11,015625;8,75;13,75;-1,0;11,75;12,75;3
+selic;dilma1;Dilma 1;48;48;1,0;completo;;9,989583333333334;7,25;12,75;1,0;12,75;11,75;3
+selic;dilma2;Dilma 2;16;16;1,0;completo;;14,09375;13,25;14,25;1,5;14,25;12,75;3
+selic;temer;Temer;32;32;1,0;completo;;8,984375;6,5;14,25;-7,75;6,5;14,25;3
+selic;bolsonaro;Bolsonaro;48;48;1,0;completo;;7,005208333333333;2,0;13,75;7,25;13,75;6,5;3
+selic;lula3;Lula 3;43;48;0,8958333333333334;mandato em curso;;13,203488372093023;10,5;15,0;0,0;13,75;13,75;3
+dolar;sarney;Sarney;0;60;0,0;sem dados;;;;;;;;3
+dolar;collor;Collor;0;31;0,0;sem dados;;;;;;;;3
+dolar;itamar;Itamar;9;27;0,3333333333333333;sem valor herdado;;0,8680333333333334;0,8408;0,9333;;0,8894;;3
+dolar;fhc1;FHC 1;48;48;1,0;completo;;1,0972770833333334;0,8974;1,9137;113,26737126152464;1,8968;0,8894;3
+dolar;fhc2;FHC 2;48;48;1,0;completo;;2,33670625;1,6835;3,8059;81,72184732180514;3,4469;1,8968;3
+dolar;lula1;Lula 1;48;48;1,0;completo;;2,5673666666666666;2,0887;3,1291;-39,40352200528011;2,0887;3,4469;3
+dolar;lula2;Lula 2;48;48;1,0;completo;;1,8575041666666667;1,5914;2,3944;-20,56781730262842;1,6591;2,0887;3
+dolar;dilma1;Dilma 1;48;48;1,0;completo;;2,109941666666667;1,5639;3,1395;89,22910011451992;3,1395;1,6591;3
+dolar;dilma2;Dilma 2;16;16;1,0;completo;;3,5577125;3,0432;4,0524;4,335085204650424;3,2756;3,1395;3
+dolar;temer;Temer;32;32;1,0;completo;;3,4317343749999996;3,1042;4,1165;17,428867993650023;3,8465;3,2756;3
+dolar;bolsonaro;Bolsonaro;48;48;1,0;completo;;5,00418125;3,7793;5,6514;35,48680618744313;5,2115;3,8465;3
+dolar;lula3;Lula 3;42;48;0,875;mandato em curso;;5,295504761904762;4,8008;6,097;-1,2817806773481655;5,1447;5,2115;3
+pib_anual;sarney;Sarney;5;5;1,0;completo;9,741256858897662;1,8764929029450927;-4,35;7,49;;;;6
+pib_anual;collor;Collor;2;2;1,0;completo;0,48443799999999815;0,2419263581860731;-0,54;1,03;;;;6
+pib_anual;itamar;Itamar;2;2;1,0;completo;11,057819999999996;5,383974113714274;4,92;5,85;;;;6
+pib_anual;fhc1;FHC 1;4;4;1,0;completo;10,508857543778127;2,5296021779319444;0,34;4,22;;;;6
+pib_anual;fhc2;FHC 2;4;4;1,0;completo;9,58179724956032;2,313891834697368;0,47;4,39;;;;6
+pib_anual;lula1;Lula 1;4;4;1,0;completo;14,759952431820844;3,501725456524185;1,14;5,76;;;;6
+pib_anual;lula2;Lula 2;4;4;1,0;completo;19,706754565211938;4,599513389617127;-0,13;7,53;;;;6
+pib_anual;dilma1;Dilma 1;4;4;1,0;completo;9,690936773600022;2,3393575635546338;0,5;3,97;;;;6
+pib_anual;dilma2;Dilma 2;2;2;1,0;completo;-6,713559999999996;-3,415094346994363;-3,55;-3,28;;;;6
+pib_anual;temer;Temer;2;2;1,0;completo;3,1234960000000145;1,5497395368397893;1,32;1,78;;;;6
+pib_anual;bolsonaro;Bolsonaro;4;4;1,0;completo;5,6573359401996814;1,3852821291898243;-3,28;4,76;;;;6
+pib_anual;lula3;Lula 3;3;5;0,6;mandato em curso;9,215859503200008;2,9821376959050516;2,29;3,42;;;;6
+pib_per_capita;sarney;Sarney;0;5;0,0;sem dados;;;;;;;;6
+pib_per_capita;collor;Collor;0;2;0,0;sem dados;;;;;;;;6
+pib_per_capita;itamar;Itamar;0;2;0,0;sem dados;;;;;;;;6
+pib_per_capita;fhc1;FHC 1;3;4;0,75;dados parciais;1,4845536999999798;0,49242245451177613;-1,1;1,9;;;;6
+pib_per_capita;fhc2;FHC 2;4;4;1,0;completo;3,1022032039999647;0,7666884794424345;-1,0;2,2;;;;6
+pib_per_capita;lula1;Lula 1;4;4;1,0;completo;9,677117895199983;2,3361342298970467;-0,1;4,6;;;;6
+pib_per_capita;lula2;Lula 2;4;4;1,0;completo;15,345522214999985;3,6335045649771303;-1,1;6,7;;;;6
+pib_per_capita;dilma1;Dilma 1;4;4;1,0;completo;6,310682676799995;1,5416524686610478;-0,3;3,2;;;;6
+pib_per_capita;dilma2;Dilma 2;2;2;1,0;completo;-8,128000000000002;-4,15011737096388;-4,3;-4,0;;;;6
+pib_per_capita;temer;Temer;2;2;1,0;completo;1,6059999999999963;0,799801587106308;0,6;1,0;;;;6
+pib_per_capita;bolsonaro;Bolsonaro;4;4;1,0;completo;3,455369838799993;0,8528694952238958;-3,9;4,3;;;;6
+pib_per_capita;lula3;Lula 3;1;5;0,2;mandato em curso;2,8000000000000025;2,8000000000000025;2,8;2,8;;;;6
+pib_trimestral;sarney;Sarney;0;20;0,0;sem dados;;;;;;;;6
+pib_trimestral;collor;Collor;0;10;0,0;sem dados;;;;;;;;6
+pib_trimestral;itamar;Itamar;0;9;0,0;sem dados;;;;;;;;6
+pib_trimestral;fhc1;FHC 1;14;16;0,875;sem valor herdado;;104,7742857142857;99,41;107,16;;106,34;;6
+pib_trimestral;fhc2;FHC 2;16;16;1,0;completo;;113,05625;106,33;117,99;9,53545232273838;116,48;106,34;6
+pib_trimestral;lula1;Lula 1;16;16;1,0;completo;;128,7175;117,58;140,8;20,879120879120894;140,8;116,48;6
+pib_trimestral;lula2;Lula 2;16;16;1,0;completo;;152,73562499999997;142,27;166,48;18,23863636363634;166,48;140,8;6
+pib_trimestral;dilma1;Dilma 1;16;16;1,0;completo;;171,965;165,23;177,04;1,9641999038923608;169,75;166,48;6
+pib_trimestral;dilma2;Dilma 2;5;5;1,0;completo;;164,51000000000002;162,86;166,96;-4,058910162002938;162,86;169,75;6
+pib_trimestral;temer;Temer;11;11;1,0;completo;;167,29454545454544;162,68;170,5;4,691145769372462;170,5;162,86;6
+pib_trimestral;bolsonaro;Bolsonaro;16;16;1,0;completo;;173,3025;153,17;184,2;8,035190615835774;184,2;170,5;6
+pib_trimestral;lula3;Lula 3;12;16;0,75;mandato em curso;;191,82500000000005;184,45;198,24;7,622149837133563;198,24;184,2;6
+desocupacao;sarney;Sarney;0;60;0,0;sem dados;;;;;;;;6
+desocupacao;collor;Collor;0;31;0,0;sem dados;;;;;;;;6
+desocupacao;itamar;Itamar;0;27;0,0;sem dados;;;;;;;;6
+desocupacao;fhc1;FHC 1;0;48;0,0;sem dados;;;;;;;;6
+desocupacao;fhc2;FHC 2;0;48;0,0;sem dados;;;;;;;;6
+desocupacao;lula1;Lula 1;0;48;0,0;sem dados;;;;;;;;6
+desocupacao;lula2;Lula 2;0;48;0,0;sem dados;;;;;;;;6
+desocupacao;dilma1;Dilma 1;40;48;0,8333333333333334;sem valor herdado;;7,2525;6,2;8,4;;8,4;;6
+desocupacao;dilma2;Dilma 2;16;16;1,0;completo;;10,375;8,6;11,9;3,5;11,9;8,4;6
+desocupacao;temer;Temer;32;32;1,0;completo;;12,549999999999999;11,7;13,9;0,1999999999999993;12,1;11,9;6
+desocupacao;bolsonaro;Bolsonaro;48;48;1,0;completo;;11,629166666666668;7,9;14,9;-4,1;8,0;12,1;6
+desocupacao;lula3;Lula 3;38;48;0,7916666666666666;mandato em curso;;6,450000000000001;5,1;7,9;-2,7;5,3;8,0;6
+desemprego_pme;sarney;Sarney;0;60;0,0;sem dados;;;;;;;;6
+desemprego_pme;collor;Collor;0;31;0,0;sem dados;;;;;;;;6
+desemprego_pme;itamar;Itamar;0;27;0,0;sem dados;;;;;;;;6
+desemprego_pme;fhc1;FHC 1;0;48;0,0;sem dados;;;;;;;;6
+desemprego_pme;fhc2;FHC 2;20;48;0,4166666666666667;sem valor herdado;;11,68;10,6;12,8;;12,8;;6
+desemprego_pme;lula1;Lula 1;48;48;1,0;completo;;10,624999999999998;9,2;13,1;-3,200000000000001;9,6;12,8;6
+desemprego_pme;lula2;Lula 2;48;48;1,0;completo;;7,547916666666667;5,9;9,4;-3,5999999999999996;6,0;9,6;6
+desemprego_pme;dilma1;Dilma 1;48;48;1,0;completo;;5,408333333333334;4,6;6,7;0,7000000000000002;6,7;6,0;6
+desemprego_pme;dilma2;Dilma 2;8;16;0,5;dados parciais;;7,725;7,2;8,1;1,2999999999999998;8,0;6,7;6
+desemprego_pme;temer;Temer;0;32;0,0;sem dados;;;;;;;;6
+desemprego_pme;bolsonaro;Bolsonaro;0;48;0,0;sem dados;;;;;;;;6
+desemprego_pme;lula3;Lula 3;0;48;0,0;sem dados;;;;;;;;6
+informalidade;sarney;Sarney;0;20;0,0;sem dados;;;;;;;;6
+informalidade;collor;Collor;0;10;0,0;sem dados;;;;;;;;6
+informalidade;itamar;Itamar;0;9;0,0;sem dados;;;;;;;;6
+informalidade;fhc1;FHC 1;0;16;0,0;sem dados;;;;;;;;6
+informalidade;fhc2;FHC 2;0;16;0,0;sem dados;;;;;;;;6
+informalidade;lula1;Lula 1;0;16;0,0;sem dados;;;;;;;;6
+informalidade;lula2;Lula 2;0;16;0,0;sem dados;;;;;;;;6
+informalidade;dilma1;Dilma 1;0;16;0,0;sem dados;;;;;;;;6
+informalidade;dilma2;Dilma 2;4;5;0,8;sem valor herdado;;38,425;38,3;38,7;;38,4;;6
+informalidade;temer;Temer;11;11;1,0;completo;;40,19090909090909;39,1;40,9;2,5;40,9;38,4;6
+informalidade;bolsonaro;Bolsonaro;16;16;1,0;completo;;39,54375;36,6;41,0;-1,6999999999999957;39,2;40,9;6
+informalidade;lula3;Lula 3;12;16;0,75;mandato em curso;;38,26666666666667;37,3;39,2;-1,8000000000000043;37,4;39,2;6
+nivel_ocupacao;sarney;Sarney;0;60;0,0;sem dados;;;;;;;;6
+nivel_ocupacao;collor;Collor;0;31;0,0;sem dados;;;;;;;;6
+nivel_ocupacao;itamar;Itamar;0;27;0,0;sem dados;;;;;;;;6
+nivel_ocupacao;fhc1;FHC 1;0;48;0,0;sem dados;;;;;;;;6
+nivel_ocupacao;fhc2;FHC 2;0;48;0,0;sem dados;;;;;;;;6
+nivel_ocupacao;lula1;Lula 1;0;48;0,0;sem dados;;;;;;;;6
+nivel_ocupacao;lula2;Lula 2;0;48;0,0;sem dados;;;;;;;;6
+nivel_ocupacao;dilma1;Dilma 1;40;48;0,8333333333333334;sem valor herdado;;58,015;57,3;58,5;;57,4;;6
+nivel_ocupacao;dilma2;Dilma 2;16;16;1,0;completo;;56,2375;55,0;57,3;-2,3999999999999986;55,0;57,4;6
+nivel_ocupacao;temer;Temer;32;32;1,0;completo;;55,115625;54,1;55,9;0,7999999999999972;55,8;55,0;6
+nivel_ocupacao;bolsonaro;Bolsonaro;48;48;1,0;completo;;54,19583333333333;48,4;57,4;0,8000000000000043;56,6;55,8;6
+nivel_ocupacao;lula3;Lula 3;38;48;0,7916666666666666;mandato em curso;;58,13157894736842;56,8;59,0;2,299999999999997;58,9;56,6;6
+ipca;sarney;Sarney;60;60;1,0;completo;2857092,1790179955;678,3732288812411;0,78;82,39;;;;6
+ipca;collor;Collor;31;31;1,0;completo;26100,68547546035;763,219072270013;4,99;30,35;;;;6
+ipca;itamar;Itamar;27;27;1,0;completo;14076,184497615353;804,1668974805781;1,02;47,43;;;;6
+ipca;fhc1;FHC 1;48;48;1,0;completo;32,92666473617898;7,374962953867414;-0,51;2,36;;;;6
+ipca;fhc2;FHC 2;48;48;1,0;completo;43,488595367034556;9,447122031919486;-0,15;3,02;;;;6
+ipca;lula1;Lula 1;48;48;1,0;completo;22,719342155419863;5,251490476488496;-0,21;0,91;;;;6
+ipca;lula2;Lula 2;48;48;1,0;completo;24,356331722258815;5,600743436735844;0,0;0,83;;;;6
+ipca;dilma1;Dilma 1;48;48;1,0;completo;29,84898606714299;6,747973880590874;0,01;1,32;;;;6
+ipca;dilma2;Dilma 2;16;16;1,0;completo;10,265715037618484;7,604485067415645;0,08;1,27;;;;6
+ipca;temer;Temer;32;32;1,0;completo;9,708040860927959;3,535532705934785;-0,23;1,26;;;;6
+ipca;bolsonaro;Bolsonaro;48;48;1,0;completo;27,724793840460915;6,308698823757419;-0,68;1,62;;;;6
+ipca;lula3;Lula 3;39;48;0,8125;mandato em curso;15,553699294153912;4,548572829866648;-0,32;1,31;;;;6
+rendimento_real;sarney;Sarney;0;60;0,0;sem dados;;;;;;;;6
+rendimento_real;collor;Collor;0;31;0,0;sem dados;;;;;;;;6
+rendimento_real;itamar;Itamar;0;27;0,0;sem dados;;;;;;;;6
+rendimento_real;fhc1;FHC 1;0;48;0,0;sem dados;;;;;;;;6
+rendimento_real;fhc2;FHC 2;0;48;0,0;sem dados;;;;;;;;6
+rendimento_real;lula1;Lula 1;0;48;0,0;sem dados;;;;;;;;6
+rendimento_real;lula2;Lula 2;0;48;0,0;sem dados;;;;;;;;6
+rendimento_real;dilma1;Dilma 1;40;48;0,8333333333333334;sem valor herdado;;3283,275;3173,0;3370,0;;3334,0;;6
+rendimento_real;dilma2;Dilma 2;16;16;1,0;completo;;3249,0625;3206,0;3311,0;-2,9094181163767274;3237,0;3334,0;6
+rendimento_real;temer;Temer;32;32;1,0;completo;;3313,59375;3243,0;3383,0;2,8112449799196693;3328,0;3237,0;6
+rendimento_real;bolsonaro;Bolsonaro;48;48;1,0;completo;;3321,9583333333335;3068,0;3588,0;0,2704326923076872;3337,0;3328,0;6
+rendimento_real;lula3;Lula 3;38;48;0,7916666666666666;mandato em curso;;3587,2105263157896;3349,0;3804,0;13,185495954450111;3777,0;3337,0;6
+salario_minimo_real;sarney;Sarney;0;60;0,0;sem dados;;;;;;;;6
+salario_minimo_real;collor;Collor;0;31;0,0;sem dados;;;;;;;;6
+salario_minimo_real;itamar;Itamar;12;27;0,4444444444444444;sem valor herdado;;556,3780056083245;495,93773015171604;690,0595387539902;;674,8114762723159;;6
+salario_minimo_real;fhc1;FHC 1;48;48;1,0;completo;;648,9757624027967;594,5197225097724;691,7225262378724;2,3119759886540026;690,4129555724134;674,8114762723159;6
+salario_minimo_real;fhc2;FHC 2;48;48;1,0;completo;;743,6364389918845;652,5093484454586;853,0020459153277;22,984966295653365;849,1041407115569;690,4129555724134;6
+salario_minimo_real;lula1;Lula 1;48;48;1,0;completo;;921,4456376706872;810,3884342847113;1101,6807685063102;29,023000347146798;1095,5396384179098;849,1041407115569;6
+salario_minimo_real;lula2;Lula 2;48;48;1,0;completo;;1187,319012716908;1059,6346876438042;1290,9816394866161;15,3304783701659;1263,4911057221611;1095,5396384179098;6
+salario_minimo_real;dilma1;Dilma 1;48;48;1,0;completo;;1380,9111579171552;1232,2428335972595;1475,4284852318624;11,350549156336577;1406,9042847630956;1263,4911057221611;6
+salario_minimo_real;dilma2;Dilma 2;16;16;1,0;completo;;1423,32024164035;1349,6720934217935;1488,3470945424738;1,2786722633965963;1424,8939796248997;1406,9042847630956;6
+salario_minimo_real;temer;Temer;32;32;1,0;completo;;1472,5385255177262;1418,0793600938082;1504,2154719067137;3,373536816885525;1472,963302629131;1424,8939796248997;6
+salario_minimo_real;bolsonaro;Bolsonaro;48;48;1,0;completo;;1476,4937388259523;1383,22658021843;1539,5423821522954;3,5537753184128773;1525,3091089272443;1472,963302629131;6
+salario_minimo_real;lula3;Lula 3;39;48;0,8125;mandato em curso;;1585,4725611137128;1499,7899685085638;1679,509219518237;6,273540917883547;1621,0;1525,3091089272443;6
+resultado_primario;sarney;Sarney;0;5;0,0;sem dados;;;;;;;;6
+resultado_primario;collor;Collor;0;2;0,0;sem dados;;;;;;;;6
+resultado_primario;itamar;Itamar;0;2;0,0;sem dados;;;;;;;;6
+resultado_primario;fhc1;FHC 1;0;4;0,0;sem dados;;;;;;;;6
+resultado_primario;fhc2;FHC 2;1;4;0,25;sem valor herdado;;3,19;3,19;3,19;;3,19;;6
+resultado_primario;lula1;Lula 1;4;4;1,0;completo;;3,455;3,15;3,74;-0,040000000000000036;3,15;3,19;6
+resultado_primario;lula2;Lula 2;4;4;1,0;completo;;2,7824999999999998;1,94;3,33;-0,5299999999999998;2,62;3,15;6
+resultado_primario;dilma1;Dilma 1;4;4;1,0;completo;;1,5675;-0,56;2,94;-3,18;-0,56;2,62;6
+resultado_primario;dilma2;Dilma 2;2;2;1,0;completo;;-2,17;-2,48;-1,86;-1,92;-2,48;-0,56;6
+resultado_primario;temer;Temer;2;2;1,0;completo;;-1,615;-1,68;-1,55;0,9299999999999999;-1,55;-2,48;6
+resultado_primario;bolsonaro;Bolsonaro;4;4;1,0;completo;;-2,0275;-9,24;1,25;2,8;1,25;-1,55;6
+resultado_primario;lula3;Lula 3;3;5;0,6;mandato em curso;;-1,0366666666666666;-2,28;-0,4;-1,68;-0,43;1,25;6
+divida_liquida;sarney;Sarney;0;60;0,0;sem dados;;;;;;;;6
+divida_liquida;collor;Collor;0;31;0,0;sem dados;;;;;;;;6
+divida_liquida;itamar;Itamar;0;27;0,0;sem dados;;;;;;;;6
+divida_liquida;fhc1;FHC 1;0;48;0,0;sem dados;;;;;;;;6
+divida_liquida;fhc2;FHC 2;19;48;0,3958333333333333;sem valor herdado;;55,984736842105264;50,95;62,45;;54,42;;6
+divida_liquida;lula1;Lula 1;48;48;1,0;completo;;49,335;44,8;55,49;-9,620000000000005;44,8;54,42;6
+divida_liquida;lula2;Lula 2;48;48;1,0;completo;;40,26083333333333;36,95;44,73;-7,719999999999999;37,08;44,8;6
+divida_liquida;dilma1;Dilma 1;48;48;1,0;completo;;32,501666666666665;30,01;36,82;-3,8500000000000014;33,23;37,08;6
+divida_liquida;dilma2;Dilma 2;16;16;1,0;completo;;37,593125;32,02;43,88;10,650000000000006;43,88;33,23;6
+divida_liquida;temer;Temer;32;32;1,0;completo;;50,4928125;43,99;53,82;9,939999999999998;53,82;43,88;6
+divida_liquida;bolsonaro;Bolsonaro;48;48;1,0;completo;;56,16104166666667;50,63;61,37;3,960000000000001;57,78;53,82;6
+divida_liquida;lula3;Lula 3;38;48;0,7916666666666666;mandato em curso;;62,62263157894738;58,34;69,27;11,489999999999995;69,27;57,78;6
+divida_bruta;sarney;Sarney;0;60;0,0;sem dados;;;;;;;;6
+divida_bruta;collor;Collor;0;31;0,0;sem dados;;;;;;;;6
+divida_bruta;itamar;Itamar;0;27;0,0;sem dados;;;;;;;;6
+divida_bruta;fhc1;FHC 1;0;48;0,0;sem dados;;;;;;;;6
+divida_bruta;fhc2;FHC 2;0;48;0,0;sem dados;;;;;;;;6
+divida_bruta;lula1;Lula 1;7;48;0,14583333333333334;sem valor herdado;;57,01428571428572;55,48;58,23;;58,23;;6
+divida_bruta;lula2;Lula 2;48;48;1,0;completo;;56,38270833333334;51,77;61,0;-5,8799999999999955;52,35;58,23;6
+divida_bruta;dilma1;Dilma 1;48;48;1,0;completo;;53,97875;51,27;60,75;8,399999999999999;60,75;52,35;6
+divida_bruta;dilma2;Dilma 2;16;16;1,0;completo;;66,345;62,17;69,98;9,030000000000001;69,78;60,75;6
+divida_bruta;temer;Temer;32;32;1,0;completo;;74,171875;69,82;77,12;6,890000000000001;76,67;69,78;6
+divida_bruta;bolsonaro;Bolsonaro;48;48;1,0;completo;;78,165;71,38;87,66;-4,700000000000003;71,97;76,67;6
+divida_bruta;lula3;Lula 3;38;48;0,7916666666666666;mandato em curso;;76,9042105263158;72,48;82,87;10,900000000000006;82,87;71,97;6
+selic;sarney;Sarney;0;60;0,0;sem dados;;;;;;;;6
+selic;collor;Collor;0;31;0,0;sem dados;;;;;;;;6
+selic;itamar;Itamar;0;27;0,0;sem dados;;;;;;;;6
+selic;fhc1;FHC 1;4;48;0,08333333333333333;sem valor herdado;;29,625;21,0;42,0;;21,0;;6
+selic;fhc2;FHC 2;48;48;1,0;completo;;19,3125;15,25;26,5;5,0;26,0;21,0;6
+selic;lula1;Lula 1;48;48;1,0;completo;;16,739583333333332;12,0;24,5;-14,0;12,0;26,0;6
+selic;lula2;Lula 2;48;48;1,0;completo;;11,0;8,75;13,75;0,25;12,25;12,0;6
+selic;dilma1;Dilma 1;48;48;1,0;completo;;10,072916666666666;7,25;13,75;1,5;13,75;12,25;6
+selic;dilma2;Dilma 2;16;16;1,0;completo;;14,234375;14,0;14,25;0,25;14,0;13,75;6
+selic;temer;Temer;32;32;1,0;completo;;8,265625;6,5;14,0;-7,5;6,5;14,0;6
+selic;bolsonaro;Bolsonaro;48;48;1,0;completo;;7,458333333333333;2,0;13,75;7,25;13,75;6,5;6
+selic;lula3;Lula 3;40;48;0,8333333333333334;mandato em curso;;13,1625;10,5;15,0;0,0;13,75;13,75;6
+dolar;sarney;Sarney;0;60;0,0;sem dados;;;;;;;;6
+dolar;collor;Collor;0;31;0,0;sem dados;;;;;;;;6
+dolar;itamar;Itamar;12;27;0,4444444444444444;sem valor herdado;;0,8776;0,8408;0,9333;;0,914;;6
+dolar;fhc1;FHC 1;48;48;1,0;completo;;1,1477791666666668;0,9288;1,9137;93,15098468271334;1,7654;0,914;6
+dolar;fhc2;FHC 2;48;48;1,0;completo;;2,4161770833333334;1,742;3,8059;63,31709527585816;2,8832;1,7654;6
+dolar;lula1;Lula 1;48;48;1,0;completo;;2,5046145833333333;1,9319;3,1291;-32,99458934517203;1,9319;2,8832;6
+dolar;lula2;Lula 2;48;48;1,0;completo;;1,8333666666666668;1,5864;2,3944;-17,85289093638387;1,587;1,9319;6
+dolar;dilma1;Dilma 1;48;48;1,0;completo;;2,2022270833333333;1,5639;3,1395;96,07435412728418;3,1117;1,587;6
+dolar;dilma2;Dilma 2;16;16;1,0;completo;;3,58491875;3,1858;4,0524;2,3813349615965596;3,1858;3,1117;6
+dolar;temer;Temer;32;32;1,0;completo;;3,4975031249999997;3,1042;4,1165;21,124992152677514;3,8588;3,1858;6
+dolar;bolsonaro;Bolsonaro;48;48;1,0;completo;;5,068714583333333;3,7793;5,6514;25,728205659790614;4,8516;3,8588;6
+dolar;lula3;Lula 3;39;48;0,8125;mandato em curso;;5,321976923076923;4,8008;6,097;6,041305960920096;5,1447;4,8516;6
+pib_anual;sarney;Sarney;5;5;1,0;completo;9,741256858897662;1,8764929029450927;-4,35;7,49;;;;12
+pib_anual;collor;Collor;3;3;1,0;completo;5,428272349599994;1,7776369415579918;-0,54;4,92;;;;12
+pib_anual;itamar;Itamar;2;2;1,0;completo;10,316870000000012;5,031838030189695;4,22;5,85;;;;12
+pib_anual;fhc1;FHC 1;4;4;1,0;completo;6,532574529105628;1,5945955290134872;0,34;3,39;;;;12
+pib_anual;fhc2;FHC 2;4;4;1,0;completo;10,312560702901719;2,484040994659198;1,14;4,39;;;;12
+pib_anual;lula1;Lula 1;4;4;1,0;completo;20,35384768087041;4,740584896924438;3,2;6,07;;;;12
+pib_anual;lula2;Lula 2;4;4;1,0;completo;17,336770737674033;4,0779029056059235;-0,13;7,53;;;;12
+pib_anual;dilma1;Dilma 1;4;4;1,0;completo;1,7571496760000027;0,4364221334694385;-3,55;3,0;;;;12
+pib_anual;dilma2;Dilma 2;1;1;1,0;completo;-3,279999999999994;-3,279999999999994;-3,28;-3,28;;;;12
+pib_anual;temer;Temer;3;3;1,0;completo;4,381602651200023;1,4397071774072456;1,22;1,78;;;;12
+pib_anual;bolsonaro;Bolsonaro;4;4;1,0;completo;7,765889769474588;1,8873647763140156;-3,28;4,76;;;;12
+pib_anual;lula3;Lula 3;2;4;0,5;mandato em curso;5,788317999999992;2,853448167769268;2,29;3,42;;;;12
+pib_per_capita;sarney;Sarney;0;5;0,0;sem dados;;;;;;;;12
+pib_per_capita;collor;Collor;0;3;0,0;sem dados;;;;;;;;12
+pib_per_capita;itamar;Itamar;0;2;0,0;sem dados;;;;;;;;12
+pib_per_capita;fhc1;FHC 1;4;4;1,0;completo;0,4697081629999822;0,11722076900286815;-1,1;1,9;;;;12
+pib_per_capita;fhc2;FHC 2;4;4;1,0;completo;4,039495960399986;0,9949270614447503;-0,1;2,2;;;;12
+pib_per_capita;lula1;Lula 1;4;4;1,0;completo;15,276250039999994;3,6179414649467168;2,1;5,0;;;;12
+pib_per_capita;lula2;Lula 2;4;4;1,0;completo;13,368170405599965;3,1864768722043024;-1,1;6,7;;;;12
+pib_per_capita;dilma1;Dilma 1;4;4;1,0;completo;-1,415384378200013;-0,35573985934865826;-4,3;2,2;;;;12
+pib_per_capita;dilma2;Dilma 2;1;1;1,0;completo;-4,0000000000000036;-4,0000000000000036;-4,0;-4,0;;;;12
+pib_per_capita;temer;Temer;3;3;1,0;completo;2,2156359999999875;0,7331570051919423;0,6;1,0;;;;12
+pib_per_capita;bolsonaro;Bolsonaro;4;4;1,0;completo;5,7178133144;1,3997870377223665;-3,9;4,3;;;;12
+pib_per_capita;lula3;Lula 3;0;4;0,0;sem dados;;;;;;;;12
+pib_trimestral;sarney;Sarney;0;20;0,0;sem dados;;;;;;;;12
+pib_trimestral;collor;Collor;0;10;0,0;sem dados;;;;;;;;12
+pib_trimestral;itamar;Itamar;0;9;0,0;sem dados;;;;;;;;12
+pib_trimestral;fhc1;FHC 1;16;16;1,0;sem valor herdado;;105,063125;99,41;107,84;;107,84;;12
+pib_trimestral;fhc2;FHC 2;16;16;1,0;completo;;114,44437500000001;108,98;118,8;10,16320474777448;118,8;107,84;12
+pib_trimestral;lula1;Lula 1;16;16;1,0;completo;;131,861875;120,44;144,42;21,565656565656568;144,42;118,8;12
+pib_trimestral;lula2;Lula 2;16;16;1,0;completo;;155,67562499999997;143,82;167,62;16,064257028112472;167,62;144,42;12
+pib_trimestral;dilma1;Dilma 1;16;16;1,0;completo;;171,896875;165,23;177,04;-1,1573797876148428;165,68;167,62;12
+pib_trimestral;dilma2;Dilma 2;5;5;1,0;completo;;163,39000000000001;162,68;164,36;-0,7967165620473171;164,36;165,68;12
+pib_trimestral;temer;Temer;11;11;1,0;completo;;168,70545454545453;165,73;172,03;4,666585543927959;172,03;164,36;12
+pib_trimestral;bolsonaro;Bolsonaro;16;16;1,0;completo;;174,991875;153,17;185,14;7,620763820263909;185,14;172,03;12
+pib_trimestral;lula3;Lula 3;10;16;0,625;mandato em curso;;193,231;186,36;198,24;7,075726477260469;198,24;185,14;12
+desocupacao;sarney;Sarney;0;60;0,0;sem dados;;;;;;;;12
+desocupacao;collor;Collor;0;31;0,0;sem dados;;;;;;;;12
+desocupacao;itamar;Itamar;0;27;0,0;sem dados;;;;;;;;12
+desocupacao;fhc1;FHC 1;0;48;0,0;sem dados;;;;;;;;12
+desocupacao;fhc2;FHC 2;0;48;0,0;sem dados;;;;;;;;12
+desocupacao;lula1;Lula 1;0;48;0,0;sem dados;;;;;;;;12
+desocupacao;lula2;Lula 2;0;48;0,0;sem dados;;;;;;;;12
+desocupacao;dilma1;Dilma 1;46;48;0,9583333333333334;sem valor herdado;;7,473913043478263;6,2;9,1;;9,1;;12
+desocupacao;dilma2;Dilma 2;16;16;1,0;completo;;11,875;9,6;13,9;4,6;13,7;9,1;12
+desocupacao;temer;Temer;32;32;1,0;completo;;12,303125000000001;11,1;13,4;-2,5999999999999996;11,1;13,7;12
+desocupacao;bolsonaro;Bolsonaro;48;48;1,0;completo;;11,13125;7,4;14,9;-3,6999999999999993;7,4;11,1;12
+desocupacao;lula3;Lula 3;32;48;0,6666666666666666;mandato em curso;;6,225;5,1;7,9;-2,1000000000000005;5,3;7,4;12
+desemprego_pme;sarney;Sarney;0;60;0,0;sem dados;;;;;;;;12
+desemprego_pme;collor;Collor;0;31;0,0;sem dados;;;;;;;;12
+desemprego_pme;itamar;Itamar;0;27;0,0;sem dados;;;;;;;;12
+desemprego_pme;fhc1;FHC 1;0;48;0,0;sem dados;;;;;;;;12
+desemprego_pme;fhc2;FHC 2;26;48;0,5416666666666666;sem valor herdado;;11,923076923076923;10,6;13,1;;12,4;;12
+desemprego_pme;lula1;Lula 1;48;48;1,0;completo;;10,158333333333333;8,6;12,4;-3,8000000000000007;8,6;12,4;12
+desemprego_pme;lula2;Lula 2;48;48;1,0;completo;;7,1499999999999995;5,5;8,5;-3,0999999999999996;5,5;8,6;12
+desemprego_pme;dilma1;Dilma 1;48;48;1,0;completo;;5,639583333333333;4,6;8,1;2,5999999999999996;8,1;5,5;12
+desemprego_pme;dilma2;Dilma 2;2;16;0,125;dados parciais;;7,9;7,8;8,0;-0,09999999999999964;8,0;8,1;12
+desemprego_pme;temer;Temer;0;32;0,0;sem dados;;;;;;;;12
+desemprego_pme;bolsonaro;Bolsonaro;0;48;0,0;sem dados;;;;;;;;12
+desemprego_pme;lula3;Lula 3;0;48;0,0;sem dados;;;;;;;;12
+informalidade;sarney;Sarney;0;20;0,0;sem dados;;;;;;;;12
+informalidade;collor;Collor;0;10;0,0;sem dados;;;;;;;;12
+informalidade;itamar;Itamar;0;9;0,0;sem dados;;;;;;;;12
+informalidade;fhc1;FHC 1;0;16;0,0;sem dados;;;;;;;;12
+informalidade;fhc2;FHC 2;0;16;0,0;sem dados;;;;;;;;12
+informalidade;lula1;Lula 1;0;16;0,0;sem dados;;;;;;;;12
+informalidade;lula2;Lula 2;0;16;0,0;sem dados;;;;;;;;12
+informalidade;dilma1;Dilma 1;1;16;0,0625;sem valor herdado;;38,3;38,3;38,3;;38,3;;12
+informalidade;dilma2;Dilma 2;5;5;1,0;completo;;38,760000000000005;38,3;39,3;1,0;39,3;38,3;12
+informalidade;temer;Temer;11;11;1,0;completo;;40,49090909090909;39,8;41,0;1,4000000000000057;40,7;39,3;12
+informalidade;bolsonaro;Bolsonaro;16;16;1,0;completo;;39,33125;36,6;40,8;-1,5;39,2;40,7;12
+informalidade;lula3;Lula 3;10;16;0,625;mandato em curso;;38,089999999999996;37,3;38,9;-1,8000000000000043;37,4;39,2;12
+nivel_ocupacao;sarney;Sarney;0;60;0,0;sem dados;;;;;;;;12
+nivel_ocupacao;collor;Collor;0;31;0,0;sem dados;;;;;;;;12
+nivel_ocupacao;itamar;Itamar;0;27;0,0;sem dados;;;;;;;;12
+nivel_ocupacao;fhc1;FHC 1;0;48;0,0;sem dados;;;;;;;;12
+nivel_ocupacao;fhc2;FHC 2;0;48;0,0;sem dados;;;;;;;;12
+nivel_ocupacao;lula1;Lula 1;0;48;0,0;sem dados;;;;;;;;12
+nivel_ocupacao;lula2;Lula 2;0;48;0,0;sem dados;;;;;;;;12
+nivel_ocupacao;dilma1;Dilma 1;46;48;0,9583333333333334;sem valor herdado;;57,90652173913042;57,1;58,5;;57,1;;12
+nivel_ocupacao;dilma2;Dilma 2;16;16;1,0;completo;;55,2625;54,1;56,7;-2,8999999999999986;54,2;57,1;12
+nivel_ocupacao;temer;Temer;32;32;1,0;completo;;55,403125;54,4;56,4;2,1999999999999957;56,4;54,2;12
+nivel_ocupacao;bolsonaro;Bolsonaro;48;48;1,0;completo;;54,322916666666664;48,4;57,6;1,2000000000000028;57,6;56,4;12
+nivel_ocupacao;lula3;Lula 3;32;48;0,6666666666666666;mandato em curso;;58,31875;57,0;59,0;1,2999999999999972;58,9;57,6;12
+ipca;sarney;Sarney;60;60;1,0;completo;3627594,6484956136;716,4435170277137;0,78;82,39;;;;12
+ipca;collor;Collor;31;31;1,0;completo;49586,17408728981;1005,8700248551932;4,99;35,69;;;;12
+ipca;itamar;Itamar;27;27;1,0;completo;2990,876762932418;359,47144758544727;0,99;47,43;;;;12
+ipca;fhc1;FHC 1;48;48;1,0;completo;27,674316818468924;6,298193929178453;-0,51;1,34;;;;12
+ipca;fhc2;FHC 2;48;48;1,0;completo;40,34539683699463;8,842759314895021;-0,15;3,02;;;;12
+ipca;lula1;Lula 1;48;48;1,0;completo;22,52400853035852;5,209582987000005;-0,21;0,91;;;;12
+ipca;lula2;Lula 2;48;48;1,0;completo;24,604943082869333;5,653482780457231;0,0;0,83;;;;12
+ipca;dilma1;Dilma 1;48;48;1,0;completo;32,00811639777772;7,188985014886273;0,01;1,32;;;;12
+ipca;dilma2;Dilma 2;16;16;1,0;completo;7,461879480515243;5,545767909740751;0,08;1,27;;;;12
+ipca;temer;Temer;32;32;1,0;completo;10,185348672730266;3,704223466013823;-0,23;1,26;;;;12
+ipca;bolsonaro;Bolsonaro;48;48;1,0;completo;27,310670926428692;6,2224225093144625;-0,68;1,62;;;;12
+ipca;lula3;Lula 3;33;48;0,6875;mandato em curso;13,62056220150729;4,752924812263015;-0,32;1,31;;;;12
+rendimento_real;sarney;Sarney;0;60;0,0;sem dados;;;;;;;;12
+rendimento_real;collor;Collor;0;31;0,0;sem dados;;;;;;;;12
+rendimento_real;itamar;Itamar;0;27;0,0;sem dados;;;;;;;;12
+rendimento_real;fhc1;FHC 1;0;48;0,0;sem dados;;;;;;;;12
+rendimento_real;fhc2;FHC 2;0;48;0,0;sem dados;;;;;;;;12
+rendimento_real;lula1;Lula 1;0;48;0,0;sem dados;;;;;;;;12
+rendimento_real;lula2;Lula 2;0;48;0,0;sem dados;;;;;;;;12
+rendimento_real;dilma1;Dilma 1;46;48;0,9583333333333334;sem valor herdado;;3282,717391304348;3173,0;3370,0;;3239,0;;12
+rendimento_real;dilma2;Dilma 2;16;16;1,0;completo;;3247,0;3206,0;3300,0;1,4201914171040553;3285,0;3239,0;12
+rendimento_real;temer;Temer;32;32;1,0;completo;;3327,1875;3264,0;3383,0;2,3135464231354597;3361,0;3285,0;12
+rendimento_real;bolsonaro;Bolsonaro;48;48;1,0;completo;;3327,7083333333335;3068,0;3588,0;1,6959238321927916;3418,0;3361,0;12
+rendimento_real;lula3;Lula 3;32;48;0,6666666666666666;mandato em curso;;3623,8125;3456,0;3804,0;10,503218256290236;3777,0;3418,0;12
+salario_minimo_real;sarney;Sarney;0;60;0,0;sem dados;;;;;;;;12
+salario_minimo_real;collor;Collor;0;31;0,0;sem dados;;;;;;;;12
+salario_minimo_real;itamar;Itamar;18;27;0,6666666666666666;sem valor herdado;;584,3926817688341;495,93773015171604;690,0595387539902;;618,5206915120194;;12
+salario_minimo_real;fhc1;FHC 1;48;48;1,0;completo;;652,8807454497072;594,5197225097724;691,7225262378724;6,521176411341112;658,8555169461652;618,5206915120194;12
+salario_minimo_real;fhc2;FHC 2;48;48;1,0;completo;;764,4018855162552;652,5093484454586;853,0020459153277;25,739123138950504;828,4391497607076;658,8555169461652;12
+salario_minimo_real;lula1;Lula 1;48;48;1,0;completo;;952,1024552425446;810,3884342847113;1101,6807685063102;29,22829066024315;1070,5777523960141;828,4391497607076;12
+salario_minimo_real;lula2;Lula 2;48;48;1,0;completo;;1207,8552850707467;1059,6346876438042;1290,9816394866161;15,100732369921733;1232,2428335972595;1070,5777523960141;12
+salario_minimo_real;dilma1;Dilma 1;48;48;1,0;completo;;1397,2817447618581;1328,7586926711192;1475,4284852318624;9,529717408193438;1349,6720934217935;1232,2428335972595;12
+salario_minimo_real;dilma2;Dilma 2;16;16;1,0;completo;;1458,5137093432638;1418,0793600938082;1504,2154719067137;10,652029754583946;1493,4395664023991;1349,6720934217935;12
+salario_minimo_real;temer;Temer;32;32;1,0;completo;;1470,8671042840026;1438,5302163728595;1500,9836679415193;-3,33578040487561;1443,6217019876885;1493,4395664023991;12
+salario_minimo_real;bolsonaro;Bolsonaro;48;48;1,0;completo;;1482,7545779259374;1383,22658021843;1539,5423821522954;3,8907884554200356;1499,7899685085638;1443,6217019876885;12
+salario_minimo_real;lula3;Lula 3;33;48;0,6875;mandato em curso;;1598,5918270887357;1530,3848799380326;1679,509219518237;8,081800387821714;1621,0;1499,7899685085638;12
+resultado_primario;sarney;Sarney;0;5;0,0;sem dados;;;;;;;;12
+resultado_primario;collor;Collor;0;3;0,0;sem dados;;;;;;;;12
+resultado_primario;itamar;Itamar;0;2;0,0;sem dados;;;;;;;;12
+resultado_primario;fhc1;FHC 1;0;4;0,0;sem dados;;;;;;;;12
+resultado_primario;fhc2;FHC 2;2;4;0,5;sem valor herdado;;3,215;3,19;3,24;;3,24;;12
+resultado_primario;lula1;Lula 1;4;4;1,0;completo;;3,455;3,15;3,74;0,0;3,24;3,24;12
+resultado_primario;lula2;Lula 2;4;4;1,0;completo;;2,7075;1,94;3,33;-0,30000000000000027;2,94;3,24;12
+resultado_primario;dilma1;Dilma 1;4;4;1,0;completo;;0,3675;-1,86;2,18;-4,8;-1,86;2,94;12
+resultado_primario;dilma2;Dilma 2;1;1;1,0;completo;;-2,48;-2,48;-2,48;-0,6199999999999999;-2,48;-1,86;12
+resultado_primario;temer;Temer;3;3;1,0;completo;;-1,3566666666666667;-1,68;-0,84;1,6400000000000001;-0,84;-2,48;12
+resultado_primario;bolsonaro;Bolsonaro;4;4;1,0;completo;;-2,3874999999999997;-9,24;1,25;-1,44;-2,28;-0,84;12
+resultado_primario;lula3;Lula 3;2;4;0,5;mandato em curso;;-0,41500000000000004;-0,43;-0,4;1,8499999999999999;-0,43;-2,28;12
+divida_liquida;sarney;Sarney;0;60;0,0;sem dados;;;;;;;;12
+divida_liquida;collor;Collor;0;31;0,0;sem dados;;;;;;;;12
+divida_liquida;itamar;Itamar;0;27;0,0;sem dados;;;;;;;;12
+divida_liquida;fhc1;FHC 1;0;48;0,0;sem dados;;;;;;;;12
+divida_liquida;fhc2;FHC 2;25;48;0,5208333333333334;sem valor herdado;;55,6528;50,95;62,45;;54,26;;12
+divida_liquida;lula1;Lula 1;48;48;1,0;completo;;48,06541666666667;44,09;54,05;-9,71;44,55;54,26;12
+divida_liquida;lula2;Lula 2;48;48;1,0;completo;;39,141041666666666;34,47;43,79;-10,079999999999998;34,47;44,55;12
+divida_liquida;dilma1;Dilma 1;48;48;1,0;completo;;32,232499999999995;30,01;35,64;1,1700000000000017;35,64;34,47;12
+divida_liquida;dilma2;Dilma 2;16;16;1,0;completo;;42,521249999999995;35,33;47,53;11,829999999999998;47,47;35,64;12
+divida_liquida;temer;Temer;32;32;1,0;completo;;51,8978125;48,01;54,7;7,230000000000004;54,7;47,47;12
+divida_liquida;bolsonaro;Bolsonaro;48;48;1,0;completo;;56,795208333333335;50,63;61,37;5,729999999999997;60,43;54,7;12
+divida_liquida;lula3;Lula 3;32;48;0,6666666666666666;mandato em curso;;63,294062499999995;59,55;69,27;8,839999999999996;69,27;60,43;12
+divida_bruta;sarney;Sarney;0;60;0,0;sem dados;;;;;;;;12
+divida_bruta;collor;Collor;0;31;0,0;sem dados;;;;;;;;12
+divida_bruta;itamar;Itamar;0;27;0,0;sem dados;;;;;;;;12
+divida_bruta;fhc1;FHC 1;0;48;0,0;sem dados;;;;;;;;12
+divida_bruta;fhc2;FHC 2;0;48;0,0;sem dados;;;;;;;;12
+divida_bruta;lula1;Lula 1;13;48;0,2708333333333333;sem valor herdado;;57,325384615384614;55,48;58,46;;56,72;;12
+divida_bruta;lula2;Lula 2;48;48;1,0;completo;;55,66437500000001;51,27;61,0;-5,449999999999996;51,27;56,72;12
+divida_bruta;dilma1;Dilma 1;48;48;1,0;completo;;55,45520833333334;51,54;65,5;14,229999999999997;65,5;51,27;12
+divida_bruta;dilma2;Dilma 2;16;16;1,0;completo;;68,90625;66,33;71,37;5,8700000000000045;71,37;65,5;12
+divida_bruta;temer;Temer;32;32;1,0;completo;;75,23156250000001;72,34;77,55;3,069999999999993;74,44;71,37;12
+divida_bruta;bolsonaro;Bolsonaro;48;48;1,0;completo;;77,77833333333332;71,38;87,66;-0,6099999999999994;73,83;74,44;12
+divida_bruta;lula3;Lula 3;32;48;0,6666666666666666;mandato em curso;;77,6096875;74,47;82,87;9,040000000000006;82,87;73,83;12
+selic;sarney;Sarney;0;60;0,0;sem dados;;;;;;;;12
+selic;collor;Collor;0;31;0,0;sem dados;;;;;;;;12
+selic;itamar;Itamar;0;27;0,0;sem dados;;;;;;;;12
+selic;fhc1;FHC 1;10;48;0,20833333333333334;sem valor herdado;;23,35;19,0;42,0;;19,0;;12
+selic;fhc2;FHC 2;48;48;1,0;completo;;19,40625;15,25;26,5;-2,5;16,5;19,0;12
+selic;lula1;Lula 1;48;48;1,0;completo;;15,666666666666666;11,25;19,75;-5,25;11,25;16,5;12
+selic;lula2;Lula 2;48;48;1,0;completo;;11,0625;8,75;13,75;-0,25;11,0;11,25;12
+selic;dilma1;Dilma 1;48;48;1,0;completo;;10,375;7,25;14,25;3,25;14,25;11,0;12
+selic;dilma2;Dilma 2;16;16;1,0;completo;;13,671875;11,25;14,25;-3,0;11,25;14,25;12
+selic;temer;Temer;32;32;1,0;completo;;6,890625;4,5;11,25;-6,75;4,5;11,25;12
+selic;bolsonaro;Bolsonaro;48;48;1,0;completo;;8,375;2,0;13,75;7,25;11,75;4,5;12
+selic;lula3;Lula 3;34;48;0,7083333333333334;mandato em curso;;13,235294117647058;10,5;15,0;2,0;13,75;11,75;12
+dolar;sarney;Sarney;0;60;0,0;sem dados;;;;;;;;12
+dolar;collor;Collor;0;31;0,0;sem dados;;;;;;;;12
+dolar;itamar;Itamar;18;27;0,6666666666666666;sem valor herdado;;0,9025666666666665;0,8408;0,9683;;0,9683;;12
+dolar;fhc1;FHC 1;48;48;1,0;completo;;1,2645770833333334;0,9745;1,9695;90,31291954972632;1,8428;0,9683;12
+dolar;fhc2;FHC 2;48;48;1,0;completo;;2,54501875;1,742;3,8059;58,74213153896244;2,9253;1,8428;12
+dolar;lula1;Lula 1;48;48;1,0;completo;;2,3712729166666664;1,7699;3,1291;-38,94643284449458;1,786;2,9253;12
+dolar;lula2;Lula 2;48;48;1,0;completo;;1,8168125000000002;1,5639;2,3944;2,8499440089585715;1,8369;1,786;12
+dolar;dilma1;Dilma 1;48;48;1,0;completo;;2,449329166666667;1,7184;3,9065;110,74092220589039;3,8711;1,8369;12
+dolar;dilma2;Dilma 2;16;16;1,0;completo;;3,40289375;3,1042;4,0524;-18,984268037508723;3,1362;3,8711;12
+dolar;temer;Temer;32;32;1,0;completo;;3,6541750000000004;3,1348;4,1553;31,037561380014033;4,1096;3,1362;12
+dolar;bolsonaro;Bolsonaro;48;48;1,0;completo;;5,17765;4,1495;5,6514;19,164882226980716;4,8972;4,1096;12
+dolar;lula3;Lula 3;33;48;0,6875;mandato em curso;;5,395621212121212;4,9144;6,097;5,053908355795156;5,1447;4,8972;12

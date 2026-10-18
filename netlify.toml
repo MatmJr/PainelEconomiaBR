@@ -1,0 +1,29 @@
+# O site é gerado localmente (python gerar_site.py) e versionado na pasta site/.
+# O Netlify só publica a pasta: não há comando de build.
+[build]
+  publish = "site"
+  command = ""
+
+# Dados mudam a cada atualização e precisam bater com o JS da mesma versão: o
+# navegador revalida a cada acesso (resposta 304, sem baixar de novo, se não mudou)
+[[headers]]
+  for = "/dados/*"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+    Access-Control-Allow-Origin = "*"
+
+# CSS e JS ficam em /static/<hash do conteúdo>/: o endereço muda a cada versão
+[[headers]]
+  for = "/static/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Cabeçalhos de segurança. O único script externo é o Plotly (jsDelivr), com SRI nas páginas.
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "DENY"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+    Content-Security-Policy = "default-src 'self'; script-src 'self' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; connect-src 'self'; font-src 'self' data:; frame-ancestors 'none'; base-uri 'self'; form-action 'self'"

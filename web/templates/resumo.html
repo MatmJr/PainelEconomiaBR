@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% from "_macros.html" import seletor_defasagem, plotly %}
+{% block pagina %}resumo{% endblock %}
+{% block titulo %}Resumo por mandato | Economia por presidente{% endblock %}
+{% block conteudo %}
+<h1>A economia em cada mandato</h1>
+<p class="lead">PIB, emprego, inflação, renda, contas públicas, juros e câmbio de Sarney a Lula 3, com dados oficiais do IBGE e do Banco Central.
+  Clique em qualquer número para ver como ele foi calculado, os dados usados e o link da fonte.</p>
+
+<div class="controles">
+  {{ seletor_defasagem() }}
+  <fieldset class="campo">
+    <legend class="campo-rotulo">O que comparar</legend>
+    <div class="segmentado" role="radiogroup" id="modo">
+      <label><input type="radio" name="modo" value="media" checked> Média no mandato</label>
+      <label><input type="radio" name="modo" value="mudanca"> Mudança no mandato</label>
+    </div>
+  </fieldset>
+</div>
+<p class="nota" id="explica-modo"></p>
+<div id="aviso-defasagem" class="alerta alerta-info" hidden></div>
+
+<div class="tabela-rolagem" id="placar-tabela" aria-live="polite">
+  <p class="carregando">Carregando…</p>
+</div>
+<noscript><p class="alerta alerta-aviso">A tabela interativa precisa de JavaScript. Os mesmos números estão em <a href="/dados/resumo.csv">resumo.csv</a>.</p></noscript>
+<p class="nota">* dados parciais ou mandato em curso · † sem valor herdado (a série começa depois da posse) · — sem dados.
+  Os números descrevem o que aconteceu durante cada governo; não medem causa.</p>
+
+<h2>Por indicador</h2>
+<div class="segmentado segmentado-botoes" id="grupos" role="tablist" aria-label="Grupo de indicadores"></div>
+<div class="grade-graficos" id="graficos"></div>
+{% endblock %}
+{% block scripts %}
+{{ plotly() }}
+<script type="module" src="{{ static }}/js/resumo.js"></script>
+{% endblock %}

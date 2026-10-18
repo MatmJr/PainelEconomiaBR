@@ -1,0 +1,41 @@
+{% macro seletor_defasagem() -%}
+<label class="campo campo-defasagem">
+  <span class="campo-rotulo">Defasagem na atribuição
+    <span class="dica" tabindex="0" role="note" aria-label="Atribui cada dado a quem governava N meses antes. Serve para testar se uma conclusão depende do tempo que as políticas levam para fazer efeito.">?</span>
+  </span>
+  <select id="defasagem">
+    <option value="0">Nenhuma</option>
+    <option value="3">3 meses</option>
+    <option value="6">6 meses</option>
+    <option value="12">12 meses</option>
+  </select>
+</label>
+{%- endmacro %}
+
+{% macro cartao_serie(sid, meta, series, oculto=False) -%}
+{%- set s = series[sid] -%}
+{%- set e = meta.extracoes.get(sid) -%}
+<section class="cartao cartao-serie" data-serie="{{ sid }}"{% if oculto %} hidden{% endif %}>
+  <h3>{{ s.nome }}</h3>
+  <p><strong>O que mede.</strong> {{ s.o_que_mede }}</p>
+  <p><strong>Fonte e método.</strong> {{ s.metodologia }}</p>
+  {%- if s.cuidados %}
+  <p><strong>Cuidados ao interpretar:</strong></p>
+  <ul>{% for c in s.cuidados %}<li>{{ c }}</li>{% endfor %}</ul>
+  {%- endif %}
+  <p><strong>Conferir na fonte:</strong> <a href="{{ meta.series[sid].link_fonte }}" rel="noopener">{{ meta.series[sid].fonte }}</a></p>
+  {%- if e %}
+  <p class="nota">Extraído em {{ e.data_extracao[:10] | data_br }} · {{ e.n_periodos }} períodos ({{ e.primeiro_periodo }} a {{ e.ultimo_periodo }}) ·
+    <a href="/dados/bronze/{{ sid }}.json">resposta bruta da API (JSON)</a></p>
+  <details class="urls">
+    <summary>URL(s) exata(s) consultada(s) na API</summary>
+    <pre>{{ e.urls }}</pre>
+  </details>
+  {%- endif %}
+</section>
+{%- endmacro %}
+
+{% macro plotly() -%}
+<script src="https://cdn.jsdelivr.net/npm/plotly.js-basic-dist-min@2.35.2/plotly-basic.min.js"
+        integrity="sha384-wQ3lfCxuvLfhHGiSdHF5+e3NZ1zNwEMd8/nII+K7VKChF9llO/OwOcn/aVRkB7az" crossorigin="anonymous"></script>
+{%- endmacro %}

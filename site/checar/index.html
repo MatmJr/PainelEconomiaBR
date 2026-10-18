@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Checar uma afirmação | Economia por presidente</title>
+  <meta name="description" content="Indicadores oficiais do IBGE e do Banco Central resumidos por mandato presidencial, com metodologia aberta e dados para conferir cada número.">
+  <meta name="author" content="Marco Mialaret Júnior">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="Economia por presidente">
+  <meta property="og:title" content="Checar uma afirmação | Economia por presidente">
+  <meta property="og:description" content="Indicadores oficiais do IBGE e do Banco Central resumidos por mandato presidencial, com metodologia aberta e dados para conferir cada número.">
+  <meta name="theme-color" content="#0b2a5e" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0a1d3d" media="(prefers-color-scheme: dark)">
+  <script src="/static/51df70e7b1/js/tema.js"></script>
+  <link rel="icon" href="/static/51df70e7b1/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/static/51df70e7b1/css/estilo.css">
+</head>
+<body data-pagina="checar-indice">
+  <a class="pular" href="#conteudo">Pular para o conteúdo</a>
+  <header class="topo">
+    <div class="topo-interno">
+      <a class="marca" href="/" aria-label="Economia por presidente — início">
+        <svg viewBox="0 0 32 32" aria-hidden="true">
+          <path d="M10.3 15.2 11.7 15.7 11.8 16.6 11.6 16.6 11.9 17.5 13.2 17.5 13.2 18.2 13.6 18.5 13.8 19.0 13.4 20.1 13.6 20.3 13.3 20.4 13.6 21.0 13.5 21.8 15.0 22.0 15.3 23.2 16.1 23.3 15.9 24.3 16.5 24.5 16.6 25.4 15.1 26.4 13.7 27.8 14.4 27.9 14.9 28.5 15.2 28.3 16.9 29.7 17.3 29.3 17.2 29.9 16.7 30.1 16.8 30.5 17.7 29.3 18.3 27.8 18.5 28.0 18.8 27.9 17.7 29.3 18.6 28.6 20.1 26.7 20.4 25.8 20.2 24.7 20.7 24.0 23.2 22.5 24.1 22.5 24.3 22.3 24.3 22.5 25.0 22.5 25.7 21.7 27.1 18.6 27.2 15.2 27.7 15.0 30.0 12.0 30.1 10.2 29.8 9.3 28.5 9.1 26.5 7.5 25.4 7.6 24.0 7.1 23.5 7.5 23.4 7.2 23.1 7.7 23.3 7.1 22.6 6.4 21.2 5.9 20.4 6.1 20.4 5.6 19.7 5.5 19.5 5.1 19.1 5.1 19.3 4.1 18.7 3.8 18.0 2.0 17.1 3.8 14.9 3.5 14.9 4.0 14.1 3.9 12.8 4.5 12.2 4.1 12.0 3.4 12.4 2.5 11.9 2.0 12.0 1.6 11.5 1.5 11.3 2.0 10.0 2.4 9.9 2.7 9.7 2.5 8.5 2.3 9.2 3.6 9.6 3.7 8.1 4.9 8.0 4.6 7.5 4.8 6.9 4.5 6.7 3.7 6.1 4.1 4.9 4.1 4.9 4.6 5.3 4.6 5.4 4.9 4.8 5.0 4.8 5.5 5.2 6.1 4.8 8.6 4.2 8.5 2.7 9.2 2.5 10.2 1.9 11.0 2.7 12.1 2.5 12.4 3.1 12.5 3.2 12.8 3.8 12.8 4.4 12.4 4.3 13.6 5.7 13.7 7.2 12.8 8.1 12.6 8.4 14.3Z" fill="#ffffff"/>
+          <path d="M13.08 12.61h1.90v3.60h-1.90Z M15.73 9.61h1.90v6.60h-1.90Z M18.38 7.81h1.90v8.40h-1.90Z M21.03 11.01h1.90v5.20h-1.90Z" fill="#0b2a5e"/><path d="M12.28 17.11H23.73" stroke="#0b2a5e" stroke-width="1.1" stroke-linecap="round"/>
+        </svg>
+        <span><span class="marca-nome">Economia por presidente</span><span class="marca-sub">Dados oficiais do Brasil, mandato a mandato</span></span>
+      </a>
+      <nav class="menu" aria-label="Principal">
+        <a href="/">Resumo</a>
+        <a href="/comparar/">Comparar</a>
+        <a href="/checar/" aria-current="page">Checar</a>
+        <a href="/series/">Séries</a>
+        <a href="/metodologia/">Metodologia</a>
+        <a href="/dados/">Dados</a>
+      </nav>
+      <button type="button" class="botao-tema" id="tema" data-tema="auto" aria-label="Tema: automático. Clique para trocar.">
+        <svg class="icone icone-auto" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 4a8 8 0 0 1 0 16Z" fill="currentColor"/></svg>
+        <svg class="icone icone-claro" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.5" fill="currentColor"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1 7 17M17 7l2.1-2.1" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <svg class="icone icone-escuro" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z" fill="currentColor"/></svg>
+        <span class="tema-rotulo">Automático</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="conteudo" class="conteudo">
+    
+<h1>Checar uma afirmação</h1>
+<p class="lead">Escolha um mandato e um indicador para ver o resultado, o cálculo passo a passo e os dados usados.</p>
+<form class="controles" id="escolha">
+  <label class="campo">
+    <span class="campo-rotulo">Mandato</span>
+    <select id="sel-mandato" autocomplete="off">
+      <option value="" disabled selected>Escolha…</option><option value="sarney">Sarney</option><option value="collor">Collor</option><option value="itamar">Itamar</option><option value="fhc1">FHC 1</option><option value="fhc2">FHC 2</option><option value="lula1">Lula 1</option><option value="lula2">Lula 2</option><option value="dilma1">Dilma 1</option><option value="dilma2">Dilma 2</option><option value="temer">Temer</option><option value="bolsonaro">Bolsonaro</option><option value="lula3">Lula 3</option>
+    </select>
+  </label>
+  <label class="campo campo-largo">
+    <span class="campo-rotulo">Indicador</span>
+    <select id="sel-serie" autocomplete="off">
+      <optgroup label="Atividade"><option value="pib_anual" selected>PIB – crescimento real anual</option><option value="pib_per_capita">PIB per capita – crescimento real anual</option><option value="pib_trimestral">PIB trimestral (índice dessazonalizado)</option>
+      </optgroup>
+      <optgroup label="Mercado de trabalho"><option value="desocupacao">Taxa de desocupação (PNAD Contínua)</option><option value="desemprego_pme">Taxa de desemprego (PME – 6 regiões metropolitanas)</option><option value="informalidade">Taxa de informalidade</option><option value="nivel_ocupacao">Nível da ocupação</option>
+      </optgroup>
+      <optgroup label="Preços"><option value="ipca">Inflação (IPCA)</option>
+      </optgroup>
+      <optgroup label="Renda"><option value="rendimento_real">Renda média real do trabalhador</option><option value="salario_minimo_real">Salário mínimo real (poder de compra)</option>
+      </optgroup>
+      <optgroup label="Fiscal"><option value="resultado_primario">Resultado primário do setor público (ano fechado)</option><option value="divida_liquida">Dívida líquida do setor público</option><option value="divida_bruta">Dívida bruta do governo geral</option>
+      </optgroup>
+      <optgroup label="Juros e câmbio"><option value="selic">Taxa Selic (meta do Copom)</option><option value="dolar">Dólar comercial (média do mês)</option>
+      </optgroup>
+    </select>
+  </label>
+  <button class="botao botao-primario" type="submit">Ver checagem</button>
+</form>
+<p class="nota" id="aviso-escolha" hidden>Escolha um mandato para ver a checagem.</p>
+
+<h2>Todas as checagens</h2>
+<div class="indice-checagens">
+  <details>
+    <summary>Sarney <span class="nota">(15/03/1985 a 14/03/1990)</span></summary>
+    <ul><li><a href="/checar/sarney/pib_anual/">PIB – crescimento real anual</a></li><li><a href="/checar/sarney/pib_per_capita/">PIB per capita – crescimento real anual</a></li><li><a href="/checar/sarney/pib_trimestral/">PIB trimestral (índice dessazonalizado)</a></li><li><a href="/checar/sarney/desocupacao/">Taxa de desocupação (PNAD Contínua)</a></li><li><a href="/checar/sarney/desemprego_pme/">Taxa de desemprego (PME – 6 regiões metropolitanas)</a></li><li><a href="/checar/sarney/informalidade/">Taxa de informalidade</a></li><li><a href="/checar/sarney/nivel_ocupacao/">Nível da ocupação</a></li><li><a href="/checar/sarney/ipca/">Inflação (IPCA)</a></li><li><a href="/checar/sarney/rendimento_real/">Renda média real do trabalhador</a></li><li><a href="/checar/sarney/salario_minimo_real/">Salário mínimo real (poder de compra)</a></li><li><a href="/checar/sarney/resultado_primario/">Resultado primário do setor público (ano fechado)</a></li><li><a href="/checar/sarney/divida_liquida/">Dívida líquida do setor público</a></li><li><a href="/checar/sarney/divida_bruta/">Dívida bruta do governo geral</a></li><li><a href="/checar/sarney/selic/">Taxa Selic (meta do Copom)</a></li><li><a href="/checar/sarney/dolar/">Dólar comercial (média do mês)</a></li></ul>
+  </details>
+  <details>
+    <summary>Collor <span class="nota">(15/03/1990 a 01/10/1992)</span></summary>
+    <ul><li><a href="/checar/collor/pib_anual/">PIB – crescimento real anual</a></li><li><a href="/checar/collor/pib_per_capita/">PIB per capita – crescimento real anual</a></li><li><a href="/checar/collor/pib_trimestral/">PIB trimestral (índice dessazonalizado)</a></li><li><a href="/checar/collor/desocupacao/">Taxa de desocupação (PNAD Contínua)</a></li><li><a href="/checar/collor/desemprego_pme/">Taxa de desemprego (PME – 6 regiões metropolitanas)</a></li><li><a href="/checar/collor/informalidade/">Taxa de informalidade</a></li><li><a href="/checar/collor/nivel_ocupacao/">Nível da ocupação</a></li><li><a href="/checar/collor/ipca/">Inflação (IPCA)</a></li><li><a href="/checar/collor/rendimento_real/">Renda média real do trabalhador</a></li><li><a href="/checar/collor/salario_minimo_real/">Salário mínimo real (poder de compra)</a></li><li><a href="/checar/collor/resultado_primario/">Resultado primário do setor público (ano fechado)</a></li><li><a href="/checar/collor/divida_liquida/">Dívida líquida do setor público</a></li><li><a href="/checar/collor/divida_bruta/">Dívida bruta do governo geral</a></li><li><a href="/checar/collor/selic/">Taxa Selic (meta do Copom)</a></li><li><a href="/checar/collor/dolar/">Dólar comercial (média do mês)</a></li></ul>
+  </details>
+  <details>
+    <summary>Itamar <span class="nota">(02/10/1992 a 31/12/1994)</span></summary>
+    <ul><li><a href="/checar/itamar/pib_anual/">PIB – crescimento real anual</a></li><li><a href="/checar/itamar/pib_per_capita/">PIB per capita – crescimento real anual</a></li><li><a href="/checar/itamar/pib_trimestral/">PIB trimestral (índice dessazonalizado)</a></li><li><a href="/checar/itamar/desocupacao/">Taxa de desocupação (PNAD Contínua)</a></li><li><a href="/checar/itamar/desemprego_pme/">Taxa de desemprego (PME – 6 regiões metropolitanas)</a></li><li><a href="/checar/itamar/informalidade/">Taxa de informalidade</a></li><li><a href="/checar/itamar/nivel_ocupacao/">Nível da ocupação</a></li><li><a href="/checar/itamar/ipca/">Inflação (IPCA)</a></li><li><a href="/checar/itamar/rendimento_real/">Renda média real do trabalhador</a></li><li><a href="/checar/itamar/salario_minimo_real/">Salário mínimo real (poder de compra)</a></li><li><a href="/checar/itamar/resultado_primario/">Resultado primário do setor público (ano fechado)</a></li><li><a href="/checar/itamar/divida_liquida/">Dívida líquida do setor público</a></li><li><a href="/checar/itamar/divida_bruta/">Dívida bruta do governo geral</a></li><li><a href="/checar/itamar/selic/">Taxa Selic (meta do Copom)</a></li><li><a href="/checar/itamar/dolar/">Dólar comercial (média do mês)</a></li></ul>
+  </details>
+  <details>
+    <summary>FHC 1 <span class="nota">(01/01/1995 a 31/12/1998)</span></summary>
+    <ul><li><a href="/checar/fhc1/pib_anual/">PIB – crescimento real anual</a></li><li><a href="/checar/fhc1/pib_per_capita/">PIB per capita – crescimento real anual</a></li><li><a href="/checar/fhc1/pib_trimestral/">PIB trimestral (índice dessazonalizado)</a></li><li><a href="/checar/fhc1/desocupacao/">Taxa de desocupação (PNAD Contínua)</a></li><li><a href="/checar/fhc1/desemprego_pme/">Taxa de desemprego (PME – 6 regiões metropolitanas)</a></li><li><a href="/checar/fhc1/informalidade/">Taxa de informalidade</a></li><li><a href="/checar/fhc1/nivel_ocupacao/">Nível da ocupação</a></li><li><a href="/checar/fhc1/ipca/">Inflação (IPCA)</a></li><li><a href="/checar/fhc1/rendimento_real/">Renda média real do trabalhador</a></li><li><a href="/checar/fhc1/salario_minimo_real/">Salário mínimo real (poder de compra)</a></li><li><a href="/checar/fhc1/resultado_primario/">Resultado primário do setor público (ano fechado)</a></li><li><a href="/checar/fhc1/divida_liquida/">Dívida líquida do setor público</a></li><li><a href="/checar/fhc1/divida_bruta/">Dívida bruta do governo geral</a></li><li><a href="/checar/fhc1/selic/">Taxa Selic (meta do Copom)</a></li><li><a href="/checar/fhc1/dolar/">Dólar comercial (média do mês)</a></li></ul>
+  </details>
+  <details>
+    <summary>FHC 2 <span class="nota">(01/01/1999 a 31/12/2002)</span></summary>
+    <ul><li><a href="/checar/fhc2/pib_anual/">PIB – crescimento real anual</a></li><li><a href="/checar/fhc2/pib_per_capita/">PIB per capita – crescimento real anual</a></li><li><a href="/checar/fhc2/pib_trimestral/">PIB trimestral (índice dessazonalizado)</a></li><li><a href="/checar/fhc2/desocupacao/">Taxa de desocupação (PNAD Contínua)</a></li><li><a href="/checar/fhc2/desemprego_pme/">Taxa de desemprego (PME – 6 regiões metropolitanas)</a></li><li><a href="/checar/fhc2/informalidade/">Taxa de informalidade</a></li><li><a href="/checar/fhc2/nivel_ocupacao/">Nível da ocupação</a></li><li><a href="/checar/fhc2/ipca/">Inflação (IPCA)</a></li><li><a href="/checar/fhc2/rendimento_real/">Renda média real do trabalhador</a></li><li><a href="/checar/fhc2/salario_minimo_real/">Salário mínimo real (poder de compra)</a></li><li><a href="/checar/fhc2/resultado_primario/">Resultado primário do setor público (ano fechado)</a></li><li><a href="/checar/fhc2/divida_liquida/">Dívida líquida do setor público</a></li><li><a href="/checar/fhc2/divida_bruta/">Dívida bruta do governo geral</a></li><li><a href="/checar/fhc2/selic/">Taxa Selic (meta do Copom)</a></li><li><a href="/checar/fhc2/dolar/">Dólar comercial (média do mês)</a></li></ul>
+  </details>
+  <details>
+    <summary>Lula 1 <span class="nota">(01/01/2003 a 31/12/2006)</span></summary>
+    <ul><li><a href="/checar/lula1/pib_anual/">PIB – crescimento real anual</a></li><li><a href="/checar/lula1/pib_per_capita/">PIB per capita – crescimento real anual</a></li><li><a href="/checar/lula1/pib_trimestral/">PIB trimestral (índice dessazonalizado)</a></li><li><a href="/checar/lula1/desocupacao/">Taxa de desocupação (PNAD Contínua)</a></li><li><a href="/checar/lula1/desemprego_pme/">Taxa de desemprego (PME – 6 regiões metropolitanas)</a></li><li><a href="/checar/lula1/informalidade/">Taxa de informalidade</a></li><li><a href="/checar/lula1/nivel_ocupacao/">Nível da ocupação</a></li><li><a href="/checar/lula1/ipca/">Inflação (IPCA)</a></li><li><a href="/checar/lula1/rendimento_real/">Renda média real do trabalhador</a></li><li><a href="/checar/lula1/salario_minimo_real/">Salário mínimo real (poder de compra)</a></li><li><a href="/checar/lula1/resultado_primario/">Resultado primário do setor público (ano fechado)</a></li><li><a href="/checar/lula1/divida_liquida/">Dívida líquida do setor público</a></li><li><a href="/checar/lula1/divida_bruta/">Dívida bruta do governo geral</a></li><li><a href="/checar/lula1/selic/">Taxa Selic (meta do Copom)</a></li><li><a href="/checar/lula1/dolar/">Dólar comercial (média do mês)</a></li></ul>
+  </details>
+  <details>
+    <summary>Lula 2 <span class="nota">(01/01/2007 a 31/12/2010)</span></summary>
+    <ul><li><a href="/checar/lula2/pib_anual/">PIB – crescimento real anual</a></li><li><a href="/checar/lula2/pib_per_capita/">PIB per capita – crescimento real anual</a></li><li><a href="/checar/lula2/pib_trimestral/">PIB trimestral (índice dessazonalizado)</a></li><li><a href="/checar/lula2/desocupacao/">Taxa de desocupação (PNAD Contínua)</a></li><li><a href="/checar/lula2/desemprego_pme/">Taxa de desemprego (PME – 6 regiões metropolitanas)</a></li><li><a href="/checar/lula2/informalidade/">Taxa de informalidade</a></li><li><a href="/checar/lula2/nivel_ocupacao/">Nível da ocupação</a></li><li><a href="/checar/lula2/ipca/">Inflação (IPCA)</a></li><li><a href="/checar/lula2/rendimento_real/">Renda média real do trabalhador</a></li><li><a href="/checar/lula2/salario_minimo_real/">Salário mínimo real (poder de compra)</a></li><li><a href="/checar/lula2/resultado_primario/">Resultado primário do setor público (ano fechado)</a></li><li><a href="/checar/lula2/divida_liquida/">Dívida líquida do setor público</a></li><li><a href="/checar/lula2/divida_bruta/">Dívida bruta do governo geral</a></li><li><a href="/checar/lula2/selic/">Taxa Selic (meta do Copom)</a></li><li><a href="/checar/lula2/dolar/">Dólar comercial (média do mês)</a></li></ul>
+  </details>
+  <details>
+    <summary>Dilma 1 <span class="nota">(01/01/2011 a 31/12/2014)</span></summary>
+    <ul><li><a href="/checar/dilma1/pib_anual/">PIB – crescimento real anual</a></li><li><a href="/checar/dilma1/pib_per_capita/">PIB per capita – crescimento real anual</a></li><li><a href="/checar/dilma1/pib_trimestral/">PIB trimestral (índice dessazonalizado)</a></li><li><a href="/checar/dilma1/desocupacao/">Taxa de desocupação (PNAD Contínua)</a></li><li><a href="/checar/dilma1/desemprego_pme/">Taxa de desemprego (PME – 6 regiões metropolitanas)</a></li><li><a href="/checar/dilma1/informalidade/">Taxa de informalidade</a></li><li><a href="/checar/dilma1/nivel_ocupacao/">Nível da ocupação</a></li><li><a href="/checar/dilma1/ipca/">Inflação (IPCA)</a></li><li><a href="/checar/dilma1/rendimento_real/">Renda média real do trabalhador</a></li><li><a href="/checar/dilma1/salario_minimo_real/">Salário mínimo real (poder de compra)</a></li><li><a href="/checar/dilma1/resultado_primario/">Resultado primário do setor público (ano fechado)</a></li><li><a href="/checar/dilma1/divida_liquida/">Dívida líquida do setor público</a></li><li><a href="/checar/dilma1/divida_bruta/">Dívida bruta do governo geral</a></li><li><a href="/checar/dilma1/selic/">Taxa Selic (meta do Copom)</a></li><li><a href="/checar/dilma1/dolar/">Dólar comercial (média do mês)</a></li></ul>
+  </details>
+  <details>
+    <summary>Dilma 2 <span class="nota">(01/01/2015 a 11/05/2016)</span></summary>
+    <ul><li><a href="/checar/dilma2/pib_anual/">PIB – crescimento real anual</a></li><li><a href="/checar/dilma2/pib_per_capita/">PIB per capita – crescimento real anual</a></li><li><a href="/checar/dilma2/pib_trimestral/">PIB trimestral (índice dessazonalizado)</a></li><li><a href="/checar/dilma2/desocupacao/">Taxa de desocupação (PNAD Contínua)</a></li><li><a href="/checar/dilma2/desemprego_pme/">Taxa de desemprego (PME – 6 regiões metropolitanas)</a></li><li><a href="/checar/dilma2/informalidade/">Taxa de informalidade</a></li><li><a href="/checar/dilma2/nivel_ocupacao/">Nível da ocupação</a></li><li><a href="/checar/dilma2/ipca/">Inflação (IPCA)</a></li><li><a href="/checar/dilma2/rendimento_real/">Renda média real do trabalhador</a></li><li><a href="/checar/dilma2/salario_minimo_real/">Salário mínimo real (poder de compra)</a></li><li><a href="/checar/dilma2/resultado_primario/">Resultado primário do setor público (ano fechado)</a></li><li><a href="/checar/dilma2/divida_liquida/">Dívida líquida do setor público</a></li><li><a href="/checar/dilma2/divida_bruta/">Dívida bruta do governo geral</a></li><li><a href="/checar/dilma2/selic/">Taxa Selic (meta do Copom)</a></li><li><a href="/checar/dilma2/dolar/">Dólar comercial (média do mês)</a></li></ul>
+  </details>
+  <details>
+    <summary>Temer <span class="nota">(12/05/2016 a 31/12/2018)</span></summary>
+    <ul><li><a href="/checar/temer/pib_anual/">PIB – crescimento real anual</a></li><li><a href="/checar/temer/pib_per_capita/">PIB per capita – crescimento real anual</a></li><li><a href="/checar/temer/pib_trimestral/">PIB trimestral (índice dessazonalizado)</a></li><li><a href="/checar/temer/desocupacao/">Taxa de desocupação (PNAD Contínua)</a></li><li><a href="/checar/temer/desemprego_pme/">Taxa de desemprego (PME – 6 regiões metropolitanas)</a></li><li><a href="/checar/temer/informalidade/">Taxa de informalidade</a></li><li><a href="/checar/temer/nivel_ocupacao/">Nível da ocupação</a></li><li><a href="/checar/temer/ipca/">Inflação (IPCA)</a></li><li><a href="/checar/temer/rendimento_real/">Renda média real do trabalhador</a></li><li><a href="/checar/temer/salario_minimo_real/">Salário mínimo real (poder de compra)</a></li><li><a href="/checar/temer/resultado_primario/">Resultado primário do setor público (ano fechado)</a></li><li><a href="/checar/temer/divida_liquida/">Dívida líquida do setor público</a></li><li><a href="/checar/temer/divida_bruta/">Dívida bruta do governo geral</a></li><li><a href="/checar/temer/selic/">Taxa Selic (meta do Copom)</a></li><li><a href="/checar/temer/dolar/">Dólar comercial (média do mês)</a></li></ul>
+  </details>
+  <details>
+    <summary>Bolsonaro <span class="nota">(01/01/2019 a 31/12/2022)</span></summary>
+    <ul><li><a href="/checar/bolsonaro/pib_anual/">PIB – crescimento real anual</a></li><li><a href="/checar/bolsonaro/pib_per_capita/">PIB per capita – crescimento real anual</a></li><li><a href="/checar/bolsonaro/pib_trimestral/">PIB trimestral (índice dessazonalizado)</a></li><li><a href="/checar/bolsonaro/desocupacao/">Taxa de desocupação (PNAD Contínua)</a></li><li><a href="/checar/bolsonaro/desemprego_pme/">Taxa de desemprego (PME – 6 regiões metropolitanas)</a></li><li><a href="/checar/bolsonaro/informalidade/">Taxa de informalidade</a></li><li><a href="/checar/bolsonaro/nivel_ocupacao/">Nível da ocupação</a></li><li><a href="/checar/bolsonaro/ipca/">Inflação (IPCA)</a></li><li><a href="/checar/bolsonaro/rendimento_real/">Renda média real do trabalhador</a></li><li><a href="/checar/bolsonaro/salario_minimo_real/">Salário mínimo real (poder de compra)</a></li><li><a href="/checar/bolsonaro/resultado_primario/">Resultado primário do setor público (ano fechado)</a></li><li><a href="/checar/bolsonaro/divida_liquida/">Dívida líquida do setor público</a></li><li><a href="/checar/bolsonaro/divida_bruta/">Dívida bruta do governo geral</a></li><li><a href="/checar/bolsonaro/selic/">Taxa Selic (meta do Copom)</a></li><li><a href="/checar/bolsonaro/dolar/">Dólar comercial (média do mês)</a></li></ul>
+  </details>
+  <details>
+    <summary>Lula 3 <span class="nota">(01/01/2023 a 04/01/2027)</span></summary>
+    <ul><li><a href="/checar/lula3/pib_anual/">PIB – crescimento real anual</a></li><li><a href="/checar/lula3/pib_per_capita/">PIB per capita – crescimento real anual</a></li><li><a href="/checar/lula3/pib_trimestral/">PIB trimestral (índice dessazonalizado)</a></li><li><a href="/checar/lula3/desocupacao/">Taxa de desocupação (PNAD Contínua)</a></li><li><a href="/checar/lula3/desemprego_pme/">Taxa de desemprego (PME – 6 regiões metropolitanas)</a></li><li><a href="/checar/lula3/informalidade/">Taxa de informalidade</a></li><li><a href="/checar/lula3/nivel_ocupacao/">Nível da ocupação</a></li><li><a href="/checar/lula3/ipca/">Inflação (IPCA)</a></li><li><a href="/checar/lula3/rendimento_real/">Renda média real do trabalhador</a></li><li><a href="/checar/lula3/salario_minimo_real/">Salário mínimo real (poder de compra)</a></li><li><a href="/checar/lula3/resultado_primario/">Resultado primário do setor público (ano fechado)</a></li><li><a href="/checar/lula3/divida_liquida/">Dívida líquida do setor público</a></li><li><a href="/checar/lula3/divida_bruta/">Dívida bruta do governo geral</a></li><li><a href="/checar/lula3/selic/">Taxa Selic (meta do Copom)</a></li><li><a href="/checar/lula3/dolar/">Dólar comercial (média do mês)</a></li></ul>
+  </details>
+</div>
+
+  </main>
+
+  <footer class="rodape">
+    <p>Fontes: <a href="https://sidra.ibge.gov.br">IBGE (SIDRA)</a> e <a href="https://www3.bcb.gov.br/sgspub">Banco Central (SGS)</a>. Dados extraídos em 18/10/2026.</p>
+    <p>O painel descreve o que aconteceu durante cada mandato; não mede o efeito causal das políticas de cada governo. <a href="/metodologia/">Veja a metodologia</a> · <a href="https://github.com/MatmJr/PainelEconomiaBR">código aberto</a> · <a href="https://github.com/MatmJr/PainelEconomiaBR/issues">reportar um erro</a>.</p>
+    <p class="creditos">Desenvolvido por <strong>Marco Mialaret Júnior</strong> com <a href="https://claude.com/claude-code" rel="noopener">Claude Code</a>.</p>
+  </footer>
+  
+<script type="module" src="/static/51df70e7b1/js/checar_indice.js"></script>
+
+</body>
+</html>

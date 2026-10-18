@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block pagina %}dados{% endblock %}
+{% block titulo %}Dados e fontes | Economia por presidente{% endblock %}
+{% block conteudo %}
+<h1>Dados e fontes</h1>
+<p class="lead">De onde veio cada série, quando foi extraída e o que ela cobre. Todos os arquivos podem ser baixados.</p>
+
+<h2>Downloads</h2>
+<ul class="downloads">
+  <li><a href="/dados/observacoes.csv" download>Todas as observações (CSV)</a> — uma linha por série e período, como gravado na camada tratada.</li>
+  <li><a href="/dados/resumo.csv" download>Resumo completo por mandato (CSV)</a> — todas as métricas, de todas as séries e mandatos, nas quatro defasagens.</li>
+  <li><a href="/dados/meta.json">Catálogo e proveniência (JSON)</a></li>
+</ul>
+<p class="nota">CSVs com separador “;” e vírgula decimal, que abrem direto no Excel em português.</p>
+
+<h2>Extrações</h2>
+<div class="tabela-rolagem">
+  <table>
+    <thead><tr><th>Série</th><th>Fonte</th><th>Extraído em</th><th class="num">Períodos</th><th>Cobertura</th><th>Bruto</th></tr></thead>
+    <tbody>
+      {%- for sid, e in meta.extracoes.items() %}
+      <tr>
+        <td>{{ series[sid].nome }}</td>
+        <td><a href="{{ meta.series[sid].link_fonte }}" rel="noopener">{{ meta.series[sid].fonte }}</a></td>
+        <td>{{ e.data_extracao[:10] | data_br }}</td>
+        <td class="num">{{ e.n_periodos }}</td>
+        <td>{{ e.primeiro_periodo }} a {{ e.ultimo_periodo }}</td>
+        <td><a href="/dados/bronze/{{ sid }}.json">JSON</a></td>
+      </tr>
+      {%- endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

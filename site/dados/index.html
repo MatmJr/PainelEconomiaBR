@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dados e fontes | Economia por presidente</title>
+  <meta name="description" content="Indicadores oficiais do IBGE e do Banco Central resumidos por mandato presidencial, com metodologia aberta e dados para conferir cada número.">
+  <meta name="author" content="Marco Mialaret Júnior">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="Economia por presidente">
+  <meta property="og:title" content="Dados e fontes | Economia por presidente">
+  <meta property="og:description" content="Indicadores oficiais do IBGE e do Banco Central resumidos por mandato presidencial, com metodologia aberta e dados para conferir cada número.">
+  <meta name="theme-color" content="#0b2a5e" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0a1d3d" media="(prefers-color-scheme: dark)">
+  <script src="/static/51df70e7b1/js/tema.js"></script>
+  <link rel="icon" href="/static/51df70e7b1/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/static/51df70e7b1/css/estilo.css">
+</head>
+<body data-pagina="dados">
+  <a class="pular" href="#conteudo">Pular para o conteúdo</a>
+  <header class="topo">
+    <div class="topo-interno">
+      <a class="marca" href="/" aria-label="Economia por presidente — início">
+        <svg viewBox="0 0 32 32" aria-hidden="true">
+          <path d="M10.3 15.2 11.7 15.7 11.8 16.6 11.6 16.6 11.9 17.5 13.2 17.5 13.2 18.2 13.6 18.5 13.8 19.0 13.4 20.1 13.6 20.3 13.3 20.4 13.6 21.0 13.5 21.8 15.0 22.0 15.3 23.2 16.1 23.3 15.9 24.3 16.5 24.5 16.6 25.4 15.1 26.4 13.7 27.8 14.4 27.9 14.9 28.5 15.2 28.3 16.9 29.7 17.3 29.3 17.2 29.9 16.7 30.1 16.8 30.5 17.7 29.3 18.3 27.8 18.5 28.0 18.8 27.9 17.7 29.3 18.6 28.6 20.1 26.7 20.4 25.8 20.2 24.7 20.7 24.0 23.2 22.5 24.1 22.5 24.3 22.3 24.3 22.5 25.0 22.5 25.7 21.7 27.1 18.6 27.2 15.2 27.7 15.0 30.0 12.0 30.1 10.2 29.8 9.3 28.5 9.1 26.5 7.5 25.4 7.6 24.0 7.1 23.5 7.5 23.4 7.2 23.1 7.7 23.3 7.1 22.6 6.4 21.2 5.9 20.4 6.1 20.4 5.6 19.7 5.5 19.5 5.1 19.1 5.1 19.3 4.1 18.7 3.8 18.0 2.0 17.1 3.8 14.9 3.5 14.9 4.0 14.1 3.9 12.8 4.5 12.2 4.1 12.0 3.4 12.4 2.5 11.9 2.0 12.0 1.6 11.5 1.5 11.3 2.0 10.0 2.4 9.9 2.7 9.7 2.5 8.5 2.3 9.2 3.6 9.6 3.7 8.1 4.9 8.0 4.6 7.5 4.8 6.9 4.5 6.7 3.7 6.1 4.1 4.9 4.1 4.9 4.6 5.3 4.6 5.4 4.9 4.8 5.0 4.8 5.5 5.2 6.1 4.8 8.6 4.2 8.5 2.7 9.2 2.5 10.2 1.9 11.0 2.7 12.1 2.5 12.4 3.1 12.5 3.2 12.8 3.8 12.8 4.4 12.4 4.3 13.6 5.7 13.7 7.2 12.8 8.1 12.6 8.4 14.3Z" fill="#ffffff"/>
+          <path d="M13.08 12.61h1.90v3.60h-1.90Z M15.73 9.61h1.90v6.60h-1.90Z M18.38 7.81h1.90v8.40h-1.90Z M21.03 11.01h1.90v5.20h-1.90Z" fill="#0b2a5e"/><path d="M12.28 17.11H23.73" stroke="#0b2a5e" stroke-width="1.1" stroke-linecap="round"/>
+        </svg>
+        <span><span class="marca-nome">Economia por presidente</span><span class="marca-sub">Dados oficiais do Brasil, mandato a mandato</span></span>
+      </a>
+      <nav class="menu" aria-label="Principal">
+        <a href="/">Resumo</a>
+        <a href="/comparar/">Comparar</a>
+        <a href="/checar/">Checar</a>
+        <a href="/series/">Séries</a>
+        <a href="/metodologia/">Metodologia</a>
+        <a href="/dados/" aria-current="page">Dados</a>
+      </nav>
+      <button type="button" class="botao-tema" id="tema" data-tema="auto" aria-label="Tema: automático. Clique para trocar.">
+        <svg class="icone icone-auto" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 4a8 8 0 0 1 0 16Z" fill="currentColor"/></svg>
+        <svg class="icone icone-claro" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.5" fill="currentColor"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1 7 17M17 7l2.1-2.1" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <svg class="icone icone-escuro" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z" fill="currentColor"/></svg>
+        <span class="tema-rotulo">Automático</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="conteudo" class="conteudo">
+    
+<h1>Dados e fontes</h1>
+<p class="lead">De onde veio cada série, quando foi extraída e o que ela cobre. Todos os arquivos podem ser baixados.</p>
+
+<h2>Downloads</h2>
+<ul class="downloads">
+  <li><a href="/dados/observacoes.csv" download>Todas as observações (CSV)</a> — uma linha por série e período, como gravado na camada tratada.</li>
+  <li><a href="/dados/resumo.csv" download>Resumo completo por mandato (CSV)</a> — todas as métricas, de todas as séries e mandatos, nas quatro defasagens.</li>
+  <li><a href="/dados/meta.json">Catálogo e proveniência (JSON)</a></li>
+</ul>
+<p class="nota">CSVs com separador “;” e vírgula decimal, que abrem direto no Excel em português.</p>
+
+<h2>Extrações</h2>
+<div class="tabela-rolagem">
+  <table>
+    <thead><tr><th>Série</th><th>Fonte</th><th>Extraído em</th><th class="num">Períodos</th><th>Cobertura</th><th>Bruto</th></tr></thead>
+    <tbody>
+      <tr>
+        <td>PIB – crescimento real anual</td>
+        <td><a href="https://www3.bcb.gov.br/sgspub/consultarvalores/telaCvsSelecionarSeries.paint" rel="noopener">Banco Central – SGS, série 7326</a></td>
+        <td>18/10/2026</td>
+        <td class="num">46</td>
+        <td>1980 a 2025</td>
+        <td><a href="/dados/bronze/pib_anual.json">JSON</a></td>
+      </tr>
+      <tr>
+        <td>PIB per capita – crescimento real anual</td>
+        <td><a href="https://sidra.ibge.gov.br/tabela/6784" rel="noopener">IBGE – SIDRA, tabela 6784, variável 9814</a></td>
+        <td>18/10/2026</td>
+        <td class="num">28</td>
+        <td>1996 a 2023</td>
+        <td><a href="/dados/bronze/pib_per_capita.json">JSON</a></td>
+      </tr>
+      <tr>
+        <td>PIB trimestral (índice dessazonalizado)</td>
+        <td><a href="https://sidra.ibge.gov.br/tabela/1621" rel="noopener">IBGE – SIDRA, tabela 1621, variável 584, classificação 11255[90707]</a></td>
+        <td>18/10/2026</td>
+        <td class="num">122</td>
+        <td>1º tri/1996 a 2º tri/2026</td>
+        <td><a href="/dados/bronze/pib_trimestral.json">JSON</a></td>
+      </tr>
+      <tr>
+        <td>Taxa de desocupação (PNAD Contínua)</td>
+        <td><a href="https://sidra.ibge.gov.br/tabela/6381" rel="noopener">IBGE – SIDRA, tabela 6381, variável 4099</a></td>
+        <td>18/10/2026</td>
+        <td class="num">174</td>
+        <td>jan-fev-mar/2012 a jun-jul-ago/2026</td>
+        <td><a href="/dados/bronze/desocupacao.json">JSON</a></td>
+      </tr>
+      <tr>
+        <td>Taxa de desemprego (PME – 6 regiões metropolitanas)</td>
+        <td><a href="https://www3.bcb.gov.br/sgspub/consultarvalores/telaCvsSelecionarSeries.paint" rel="noopener">Banco Central – SGS, série 10777</a></td>
+        <td>18/10/2026</td>
+        <td class="num">172</td>
+        <td>nov/2001 a fev/2016</td>
+        <td><a href="/dados/bronze/desemprego_pme.json">JSON</a></td>
+      </tr>
+      <tr>
+        <td>Taxa de informalidade</td>
+        <td><a href="https://sidra.ibge.gov.br/tabela/8529" rel="noopener">IBGE – SIDRA, tabela 8529, variável 12466</a></td>
+        <td>18/10/2026</td>
+        <td class="num">43</td>
+        <td>4º tri/2015 a 2º tri/2026</td>
+        <td><a href="/dados/bronze/informalidade.json">JSON</a></td>
+      </tr>
+      <tr>
+        <td>Nível da ocupação</td>
+        <td><a href="https://sidra.ibge.gov.br/tabela/6379" rel="noopener">IBGE – SIDRA, tabela 6379, variável 4097</a></td>
+        <td>18/10/2026</td>
+        <td class="num">174</td>
+        <td>jan-fev-mar/2012 a jun-jul-ago/2026</td>
+        <td><a href="/dados/bronze/nivel_ocupacao.json">JSON</a></td>
+      </tr>
+      <tr>
+        <td>Inflação (IPCA)</td>
+        <td><a href="https://sidra.ibge.gov.br/tabela/1737" rel="noopener">IBGE – SIDRA, tabela 1737, variável 63</a></td>
+        <td>18/10/2026</td>
+        <td class="num">561</td>
+        <td>jan/1980 a set/2026</td>
+        <td><a href="/dados/bronze/ipca.json">JSON</a></td>
+      </tr>
+      <tr>
+        <td>IPCA acumulado em 12 meses (divulgado pelo IBGE)</td>
+        <td><a href="https://sidra.ibge.gov.br/tabela/1737" rel="noopener">IBGE – SIDRA, tabela 1737, variável 2265</a></td>
+        <td>18/10/2026</td>
+        <td class="num">550</td>
+        <td>dez/1980 a set/2026</td>
+        <td><a href="/dados/bronze/ipca_12m_ibge.json">JSON</a></td>
+      </tr>
+      <tr>
+        <td>IPCA – número-índice (dez/1993 = 100)</td>
+        <td><a href="https://sidra.ibge.gov.br/tabela/1737" rel="noopener">IBGE – SIDRA, tabela 1737, variável 2266</a></td>
+        <td>18/10/2026</td>
+        <td class="num">562</td>
+        <td>dez/1979 a set/2026</td>
+        <td><a href="/dados/bronze/ipca_indice.json">JSON</a></td>
+      </tr>
+      <tr>
+        <td>Renda média real do trabalhador</td>
+        <td><a href="https://sidra.ibge.gov.br/tabela/6390" rel="noopener">IBGE – SIDRA, tabela 6390, variável 5933</a></td>
+        <td>18/10/2026</td>
+        <td class="num">174</td>
+        <td>jan-fev-mar/2012 a jun-jul-ago/2026</td>
+        <td><a href="/dados/bronze/rendimento_real.json">JSON</a></td>
+      </tr>
+      <tr>
+        <td>Salário mínimo real (poder de compra)</td>
+        <td><a href="https://www3.bcb.gov.br/sgspub/consultarvalores/telaCvsSelecionarSeries.paint" rel="noopener">Banco Central – SGS, série 1619</a></td>
+        <td>18/10/2026</td>
+        <td class="num">387</td>
+        <td>jul/1994 a set/2026</td>
+        <td><a href="/dados/bronze/salario_minimo_real.json">JSON</a></td>
+      </tr>
+      <tr>
+        <td>Resultado primário do setor público (ano fechado)</td>
+        <td><a href="https://www3.bcb.gov.br/sgspub/consultarvalores/telaCvsSelecionarSeries.paint" rel="noopener">Banco Central – SGS, série 5793</a></td>
+        <td>18/10/2026</td>
+        <td class="num">24</td>
+        <td>2002 a 2025</td>
+        <td><a href="/dados/bronze/resultado_primario.json">JSON</a></td>
+      </tr>
+      <tr>
+        <td>Dívida líquida do setor público</td>
+        <td><a href="https://www3.bcb.gov.br/sgspub/consultarvalores/telaCvsSelecionarSeries.paint" rel="noopener">Banco Central – SGS, série 4513</a></td>
+        <td>18/10/2026</td>
+        <td class="num">297</td>
+        <td>dez/2001 a ago/2026</td>
+        <td><a href="/dados/bronze/divida_liquida.json">JSON</a></td>
+      </tr>
+      <tr>
+        <td>Dívida bruta do governo geral</td>
+        <td><a href="https://www3.bcb.gov.br/sgspub/consultarvalores/telaCvsSelecionarSeries.paint" rel="noopener">Banco Central – SGS, série 13762</a></td>
+        <td>18/10/2026</td>
+        <td class="num">237</td>
+        <td>dez/2006 a ago/2026</td>
+        <td><a href="/dados/bronze/divida_bruta.json">JSON</a></td>
+      </tr>
+      <tr>
+        <td>Taxa Selic (meta do Copom)</td>
+        <td><a href="https://www3.bcb.gov.br/sgspub/consultarvalores/telaCvsSelecionarSeries.paint" rel="noopener">Banco Central – SGS, série 432</a></td>
+        <td>18/10/2026</td>
+        <td class="num">332</td>
+        <td>mar/1999 a out/2026</td>
+        <td><a href="/dados/bronze/selic.json">JSON</a></td>
+      </tr>
+      <tr>
+        <td>Dólar comercial (média do mês)</td>
+        <td><a href="https://www3.bcb.gov.br/sgspub/consultarvalores/telaCvsSelecionarSeries.paint" rel="noopener">Banco Central – SGS, série 3698</a></td>
+        <td>18/10/2026</td>
+        <td class="num">387</td>
+        <td>jul/1994 a set/2026</td>
+        <td><a href="/dados/bronze/dolar.json">JSON</a></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+  </main>
+
+  <footer class="rodape">
+    <p>Fontes: <a href="https://sidra.ibge.gov.br">IBGE (SIDRA)</a> e <a href="https://www3.bcb.gov.br/sgspub">Banco Central (SGS)</a>. Dados extraídos em 18/10/2026.</p>
+    <p>O painel descreve o que aconteceu durante cada mandato; não mede o efeito causal das políticas de cada governo. <a href="/metodologia/">Veja a metodologia</a> · <a href="https://github.com/MatmJr/PainelEconomiaBR">código aberto</a> · <a href="https://github.com/MatmJr/PainelEconomiaBR/issues">reportar um erro</a>.</p>
+    <p class="creditos">Desenvolvido por <strong>Marco Mialaret Júnior</strong> com <a href="https://claude.com/claude-code" rel="noopener">Claude Code</a>.</p>
+  </footer>
+  
+</body>
+</html>
