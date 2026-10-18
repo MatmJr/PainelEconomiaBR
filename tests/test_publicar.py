@@ -34,3 +34,22 @@ def test_primario_usa_so_dezembro():
     df = Transform().transform_serie({"serie_id": "resultado_primario", "fonte": "bcb", "resposta": resposta})
     assert df["periodo"].tolist() == ["2021", "2022"]
     assert df["valor"].tolist() == [-12.0, -12.0]  # valor de dezembro, com o sinal invertido (fator −1)
+
+
+def test_ultimo_bronze_recusa_extracao_com_outra_configuracao(tmp_path, monkeypatch):
+    import json
+    from src import config
+    from src.load import Load
+    monkeypatch.setattr(config, "PASTA_BRONZE", tmp_path / "bronze")
+    monkeypatch.setattr(config, "RAIZ", tmp_path)
+    pasta = tmp_path / "bronze" / "selic"
+    pasta.mkdir(parents=True)
+    antigo = {"serie_id": "selic", "fonte": "bcb", "urls": ["https://api.bcb.gov.br/dados/serie/bcdata.sgs.4189/dados?x"],
+              "resposta": [], "data_extracao": "2026-01-01T00:00:00+00:00"}
+    (pasta / "20260101T000000Z.json").write_text(json.dumps(antigo), encoding="utf-8")
+    with pytest.raises(ValueError, match="outra configuração"):
+        Load().ultimo_bronze("selic")
+    atual = dict(antigo, urls=["https://api.bcb.gov.br/dados/serie/bcdata.sgs.432/dados?x"])
+    (pasta / "20260201T000000Z.json").write_text(json.dumps(atual), encoding="utf-8")
+    pacote, caminho = Load().ultimo_bronze("selic")
+    assert caminho.endswith("20260201T000000Z.json")

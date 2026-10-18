@@ -13,9 +13,9 @@
   <meta property="og:description" content="Como cada dado é atribuído a um mandato, como os indicadores são resumidos e os cuidados ao comparar governos.">
   <meta name="theme-color" content="#0b2a5e" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#0a1d3d" media="(prefers-color-scheme: dark)">
-  <script src="/static/51df70e7b1/js/tema.js"></script>
-  <link rel="icon" href="/static/51df70e7b1/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="/static/51df70e7b1/css/estilo.css">
+  <script src="/static/77b4dee5bb/js/tema.js"></script>
+  <link rel="icon" href="/static/77b4dee5bb/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/static/77b4dee5bb/css/estilo.css">
 </head>
 <body data-pagina="metodologia">
   <a class="pular" href="#conteudo">Pular para o conteúdo</a>
@@ -136,7 +136,7 @@
 <section id="erros">
   <h2>5. Erros comuns ao comparar governos</h2>
   <ol>
-    <li><strong>Escolher a dedo o ponto de partida.</strong> Comparar o pior mês de um governo com o melhor de outro. O painel usa sempre a herança e o último dado do mandato, e mostra a média.</li>
+    <li><strong>Escolher a dedo o ponto de partida.</strong> Comparar o mês mais desfavorável de um governo com o mais favorável de outro. O painel usa sempre a herança e o último dado do mandato, e mostra a média.</li>
     <li><strong>Confundir nível com variação.</strong> “O desemprego era alto no governo X” pode ser herança do governo anterior.</li>
     <li><strong>Ignorar choques externos.</strong> Crise de 2008, pandemia, guerra, preço de commodities. Veja os eventos de contexto.</li>
     <li><strong>Ignorar defasagens.</strong> Use o seletor de defasagem e veja se a conclusão se mantém.</li>
@@ -188,7 +188,7 @@
     <summary>Atividade · PIB – crescimento real anual</summary>
     <p class="nota">Unidade: <strong>% a.a.</strong> · Frequência: <strong>anual</strong> ·
       Resumo por mandato: <strong>variacao anual</strong> ·
-      Direção: <strong>maior é melhor</strong></p>
+      Critério de destaque: <strong>maior valor</strong></p>
     <section class="cartao cartao-serie" data-serie="pib_anual">
   <h3>PIB – crescimento real anual</h3>
   <p><strong>O que mede.</strong> Variação real (descontada a inflação) do Produto Interno Bruto de um ano em relação ao ano anterior.</p>
@@ -212,19 +212,19 @@ https://api.bcb.gov.br/dados/serie/bcdata.sgs.7326/dados?formato=json&amp;dataIn
     <summary>Atividade · PIB per capita – crescimento real anual</summary>
     <p class="nota">Unidade: <strong>% a.a.</strong> · Frequência: <strong>anual</strong> ·
       Resumo por mandato: <strong>variacao anual</strong> ·
-      Direção: <strong>maior é melhor</strong></p>
+      Critério de destaque: <strong>maior valor</strong></p>
     <section class="cartao cartao-serie" data-serie="pib_per_capita">
   <h3>PIB per capita – crescimento real anual</h3>
-  <p><strong>O que mede.</strong> Variação real do PIB dividido pela população. Desconta o crescimento populacional, por isso é melhor que o PIB total para comparar o ganho médio por pessoa.</p>
-  <p><strong>Fonte e método.</strong> Tabela SIDRA 6784 (Contas Nacionais anuais), variável 9814, Brasil.</p>
+  <p><strong>O que mede.</strong> Variação real do PIB dividido pela população. Desconta o crescimento populacional, por isso é mais adequado que o PIB total para comparar o ganho médio por pessoa.</p>
+  <p><strong>Fonte e método.</strong> Tabela SIDRA 6601 (indicador 8.1.1 dos Objetivos de Desenvolvimento Sustentável: taxa de crescimento real do PIB per capita), variável 9347, Brasil, de 2000 em diante. Foi escolhida no lugar da tabela 6784 (Contas Nacionais anuais) porque já traz os anos mais recentes, enquanto as contas anuais definitivas saem com cerca de dois anos de atraso. Nos anos em comum, as duas tabelas diferem no máximo 0,1 ponto (arredondamento).</p>
   <p><strong>Cuidados ao interpretar:</strong></p>
-  <ul><li>As contas anuais definitivas saem com cerca de dois anos de atraso, então os anos mais recentes ainda não aparecem.</li></ul>
-  <p><strong>Conferir na fonte:</strong> <a href="https://sidra.ibge.gov.br/tabela/6784" rel="noopener">IBGE – SIDRA, tabela 6784, variável 9814</a></p>
-  <p class="nota">Extraído em 18/10/2026 · 28 períodos (1996 a 2023) ·
+  <ul><li>Valores com uma casa decimal; os anos mais recentes são preliminares e podem ser revisados pelo IBGE.</li><li>Começa em 2000: FHC 1 (1995-1998) não tem esta série; FHC 2 tem 2000 a 2002.</li></ul>
+  <p><strong>Conferir na fonte:</strong> <a href="https://sidra.ibge.gov.br/tabela/6601" rel="noopener">IBGE – SIDRA, tabela 6601, variável 9347</a></p>
+  <p class="nota">Extraído em 18/10/2026 · 26 períodos (2000 a 2025) ·
     <a href="/dados/bronze/pib_per_capita.json">resposta bruta da API (JSON)</a></p>
   <details class="urls">
     <summary>URL(s) exata(s) consultada(s) na API</summary>
-    <pre>https://servicodados.ibge.gov.br/api/v3/agregados/6784/periodos/all/variaveis/9814?localidades=N1[all]</pre>
+    <pre>https://servicodados.ibge.gov.br/api/v3/agregados/6601/periodos/all/variaveis/9347?localidades=N1[all]</pre>
   </details>
 </section>
   </details>
@@ -232,7 +232,7 @@ https://api.bcb.gov.br/dados/serie/bcdata.sgs.7326/dados?formato=json&amp;dataIn
     <summary>Atividade · PIB trimestral (índice dessazonalizado)</summary>
     <p class="nota">Unidade: <strong>índice (média 1995 = 100)</strong> · Frequência: <strong>trimestral</strong> ·
       Resumo por mandato: <strong>nivel</strong> ·
-      Direção: <strong>maior é melhor</strong> · a média não é usada para comparar governos (o índice cresce com o tempo)</p>
+      Critério de destaque: <strong>maior valor</strong> · a média não é usada para comparar governos (o índice cresce com o tempo)</p>
     <section class="cartao cartao-serie" data-serie="pib_trimestral">
   <h3>PIB trimestral (índice dessazonalizado)</h3>
   <p><strong>O que mede.</strong> Volume do PIB a preços de mercado em cada trimestre, com ajuste sazonal. Como é um índice de volume, a variação entre dois trimestres mostra o crescimento real acumulado.</p>
@@ -252,7 +252,7 @@ https://api.bcb.gov.br/dados/serie/bcdata.sgs.7326/dados?formato=json&amp;dataIn
     <summary>Mercado de trabalho · Taxa de desocupação (PNAD Contínua)</summary>
     <p class="nota">Unidade: <strong>%</strong> · Frequência: <strong>trimestral movel</strong> ·
       Resumo por mandato: <strong>nivel</strong> ·
-      Direção: <strong>menor é melhor</strong></p>
+      Critério de destaque: <strong>menor valor</strong></p>
     <section class="cartao cartao-serie" data-serie="desocupacao">
   <h3>Taxa de desocupação (PNAD Contínua)</h3>
   <p><strong>O que mede.</strong> Percentual das pessoas de 14 anos ou mais na força de trabalho que estavam sem trabalho, disponíveis e procurando emprego na semana de referência.</p>
@@ -272,7 +272,7 @@ https://api.bcb.gov.br/dados/serie/bcdata.sgs.7326/dados?formato=json&amp;dataIn
     <summary>Mercado de trabalho · Taxa de desemprego (PME – 6 regiões metropolitanas)</summary>
     <p class="nota">Unidade: <strong>%</strong> · Frequência: <strong>mensal</strong> ·
       Resumo por mandato: <strong>nivel</strong> ·
-      Direção: <strong>menor é melhor</strong></p>
+      Critério de destaque: <strong>menor valor</strong></p>
     <section class="cartao cartao-serie" data-serie="desemprego_pme">
   <h3>Taxa de desemprego (PME – 6 regiões metropolitanas)</h3>
   <p><strong>O que mede.</strong> Taxa de desocupação da antiga Pesquisa Mensal de Emprego do IBGE, que cobria apenas as regiões metropolitanas de Recife, Salvador, Belo Horizonte, Rio de Janeiro, São Paulo e Porto Alegre.</p>
@@ -296,7 +296,7 @@ https://api.bcb.gov.br/dados/serie/bcdata.sgs.10777/dados?formato=json&amp;dataI
     <summary>Mercado de trabalho · Taxa de informalidade</summary>
     <p class="nota">Unidade: <strong>%</strong> · Frequência: <strong>trimestral</strong> ·
       Resumo por mandato: <strong>nivel</strong> ·
-      Direção: <strong>menor é melhor</strong></p>
+      Critério de destaque: <strong>menor valor</strong></p>
     <section class="cartao cartao-serie" data-serie="informalidade">
   <h3>Taxa de informalidade</h3>
   <p><strong>O que mede.</strong> Percentual dos ocupados em situação de informalidade: empregados sem carteira (inclusive domésticos), empregadores e trabalhadores por conta própria sem CNPJ e trabalhadores familiares auxiliares.</p>
@@ -316,7 +316,7 @@ https://api.bcb.gov.br/dados/serie/bcdata.sgs.10777/dados?formato=json&amp;dataI
     <summary>Mercado de trabalho · Nível da ocupação</summary>
     <p class="nota">Unidade: <strong>%</strong> · Frequência: <strong>trimestral movel</strong> ·
       Resumo por mandato: <strong>nivel</strong> ·
-      Direção: <strong>maior é melhor</strong></p>
+      Critério de destaque: <strong>maior valor</strong></p>
     <section class="cartao cartao-serie" data-serie="nivel_ocupacao">
   <h3>Nível da ocupação</h3>
   <p><strong>O que mede.</strong> Percentual das pessoas de 14 anos ou mais que estão trabalhando. Complementa a taxa de desocupação, porque não é afetado por quem desiste de procurar emprego.</p>
@@ -336,13 +336,13 @@ https://api.bcb.gov.br/dados/serie/bcdata.sgs.10777/dados?formato=json&amp;dataI
     <summary>Preços · Inflação (IPCA)</summary>
     <p class="nota">Unidade: <strong>% no mês</strong> · Frequência: <strong>mensal</strong> ·
       Resumo por mandato: <strong>variacao mensal</strong> ·
-      Direção: <strong>menor é melhor</strong></p>
+      Critério de destaque: <strong>menor valor</strong></p>
     <section class="cartao cartao-serie" data-serie="ipca">
   <h3>Inflação (IPCA)</h3>
   <p><strong>O que mede.</strong> Índice oficial de inflação do país, usado no sistema de metas: variação dos preços para famílias com renda de 1 a 40 salários mínimos.</p>
   <p><strong>Fonte e método.</strong> Tabela SIDRA 1737, variável 63 (variação mensal), Brasil, desde dez/1979. A inflação acumulada no mandato é o produto dos fatores mensais: (1+i₁)×(1+i₂)×…×(1+iₙ) − 1.</p>
   <p><strong>Cuidados ao interpretar:</strong></p>
-  <ul><li>Antes do Plano Real (jul/1994) o país viveu hiperinflação; para comparar governos posteriores, use a escala logarítmica ou filtre o período.</li><li>Inflação mais baixa não é sempre melhor: deflação persistente também é sinal ruim. Desde 1999 a referência é a meta definida pelo CMN.</li></ul>
+  <ul><li>Antes do Plano Real (jul/1994) o país viveu hiperinflação; para comparar governos posteriores, use a escala logarítmica ou filtre o período.</li><li>Inflação mais baixa nem sempre é boa notícia: deflação persistente também é sinal ruim. Desde 1999 a referência é a meta definida pelo CMN.</li></ul>
   <p><strong>Conferir na fonte:</strong> <a href="https://sidra.ibge.gov.br/tabela/1737" rel="noopener">IBGE – SIDRA, tabela 1737, variável 63</a></p>
   <p class="nota">Extraído em 18/10/2026 · 561 períodos (jan/1980 a set/2026) ·
     <a href="/dados/bronze/ipca.json">resposta bruta da API (JSON)</a></p>
@@ -356,7 +356,7 @@ https://api.bcb.gov.br/dados/serie/bcdata.sgs.10777/dados?formato=json&amp;dataI
     <summary>Renda · Renda média real do trabalhador</summary>
     <p class="nota">Unidade: <strong>R$ (preços do último trimestre)</strong> · Frequência: <strong>trimestral movel</strong> ·
       Resumo por mandato: <strong>nivel</strong> ·
-      Direção: <strong>maior é melhor</strong></p>
+      Critério de destaque: <strong>maior valor</strong></p>
     <section class="cartao cartao-serie" data-serie="rendimento_real">
   <h3>Renda média real do trabalhador</h3>
   <p><strong>O que mede.</strong> Rendimento mensal habitual médio dos ocupados, de todos os trabalhos, já corrigido pela inflação para os preços do trimestre mais recente.</p>
@@ -376,7 +376,7 @@ https://api.bcb.gov.br/dados/serie/bcdata.sgs.10777/dados?formato=json&amp;dataI
     <summary>Renda · Salário mínimo real (poder de compra)</summary>
     <p class="nota">Unidade: <strong>R$ (preços do último mês do IPCA)</strong> · Frequência: <strong>mensal</strong> ·
       Resumo por mandato: <strong>nivel</strong> ·
-      Direção: <strong>maior é melhor</strong></p>
+      Critério de destaque: <strong>maior valor</strong></p>
     <section class="cartao cartao-serie" data-serie="salario_minimo_real">
   <h3>Salário mínimo real (poder de compra)</h3>
   <p><strong>O que mede.</strong> Poder de compra do salário mínimo nacional, descontada a inflação.</p>
@@ -400,7 +400,7 @@ https://api.bcb.gov.br/dados/serie/bcdata.sgs.1619/dados?formato=json&amp;dataIn
     <summary>Fiscal · Resultado primário do setor público (ano fechado)</summary>
     <p class="nota">Unidade: <strong>% do PIB</strong> · Frequência: <strong>anual</strong> ·
       Resumo por mandato: <strong>nivel</strong> ·
-      Direção: <strong>maior é melhor</strong></p>
+      Critério de destaque: <strong>maior valor</strong></p>
     <section class="cartao cartao-serie" data-serie="resultado_primario">
   <h3>Resultado primário do setor público (ano fechado)</h3>
   <p><strong>O que mede.</strong> Receitas menos despesas do setor público consolidado (União, estados, municípios e estatais), sem contar os juros, em cada ano fechado (janeiro a dezembro). Positivo = superávit.</p>
@@ -424,7 +424,7 @@ https://api.bcb.gov.br/dados/serie/bcdata.sgs.5793/dados?formato=json&amp;dataIn
     <summary>Fiscal · Dívida líquida do setor público</summary>
     <p class="nota">Unidade: <strong>% do PIB</strong> · Frequência: <strong>mensal</strong> ·
       Resumo por mandato: <strong>nivel</strong> ·
-      Direção: <strong>menor é melhor</strong> · atenção na média: dívida é um estoque acumulado ao longo de décadas: a média reflete sobretudo o nível herdado</p>
+      Critério de destaque: <strong>menor valor</strong> · atenção na média: dívida é um estoque acumulado ao longo de décadas: a média reflete sobretudo o nível herdado</p>
     <section class="cartao cartao-serie" data-serie="divida_liquida">
   <h3>Dívida líquida do setor público</h3>
   <p><strong>O que mede.</strong> Dívida do setor público consolidado descontados os ativos (reservas internacionais, créditos), em proporção do PIB.</p>
@@ -448,7 +448,7 @@ https://api.bcb.gov.br/dados/serie/bcdata.sgs.4513/dados?formato=json&amp;dataIn
     <summary>Fiscal · Dívida bruta do governo geral</summary>
     <p class="nota">Unidade: <strong>% do PIB</strong> · Frequência: <strong>mensal</strong> ·
       Resumo por mandato: <strong>nivel</strong> ·
-      Direção: <strong>menor é melhor</strong> · atenção na média: dívida é um estoque acumulado ao longo de décadas: a média reflete sobretudo o nível herdado</p>
+      Critério de destaque: <strong>menor valor</strong> · atenção na média: dívida é um estoque acumulado ao longo de décadas: a média reflete sobretudo o nível herdado</p>
     <section class="cartao cartao-serie" data-serie="divida_bruta">
   <h3>Dívida bruta do governo geral</h3>
   <p><strong>O que mede.</strong> Dívida total do governo geral (sem estatais), em proporção do PIB.</p>
@@ -472,13 +472,13 @@ https://api.bcb.gov.br/dados/serie/bcdata.sgs.13762/dados?formato=json&amp;dataI
     <summary>Juros e câmbio · Taxa Selic (meta do Copom)</summary>
     <p class="nota">Unidade: <strong>% a.a.</strong> · Frequência: <strong>mensal</strong> ·
       Resumo por mandato: <strong>nivel</strong> ·
-      Direção: <strong>menor é melhor</strong> (juro menor barateia o crédito; desde 2021 a Selic é decidida pelo Banco Central autônomo, não pelo presidente)</p>
+      Critério de destaque: <strong>menor valor</strong> (juro menor barateia o crédito; desde 2021 a Selic é decidida pelo Banco Central autônomo, não pelo presidente)</p>
     <section class="cartao cartao-serie" data-serie="selic">
   <h3>Taxa Selic (meta do Copom)</h3>
   <p><strong>O que mede.</strong> Meta da taxa básica de juros definida pelo Copom, a que é anunciada nas reuniões e noticiada pela imprensa.</p>
   <p><strong>Fonte e método.</strong> Série SGS 432 do Banco Central (meta Selic, diária). O painel usa a meta em vigor no último dia de cada mês. A meta existe desde mar/1999, quando o Copom passou a definir uma meta para a Selic; antes disso o painel não mostra a série.</p>
   <p><strong>Cuidados ao interpretar:</strong></p>
-  <ul><li>Desde 2021 o Banco Central é formalmente autônomo e a Selic é decidida pelo Copom, não pelo presidente da República.</li><li>Juro menor é tratado como melhor porque barateia crédito e dívida, mas juro alto é a resposta do Banco Central à inflação: compare junto com o IPCA.</li></ul>
+  <ul><li>Desde 2021 o Banco Central é formalmente autônomo e a Selic é decidida pelo Copom, não pelo presidente da República.</li><li>O site destaca o juro menor porque ele barateia crédito e dívida, mas juro alto é a resposta do Banco Central à inflação: compare junto com o IPCA.</li></ul>
   <p><strong>Conferir na fonte:</strong> <a href="https://www3.bcb.gov.br/sgspub/consultarvalores/telaCvsSelecionarSeries.paint" rel="noopener">Banco Central – SGS, série 432</a></p>
   <p class="nota">Extraído em 18/10/2026 · 332 períodos (mar/1999 a out/2026) ·
     <a href="/dados/bronze/selic.json">resposta bruta da API (JSON)</a></p>
@@ -496,13 +496,13 @@ https://api.bcb.gov.br/dados/serie/bcdata.sgs.432/dados?formato=json&amp;dataIni
     <summary>Juros e câmbio · Dólar comercial (média do mês)</summary>
     <p class="nota">Unidade: <strong>R$/US$</strong> · Frequência: <strong>mensal</strong> ·
       Resumo por mandato: <strong>nivel</strong> ·
-      Direção: <strong>menor é melhor</strong> (dólar mais barato preserva o poder de compra, mas prejudica exportadores) · atenção na média: valor nominal: entre décadas, pesa mais a inflação acumulada do que o governo</p>
+      Critério de destaque: <strong>menor valor</strong> (dólar mais barato preserva o poder de compra, mas prejudica exportadores) · atenção na média: valor nominal: entre décadas, pesa mais a inflação acumulada do que o governo</p>
     <section class="cartao cartao-serie" data-serie="dolar">
   <h3>Dólar comercial (média do mês)</h3>
   <p><strong>O que mede.</strong> Taxa de câmbio nominal de venda (PTAX), média mensal.</p>
   <p><strong>Fonte e método.</strong> Série SGS 3698 do Banco Central, a partir de jul/1994 (Plano Real).</p>
   <p><strong>Cuidados ao interpretar:</strong></p>
-  <ul><li>Valor nominal: não desconta a inflação do Brasil nem a dos EUA, então não é comparável em nível entre décadas.</li><li>Dólar menor é tratado como melhor porque preserva o poder de compra e segura a inflação, mas favorece importações em vez de exportações. Por ser nominal, a média de governos de décadas diferentes reflete a inflação acumulada: confira também a variação durante o mandato.</li></ul>
+  <ul><li>Valor nominal: não desconta a inflação do Brasil nem a dos EUA, então não é comparável em nível entre décadas.</li><li>O site destaca o dólar menor porque ele preserva o poder de compra e segura a inflação, mas favorece importações em vez de exportações. Por ser nominal, a média de governos de décadas diferentes reflete a inflação acumulada: confira também a variação durante o mandato.</li></ul>
   <p><strong>Conferir na fonte:</strong> <a href="https://www3.bcb.gov.br/sgspub/consultarvalores/telaCvsSelecionarSeries.paint" rel="noopener">Banco Central – SGS, série 3698</a></p>
   <p class="nota">Extraído em 18/10/2026 · 387 períodos (jul/1994 a set/2026) ·
     <a href="/dados/bronze/dolar.json">resposta bruta da API (JSON)</a></p>
@@ -520,7 +520,7 @@ https://api.bcb.gov.br/dados/serie/bcdata.sgs.3698/dados?formato=json&amp;dataIn
     <summary>Preços · IPCA acumulado em 12 meses (divulgado pelo IBGE) (auxiliar)</summary>
     <p class="nota">Unidade: <strong>%</strong> · Frequência: <strong>mensal</strong> ·
       Resumo por mandato: <strong>nivel</strong> ·
-      Direção: <strong>contexto (sem direção)</strong></p>
+      Critério de destaque: <strong>nenhum (série de contexto)</strong></p>
     <section class="cartao cartao-serie" data-serie="ipca_12m_ibge">
   <h3>IPCA acumulado em 12 meses (divulgado pelo IBGE)</h3>
   <p><strong>O que mede.</strong> Usado só para conferir o acumulado em 12 meses que o painel calcula.</p>
@@ -538,7 +538,7 @@ https://api.bcb.gov.br/dados/serie/bcdata.sgs.3698/dados?formato=json&amp;dataIn
     <summary>Preços · IPCA – número-índice (dez/1993 = 100) (auxiliar)</summary>
     <p class="nota">Unidade: <strong>índice</strong> · Frequência: <strong>mensal</strong> ·
       Resumo por mandato: <strong>nivel</strong> ·
-      Direção: <strong>contexto (sem direção)</strong></p>
+      Critério de destaque: <strong>nenhum (série de contexto)</strong></p>
     <section class="cartao cartao-serie" data-serie="ipca_indice">
   <h3>IPCA – número-índice (dez/1993 = 100)</h3>
   <p><strong>O que mede.</strong> Usado para deflacionar o salário mínimo.</p>

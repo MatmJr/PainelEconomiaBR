@@ -56,8 +56,8 @@ function desenharGraficos() {
   alvo.innerHTML = aviso + sids.map((sid) => {
     const s = meta.series[sid];
     const m = metricaDe(sid);
-    const criterio = s.direcao === "menor" ? "Menor é melhor" : "Maior é melhor";
-    const contexto = !s.direcao ? `<p class="nota">Série de contexto: não há consenso sobre o que é “melhor”.</p>`
+    const criterio = s.direcao === "menor" ? "Destaque para o menor valor" : "Destaque para o maior valor";
+    const contexto = !s.direcao ? `<p class="nota">Série de contexto, sem critério de destaque.</p>`
       : m === "media" && !s.media_comparavel ? `<p class="nota">A média não serve para comparar governos (${esc(s.motivo_media)}): use “Mudança no mandato”.</p>`
       : [s.ressalva_direcao ? `<p class="nota">${criterio}, com ressalva: ${esc(s.ressalva_direcao)}.</p>` : "",
          m === "media" && s.aviso_media ? `<p class="nota">Atenção: ${esc(s.aviso_media)}. Confira também a “Mudança no mandato”.</p>` : ""].join("");

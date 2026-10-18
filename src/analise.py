@@ -290,13 +290,17 @@ def explicar(r: dict) -> list[str]:
 
 
 # ------------------------------------------------------------------ trajetórias
-def trajetorias(atribuidas: pd.DataFrame, serie_id: str) -> pd.DataFrame:
+def trajetorias(atribuidas: pd.DataFrame, serie_id: str, defasagem_meses: int = 0) -> pd.DataFrame:
     """
     Trajetória de cada mandato alinhada pela posse (eixo x = meses desde a
     posse), para comparar governos lado a lado partindo do mesmo ponto.
 
     - séries de nível: valor em relação à herança (p.p. ou %), começando em 0;
     - séries de variação: acumulado desde a posse (%), começando em 0.
+
+    Cada ponto fica no FIM do seu período (menos a defasagem), porque o valor
+    acumulado só se completa ali: o PIB do 1º ano fica no mês 12 e o do 4º no
+    mês 48, e janeiro fica no mês 1.
     """
     meta = SERIES[serie_id]
     mandatos = mandatos_df().set_index("id")
@@ -307,7 +311,8 @@ def trajetorias(atribuidas: pd.DataFrame, serie_id: str) -> pd.DataFrame:
         dentro = s[s["mandato"] == mid]
         if dentro.empty:
             continue
-        meses = ((dentro["data_atribuicao"] - m["inicio"]).dt.days / 30.4375).round(1)
+        fim_periodo = dentro["data_fim"] + pd.Timedelta(days=1) - pd.DateOffset(months=defasagem_meses)
+        meses = ((fim_periodo - m["inicio"]).dt.days / 30.4375).round(1)
 
         if meta["tipo"] == "nivel":
             antes = s[s["data_atribuicao"] < m["inicio"]]
@@ -437,8 +442,8 @@ def frase_ranking(tabela: pd.DataFrame, serie_id: str, mandato_id: str) -> str |
             textos.append(f"**{pos}º de {len(rk)}** em {METRICAS[meta['tipo']][k].lower()}")
     if not textos:
         return None
-    melhor, pior = ("menor", "maior") if meta["direcao"] == "menor" else ("maior", "menor")
+    primeiro, ultimo = ("menor", "maior") if meta["direcao"] == "menor" else ("maior", "menor")
     return (
-        f"Entre os mandatos com dados completos, ordenando do {melhor} valor para o {pior} "
-        f"({melhor} é melhor): " + " · ".join(textos) + "."
+        f"Entre os mandatos com dados completos, do {primeiro} para o {ultimo} valor: "
+        + " · ".join(textos) + "."
     )

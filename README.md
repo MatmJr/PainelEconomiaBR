@@ -47,7 +47,7 @@ O pipeline e a geração do site rodam no seu computador; o Netlify só serve a 
 | Grupo | Série | Fonte | Desde |
 |-------|-------|-------|-------|
 | Atividade | PIB – crescimento real anual | BCB SGS 7326 (dado do IBGE) | 1980 |
-| Atividade | PIB per capita – crescimento real | IBGE SIDRA 6784 | 1996 |
+| Atividade | PIB per capita – crescimento real | IBGE SIDRA 6601 (indicador ODS 8.1.1) | 2000 |
 | Atividade | PIB trimestral dessazonalizado | IBGE SIDRA 1621 | 1996 |
 | Trabalho | Taxa de desocupação (PNAD Contínua) | IBGE SIDRA 6381 | 2012 |
 | Trabalho | Taxa de desemprego (PME, 6 regiões metropolitanas) | BCB SGS 10777 | 2001–2016 |
@@ -120,6 +120,12 @@ Sem nenhuma configuração, tudo funciona com o SQLite local. Copie `.env.exampl
 python run_etl.py
 ```
 
+Se uma API estiver fora do ar ou bloqueando acessos (o Banco Central bloqueia temporariamente quando recebe muitas consultas seguidas), dá para buscar de novo só algumas séries; as demais são relidas da última extração salva em `data/bronze/`:
+
+```bash
+python run_etl.py --series pib_per_capita desocupacao
+```
+
 2. Gerar o site. Antes de gerar, os dados são conferidos: série vazia, valor nulo ou período duplicado interrompem a geração, e séries que parecem desatualizadas geram um aviso.
 
 ```bash
@@ -168,7 +174,7 @@ python -m pytest
 ## Páginas do site
 
 1. **Resumo** — tabela com todos os indicadores × mandatos (cada número leva à sua checagem) e gráficos de barras por indicador.
-2. **Comparar** — dois mandatos lado a lado em todos os indicadores, com a trajetória de cada um desde a posse. O valor melhor é marcado só onde há consenso sobre a direção (e nunca no acumulado de inflação/PIB, que depende da duração do mandato, nem na média de índices que crescem com o tempo). O site não soma quantas vezes cada mandato foi melhor. Nenhum mandato vem escolhido; depois de escolher, a seleção fica na URL (`/comparar/?a=lula2&b=bolsonaro`), para compartilhar.
+2. **Comparar** — dois mandatos lado a lado em todos os indicadores, com a trajetória de cada um desde a posse. Um dos valores aparece em destaque (negrito e fundo) segundo o critério escrito em cada linha (e nunca no acumulado de inflação/PIB, que depende da duração do mandato, nem na média de índices que crescem com o tempo). O site não soma quantos destaques cada mandato teve. No celular, cada indicador vira um cartão com os dois valores lado a lado. Nenhum mandato vem escolhido; depois de escolher, a seleção fica na URL (`/comparar/?a=lula2&b=bolsonaro`), para compartilhar.
 3. **Checar** — escolha um mandato e um indicador: frase-resumo, comparação com os outros governos, cálculo passo a passo, teste de robustez com diferentes defasagens, trajetórias alinhadas pela posse, dados usados (com download) e fonte.
 4. **Séries** — série completa com os mandatos sombreados e eventos de contexto (crise de 2008, pandemia etc.).
 5. **Metodologia** — regra de atribuição, fórmulas, status, erros comuns ao comparar governos, datas dos mandatos e ficha de cada série.

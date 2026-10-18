@@ -51,6 +51,7 @@
   --grade: light-dark(#e6e7e2, #262b34);
   --faixa: light-dark(rgba(0, 39, 118, 0.06), rgba(255, 255, 255, 0.05));
   --destaque: light-dark(rgba(42, 120, 214, 0.16), rgba(57, 135, 229, 0.24));
+  --realce: light-dark(#e2e8f1, #2a3548);
 
   --info-fundo: light-dark(#eaf2fc, #13233a);
   --info-borda: var(--serie-1);
@@ -398,21 +399,17 @@ details.ficha > summary { cursor: pointer; font-weight: 600; }
 .marcador { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 6px; vertical-align: 0; }
 .marcador-a { background: var(--serie-1); }
 .marcador-b { background: var(--serie-2); }
-.selo {
+/* Valor em destaque na comparação: negrito e fundo discreto, sem etiqueta */
+.realce {
   display: inline-block;
-  font-size: 0.72rem;
-  font-weight: 600;
-  font-style: normal;
-  line-height: 1;
-  padding: 3px 6px;
-  border-radius: 999px;
-  border: 1px solid var(--borda);
-  background: var(--superficie-2);
-  color: var(--texto-sec);
-  margin-left: 6px;
-  vertical-align: 1px;
-  white-space: nowrap;
+  font-weight: 700;
+  background: var(--realce);
+  border-radius: 6px;
+  padding: 0 6px;
 }
+/* Na tabela, o fundo avança sobre o espaçamento da célula para o número não sair do alinhamento */
+.comparacao td .realce { padding: 2px 8px; margin: -2px -8px; }
+.realce a, .comparacao td.parcial .realce a { color: var(--texto); }
 .cuidados > summary { cursor: pointer; }
 .cuidados ul { margin: 8px 0 0; padding-left: 20px; }
 .cuidados li { margin: 4px 0; }
@@ -432,9 +429,35 @@ details.ficha > summary { cursor: pointer; font-weight: 600; }
 }
 
 @media (max-width: 600px) {
-  /* No celular as três colunas cabem na tela: a marca "melhor" desce para baixo do valor */
-  .comparacao th, .comparacao td { padding: 7px 8px; }
-  .comparacao th.coluna-mandato { min-width: 0; }
-  .comparacao .selo { display: block; width: fit-content; margin: 4px 0 0 auto; }
-  .comparacao .indicador { font-size: 0.88rem; }
+  /* No celular a tabela vira uma lista de cartões: o nome do indicador ocupa a linha
+     inteira e os dois valores ficam lado a lado embaixo, cada um com o nome do
+     mandato. Sem rolagem lateral e sem nomes espremidos em colunas estreitas. */
+  #comparacao { overflow: visible; border: 0; background: transparent; }
+  .comparacao, .comparacao thead, .comparacao tbody { display: block; }
+  .comparacao thead { display: none; }
+  .comparacao tr {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background: var(--superficie);
+    border: 1px solid var(--borda);
+    border-radius: var(--raio);
+    margin-bottom: 8px;
+  }
+  .comparacao th, .comparacao td { border: 0; padding: 8px 12px; }
+  .comparacao tbody th[scope="row"] { grid-column: 1 / -1; padding-bottom: 2px; }
+  .comparacao tr.grupo { background: transparent; border: 0; margin: 16px 0 6px; }
+  .comparacao tr.grupo th { grid-column: 1 / -1; background: transparent; padding: 0 2px; }
+  .comparacao td.num { text-align: left; padding-top: 4px; font-size: 1.05rem; }
+  .comparacao td::before {
+    content: attr(data-mandato);
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--texto-mudo);
+    margin-bottom: 2px;
+  }
+  .comparacao td:nth-of-type(1)::before { color: var(--texto-sec); }
+  .comparacao .realce { margin: 0 -8px; }
+  .comparacao .unidade { font-size: 0.78rem; }
 }
+

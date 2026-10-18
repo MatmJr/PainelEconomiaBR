@@ -94,7 +94,7 @@
 <section id="erros">
   <h2>5. Erros comuns ao comparar governos</h2>
   <ol>
-    <li><strong>Escolher a dedo o ponto de partida.</strong> Comparar o pior mês de um governo com o melhor de outro. O painel usa sempre a herança e o último dado do mandato, e mostra a média.</li>
+    <li><strong>Escolher a dedo o ponto de partida.</strong> Comparar o mês mais desfavorável de um governo com o mais favorável de outro. O painel usa sempre a herança e o último dado do mandato, e mostra a média.</li>
     <li><strong>Confundir nível com variação.</strong> “O desemprego era alto no governo X” pode ser herança do governo anterior.</li>
     <li><strong>Ignorar choques externos.</strong> Crise de 2008, pandemia, guerra, preço de commodities. Veja os eventos de contexto.</li>
     <li><strong>Ignorar defasagens.</strong> Use o seletor de defasagem e veja se a conclusão se mantém.</li>
@@ -139,7 +139,7 @@
     <summary>{{ s.grupo }} · {{ s.nome }}{% if s.auxiliar %} (auxiliar){% endif %}</summary>
     <p class="nota">Unidade: <strong>{{ s.unidade }}</strong> · Frequência: <strong>{{ s.frequencia | replace("_", " ") }}</strong> ·
       Resumo por mandato: <strong>{{ s.tipo | replace("_", " ") }}</strong> ·
-      Direção: <strong>{{ {"menor": "menor é melhor", "maior": "maior é melhor"}.get(s.direcao, "contexto (sem direção)") }}</strong>
+      Critério de destaque: <strong>{{ {"menor": "menor valor", "maior": "maior valor"}.get(s.direcao, "nenhum (série de contexto)") }}</strong>
       {%- if s.ressalva_direcao %} ({{ s.ressalva_direcao }}){% endif %}
       {%- if s.media_comparavel is false %} · a média não é usada para comparar governos ({{ s.motivo_media }}){% endif %}
       {%- if s.aviso_media %} · atenção na média: {{ s.aviso_media }}{% endif %}</p>

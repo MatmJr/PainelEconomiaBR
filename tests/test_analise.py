@@ -128,3 +128,14 @@ def test_sufixo_de_anos_so_em_series_anuais_com_menos_de_4_anos():
     assert analise.sufixo_anos("desocupacao", "media", 1) == ""
     assert analise.sufixo_anos("resultado_primario", "media", 1) == " (1 ano)"
     assert analise.sufixo_anos("pib_per_capita", "media", 1) == ""
+
+
+def test_trajetoria_termina_no_fim_do_mandato(monkeypatch):
+    """O acumulado de 4 anos fica no mês 48, e não no meio do último ano."""
+    monkeypatch.setitem(analise.SERIES, "teste", {"tipo": "variacao_anual", "frequencia": "anual",
+                                                  "unidade": "% a.a.", "nome": "Teste"})
+    valores = {str(a): 1.0 for a in range(2018, 2023)}
+    t = analise.trajetorias(analise.atribuir(obs("teste", "anual", valores)), "teste")
+    b = t[t["mandato"] == "Bolsonaro"]
+    assert b["meses"].tolist()[:2] == [0.0, 12.0]
+    assert b["meses"].iloc[-1] == 48.0

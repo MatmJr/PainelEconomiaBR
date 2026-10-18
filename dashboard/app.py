@@ -130,7 +130,7 @@ def pagina_placar():
             fig = graficos.barras_mandatos(tabela, sid, m, analise.rotulo_unidade(sid, m))
             st.plotly_chart(fig, width="stretch", key=f"barra_{sid}")
             if SERIES[sid].get("direcao") is None:
-                st.caption("Série de contexto: não há consenso sobre o que é 'melhor'.")
+                st.caption("Série de contexto, sem critério de destaque.")
 
 
 def pagina_series():
@@ -252,7 +252,7 @@ def pagina_checar():
 
     # Comparação com os outros mandatos
     st.subheader("Comparação com os outros governos, a partir da posse")
-    traj = analise.trajetorias(at, sid)
+    traj = analise.trajetorias(at, sid, defasagem)
     if not traj.empty and m["rotulo"] in traj["mandato"].values:
         pos = ids.index(mid)
         anterior = rotulos[ids[pos - 1]] if pos > 0 else None
@@ -367,7 +367,7 @@ def pagina_metodologia():
 
     st.header("4. Erros comuns ao comparar governos")
     st.markdown(
-        "1. **Escolher a dedo o ponto de partida.** Comparar o pior mês de um governo com o melhor de outro. "
+        "1. **Escolher a dedo o ponto de partida.** Comparar o mês mais desfavorável de um governo com o mais favorável de outro. "
         "O painel usa sempre a herança e o último dado do mandato, e mostra a média.\n"
         "2. **Confundir nível com variação.** \"O desemprego era alto no governo X\" pode ser herança do governo anterior.\n"
         "3. **Ignorar choques externos.** Crise de 2008, pandemia, guerra, preço de commodities. Veja os eventos de contexto.\n"
@@ -398,7 +398,7 @@ def pagina_metodologia():
             st.markdown(
                 f"Unidade: **{meta['unidade']}** · Frequência: **{meta['frequencia'].replace('_', ' ')}** · "
                 f"Resumo por mandato: **{meta['tipo'].replace('_', ' ')}** · "
-                f"Direção: **{ {'menor': 'menor é melhor', 'maior': 'maior é melhor'}.get(meta.get('direcao'), 'contexto (sem direção)') }**"
+                f"Critério de destaque: **{ {'menor': 'menor valor', 'maior': 'maior valor'}.get(meta.get('direcao'), 'nenhum (série de contexto)') }**"
             )
             cartao_metodologia(sid, ext)
 

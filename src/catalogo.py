@@ -70,8 +70,8 @@ SERIES = {
         "nome": "PIB per capita – crescimento real anual",
         "grupo": "Atividade",
         "fonte": "ibge",
-        "tabela": 6784,
-        "variavel": 9814,
+        "tabela": 6601,
+        "variavel": 9347,
         "frequencia": "anual",
         "aviso_anos": False,
         "tipo": "variacao_anual",
@@ -79,12 +79,19 @@ SERIES = {
         "direcao": "maior",
         "o_que_mede": (
             "Variação real do PIB dividido pela população. Desconta o crescimento populacional, "
-            "por isso é melhor que o PIB total para comparar o ganho médio por pessoa."
+            "por isso é mais adequado que o PIB total para comparar o ganho médio por pessoa."
         ),
-        "metodologia": "Tabela SIDRA 6784 (Contas Nacionais anuais), variável 9814, Brasil.",
+        "metodologia": (
+            "Tabela SIDRA 6601 (indicador 8.1.1 dos Objetivos de Desenvolvimento Sustentável: "
+            "taxa de crescimento real do PIB per capita), variável 9347, Brasil, de 2000 em diante. "
+            "Foi escolhida no lugar da tabela 6784 (Contas Nacionais anuais) porque já traz os anos "
+            "mais recentes, enquanto as contas anuais definitivas saem com cerca de dois anos de "
+            "atraso. Nos anos em comum, as duas tabelas diferem no máximo 0,1 ponto (arredondamento)."
+        ),
         "cuidados": [
-            "As contas anuais definitivas saem com cerca de dois anos de atraso, então os anos mais "
-            "recentes ainda não aparecem.",
+            "Valores com uma casa decimal; os anos mais recentes são preliminares e podem ser "
+            "revisados pelo IBGE.",
+            "Começa em 2000: FHC 1 (1995-1998) não tem esta série; FHC 2 tem 2000 a 2002.",
         ],
     },
     "pib_trimestral": {
@@ -233,7 +240,7 @@ SERIES = {
         "cuidados": [
             "Antes do Plano Real (jul/1994) o país viveu hiperinflação; para comparar governos "
             "posteriores, use a escala logarítmica ou filtre o período.",
-            "Inflação mais baixa não é sempre melhor: deflação persistente também é sinal ruim. "
+            "Inflação mais baixa nem sempre é boa notícia: deflação persistente também é sinal ruim. "
             "Desde 1999 a referência é a meta definida pelo CMN.",
         ],
     },
@@ -410,7 +417,7 @@ SERIES = {
         "cuidados": [
             "Desde 2021 o Banco Central é formalmente autônomo e a Selic é decidida pelo Copom, "
             "não pelo presidente da República.",
-            "Juro menor é tratado como melhor porque barateia crédito e dívida, mas juro alto é a "
+            "O site destaca o juro menor porque ele barateia crédito e dívida, mas juro alto é a "
             "resposta do Banco Central à inflação: compare junto com o IPCA.",
         ],
     },
@@ -432,7 +439,7 @@ SERIES = {
         "cuidados": [
             "Valor nominal: não desconta a inflação do Brasil nem a dos EUA, então não é "
             "comparável em nível entre décadas.",
-            "Dólar menor é tratado como melhor porque preserva o poder de compra e segura a "
+            "O site destaca o dólar menor porque ele preserva o poder de compra e segura a "
             "inflação, mas favorece importações em vez de exportações. Por ser nominal, a média "
             "de governos de décadas diferentes reflete a inflação acumulada: confira também a "
             "variação durante o mandato.",

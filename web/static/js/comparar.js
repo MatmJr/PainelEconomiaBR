@@ -4,7 +4,7 @@ import { trajetorias } from "./graficos.js";
 const MARCA = { "completo": "", "mandato em curso": "*", "dados parciais": "*", "sem valor herdado": "†", "sem dados": "" };
 const EXPLICA_MODO = {
   media: "Média: como o indicador ficou, em média, durante cada mandato. Para inflação e PIB, quanto subiram por ano, em média.",
-  mudanca: "Mudança: quanto o indicador mudou entre o que cada governo recebeu e o que entregou. Para inflação e PIB, o total acumulado — que depende da duração do mandato, por isso ali não há marca de “melhor”.",
+  mudanca: "Mudança: quanto o indicador mudou entre o que cada governo recebeu e o que entregou. Para inflação e PIB, o total acumulado — que depende da duração do mandato, por isso ali não há destaque.",
 };
 
 const el = (id) => document.getElementById(id);
@@ -63,14 +63,19 @@ function melhor(sid, ea, eb, m) {
 }
 
 function celula(sid, mid, e, m, ehMelhor) {
+  // data-mandato: no celular, cada valor mostra o nome do mandato acima dele
+  const rotulo = esc(meta.mandatos.find((x) => x.id === mid).rotulo);
   if (!e || e.status === "sem dados" || e.metricas[m] == null) {
     const marca = e && e.status === "sem valor herdado" ? "†" : "";
-    return `<td class="num vazio">—${marca}</td>`;
+    return `<td class="num vazio" data-mandato="${rotulo}">—${marca}</td>`;
   }
   const classe = e.status === "completo" ? "num" : "num parcial";
   const href = comDefasagem(`/checar/${mid}/${sid}/`, estado.d);
-  const selo = ehMelhor ? '<span class="selo">melhor</span>' : "";
-  return `<td class="${classe}"><a href="${href}" title="${esc(e.status)}">${esc(e.texto[m] + MARCA[e.status])}</a>${selo}</td>`;
+  const valor = `<a href="${href}" title="${esc(e.status)}">${esc(e.texto[m] + MARCA[e.status])}</a>`;
+  // O valor que atende ao critério ganha destaque visual (negrito e fundo), sem etiqueta; o texto
+  // escondido mantém a informação para leitores de tela
+  const conteudo = ehMelhor ? `<span class="realce">${valor}<span class="pular"> (em destaque)</span></span>` : valor;
+  return `<td class="${classe}" data-mandato="${rotulo}">${conteudo}</td>`;
 }
 
 function desenharTabela() {
@@ -97,11 +102,11 @@ function desenharTabela() {
       const venc = melhor(sid, ea, eb, m);
       // Linhas sem dado nos dois mandatos (ex.: PME em governos recentes) não ajudam a comparar
       if ([ea, eb].every((e) => !e || e.metricas[m] == null)) return "";
-      const semMelhor = !s.direcao ? "contexto, sem “melhor”"
+      const semMelhor = !s.direcao ? "contexto, sem destaque"
         : estado.modo === "media" && !s.media_comparavel ? `média não comparável (${s.motivo_media}); veja a mudança no mandato` : null;
       const ressalva = s.ressalva_direcao ? ` (${s.ressalva_direcao})` : "";
       const aviso = estado.modo === "media" && s.aviso_media ? ` · atenção: ${s.aviso_media}; veja também a mudança no mandato` : "";
-      const direcao = semMelhor ?? `${s.direcao === "menor" ? "menor é melhor" : "maior é melhor"}${ressalva}${aviso}`;
+      const direcao = semMelhor ?? `destaque: ${s.direcao === "menor" ? "menor valor" : "maior valor"}${ressalva}${aviso}`;
       return `<tr><th scope="row"><span class="indicador">${esc(s.nome)}</span>
         <span class="unidade">${esc(s.rotulos_unidade[m])} · ${direcao}</span></th>
         ${celula(sid, estado.a, ea, m, venc === "a")}${celula(sid, estado.b, eb, m, venc === "b")}</tr>`;

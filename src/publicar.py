@@ -181,7 +181,7 @@ def exportar_dados(obs: pd.DataFrame, ext: pd.DataFrame) -> dict:
             }
 
         for sid in ordem:
-            traj = analise.trajetorias(at, sid)
+            traj = analise.trajetorias(at, sid, d)
             checar[sid]["trajetorias"][str(d)] = (
                 [] if traj.empty else
                 [{"mandato": t.mandato, "x": t.meses, "y": round(t.valor, 6), "p": t.periodo_rotulo} for t in traj.itertuples()]

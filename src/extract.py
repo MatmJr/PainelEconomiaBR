@@ -41,12 +41,21 @@ class Extract:
         for tentativa in range(1, self.TENTATIVAS_JSON + 1):
             response = self.session.get(url, timeout=self.timeout)
             response.raise_for_status()
+            # O SGS, quando bloqueia por excesso de acessos, responde 200 com uma página
+            # HTML de "Requisição inválida": tentar de novo só prolonga o bloqueio
+            if "text/html" in response.headers.get("content-type", ""):
+                raise RuntimeError(
+                    f"A API recusou a requisição (página HTML no lugar dos dados) em {url}. "
+                    "No Banco Central isso costuma ser um bloqueio temporário por excesso de "
+                    "acessos: tente mais tarde, ou atualize só as outras séries com "
+                    "'python run_etl.py --series <serie> ...'."
+                )
             try:
                 return response.json()
             except requests.exceptions.JSONDecodeError:
                 if tentativa == self.TENTATIVAS_JSON:
                     raise
-                print(f"Resposta inválida da API (tentativa {tentativa}); tentando de novo...")
+                print(f"Resposta inválida da API (tentativa {tentativa}) em {url}; tentando de novo...")
                 time.sleep(2 * tentativa)
 
     def ibge(self, serie_id: str) -> dict:

@@ -5,7 +5,7 @@ import pandas as pd
 from sqlalchemy import create_engine
 
 import src.config as config
-from src.catalogo import SERIES, descricao_fonte, link_fonte
+from src.catalogo import SERIES, URL_BCB, descricao_fonte, link_fonte, montar_url
 from src.presidentes import mandatos_df
 
 
@@ -38,6 +38,30 @@ class Load:
         relativo = caminho.relative_to(config.RAIZ).as_posix()
         print(f"Bruto salvo em '{relativo}'!")
         return relativo
+
+    def ultimo_bronze(self, serie_id: str) -> tuple[dict, str]:
+        """
+        Relê a extração mais recente de uma série guardada na camada bronze, para
+        refazer a camada prata sem consultar a API de novo. Recusa o arquivo se ele
+        foi extraído com outra configuração (ex.: outra tabela ou série no catálogo).
+        """
+        pasta = config.PASTA_BRONZE / serie_id
+        arquivos = sorted(pasta.glob("*.json")) if pasta.exists() else []
+        if not arquivos:
+            raise FileNotFoundError(f"Não há extração salva de '{serie_id}': rode sem --series uma vez.")
+        caminho = arquivos[-1]  # nomes são carimbos de data: o último é o mais recente
+        with open(caminho, encoding="utf-8") as f:
+            pacote = json.load(f)
+
+        meta = SERIES[serie_id]
+        esperado = montar_url(serie_id) if meta["fonte"] == "ibge" else URL_BCB.format(codigo=meta["codigo"])
+        if not pacote["urls"][0].startswith(esperado):
+            raise ValueError(
+                f"A última extração de '{serie_id}' usa outra configuração ({pacote['urls'][0]}): "
+                f"inclua a série em --series para extraí-la de novo."
+            )
+        print(f"Série '{serie_id}' relida da camada bronze ({caminho.name}).")
+        return pacote, caminho.relative_to(config.RAIZ).as_posix()
 
     @staticmethod
     def registro_extracoes(pacotes: dict[str, dict], arquivos: dict[str, str], obs: pd.DataFrame) -> pd.DataFrame:
