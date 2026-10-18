@@ -3,28 +3,30 @@
 import pandas as pd
 import pytest
 
-from src import publicar
-from src.catalogo import SERIES
+from src.catalogo import Catalogo
+from src.publicar import Publicador
+
+SEM_EXTRACOES = pd.DataFrame()
 
 
 def test_negrito_escapa_html():
-    assert str(publicar._negrito("**5%** <script>")) == "<strong>5%</strong> &lt;script&gt;"
+    assert str(Publicador._negrito("**5%** <script>")) == "<strong>5%</strong> &lt;script&gt;"
 
 
 def test_limpo_converte_nan_e_datas():
-    assert publicar._limpo({"a": float("nan"), "b": pd.Timestamp(2020, 1, 31)}) == {"a": None, "b": "2020-01-31"}
+    assert Publicador._limpo({"a": float("nan"), "b": pd.Timestamp(2020, 1, 31)}) == {"a": None, "b": "2020-01-31"}
 
 
 def test_validar_recusa_serie_ausente():
     obs = pd.DataFrame(columns=["serie_id", "periodo", "data_inicio", "data_fim", "valor"])
     with pytest.raises(ValueError, match="nenhuma observação"):
-        publicar.validar(obs)
+        Publicador(obs, SEM_EXTRACOES).validar()
 
 
 def test_validar_aceita_dados_completos():
     hoje = pd.Timestamp.today().normalize()
-    linhas = [{"serie_id": sid, "periodo": "1", "data_inicio": hoje, "data_fim": hoje, "valor": 1.0} for sid in SERIES]
-    assert publicar.validar(pd.DataFrame(linhas)) == []
+    linhas = [{"serie_id": sid, "periodo": "1", "data_inicio": hoje, "data_fim": hoje, "valor": 1.0} for sid in Catalogo.SERIES]
+    assert Publicador(pd.DataFrame(linhas), SEM_EXTRACOES).validar() == []
 
 
 def test_primario_usa_so_dezembro():

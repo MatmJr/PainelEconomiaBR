@@ -3,8 +3,8 @@
 import pandas as pd
 import plotly.graph_objects as go
 
-from src.catalogo import SERIES
-from src.presidentes import EVENTOS, mandatos_df
+from src.catalogo import Catalogo
+from src.presidentes import Mandatos
 
 AZUL = "#2a78d6"      # série principal / mandato em destaque
 LARANJA = "#eb6834"   # mandato anterior (comparação)
@@ -28,7 +28,7 @@ def _layout(fig: go.Figure, titulo_y: str, altura: int = 420) -> go.Figure:
 
 def faixas_mandatos(fig: go.Figure, inicio: pd.Timestamp, fim: pd.Timestamp, destaque: str | None = None) -> None:
     """Sombreia o período de cada mandato e escreve o nome no topo (alternando a altura para não sobrepor)."""
-    for i, m in mandatos_df().iterrows():
+    for i, m in Mandatos.tabela().iterrows():
         a, b = max(m["inicio"], inicio), min(m["fim"], fim)
         if a >= b:
             continue
@@ -42,7 +42,7 @@ def faixas_mandatos(fig: go.Figure, inicio: pd.Timestamp, fim: pd.Timestamp, des
 
 def marcas_eventos(fig: go.Figure, inicio: pd.Timestamp, fim: pd.Timestamp) -> None:
     """Linha fina em cada evento de contexto; o nome do evento aparece ao passar o mouse no marcador."""
-    eventos = [(pd.Timestamp(d), nome) for d, nome in EVENTOS if inicio <= pd.Timestamp(d) <= fim]
+    eventos = [(pd.Timestamp(d), nome) for d, nome in Mandatos.EVENTOS if inicio <= pd.Timestamp(d) <= fim]
     if not eventos:
         return
     for d, _ in eventos:
@@ -61,7 +61,7 @@ def marcas_eventos(fig: go.Figure, inicio: pd.Timestamp, fim: pd.Timestamp) -> N
 def serie_historica(df: pd.DataFrame, serie_id: str, titulo_y: str, eventos: bool = True,
                     log: bool = False, destaque: str | None = None) -> go.Figure:
     """Linha (ou barras, para séries anuais) com os mandatos sombreados ao fundo."""
-    meta = SERIES[serie_id]
+    meta = Catalogo.SERIES[serie_id]
     fig = go.Figure()
     hover = "%{customdata}: %{y:,.2f}<extra></extra>"
     if meta["frequencia"] == "anual":
@@ -95,7 +95,7 @@ def barras_mandatos(tabela: pd.DataFrame, serie_id: str, metrica: str, titulo_y:
             x=parte["rotulo"], y=parte[metrica], name=nome, marker_color=cor,
             customdata=parte["status"], hovertemplate="%{x}: %{y:,.2f}<br>%{customdata}<extra></extra>",
         ))
-    fig.update_xaxes(categoryorder="array", categoryarray=mandatos_df()["rotulo"].tolist(),
+    fig.update_xaxes(categoryorder="array", categoryarray=Mandatos.tabela()["rotulo"].tolist(),
                      tickangle=-45, tickfont=dict(size=11), automargin=True)
     fig.update_layout(barmode="overlay", bargap=0.25, separators=",.")
     fig.add_hline(y=0, line_width=1, line_color=CINZA)

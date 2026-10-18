@@ -1,7 +1,7 @@
 import pandas as pd
 
-from src import periodos
-from src.catalogo import SERIES
+from src.catalogo import Catalogo
+from src.periodos import Periodo
 
 # Símbolos que o IBGE usa no lugar de um número
 SIMBOLOS_SEM_DADO = {"...", "-", "X", "..", ""}
@@ -33,7 +33,7 @@ class Transform:
         datados = sorted((pd.to_datetime(item["data"], format="%d/%m/%Y"), item["valor"]) for item in resposta)
         linhas = {}
         for data, valor in datados:
-            linhas[periodos.codigo_de_data(data, frequencia)] = valor
+            linhas[Periodo.codigo_de_data(data, frequencia)] = valor
         return linhas
 
     def transform_serie(self, pacote: dict) -> pd.DataFrame:
@@ -48,7 +48,7 @@ class Transform:
             4. os valores são multiplicados por `fator`, quando houver.
         """
         serie_id = pacote["serie_id"]
-        meta = SERIES[serie_id]
+        meta = Catalogo.SERIES[serie_id]
         frequencia = meta["frequencia"]
 
         if pacote["fonte"] == "ibge":
@@ -64,12 +64,12 @@ class Transform:
         for codigo, valor in brutos.items():
             if valor is None or str(valor).strip() in SIMBOLOS_SEM_DADO:
                 continue
-            inicio, fim = periodos.intervalo(codigo, frequencia)
+            inicio, fim = Periodo.intervalo(codigo, frequencia)
             linhas.append(
                 {
                     "serie_id": serie_id,
                     "periodo": codigo,
-                    "periodo_rotulo": periodos.rotulo(inicio, fim, frequencia),
+                    "periodo_rotulo": Periodo.rotulo(inicio, fim, frequencia),
                     "data_inicio": inicio,
                     "data_fim": fim,
                     "valor": float(valor),
@@ -110,7 +110,7 @@ class Transform:
         series = {sid: self.transform_serie(p) for sid, p in pacotes.items()}
 
         for sid, df in series.items():
-            deflator = SERIES[sid].get("deflacionar_por")
+            deflator = Catalogo.SERIES[sid].get("deflacionar_por")
             if deflator:
                 series[sid] = self.deflacionar(df, series[deflator])
 

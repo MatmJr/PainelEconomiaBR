@@ -1,6 +1,6 @@
 import argparse
 
-from src.catalogo import SERIES
+from src.catalogo import Catalogo
 from src.extract import Extract
 from src.load import Load
 from src.transform import Transform
@@ -18,7 +18,7 @@ def main(series: list[str] | None = None):
 
     print("Etapa 1: Extração das APIs e carga na camada bronze!")
     pacotes, arquivos = {}, {}
-    for serie_id in SERIES:
+    for serie_id in Catalogo.SERIES:
         if series and serie_id not in series:
             pacotes[serie_id], arquivos[serie_id] = ld.ultimo_bronze(serie_id)
             continue
@@ -37,7 +37,7 @@ def main(series: list[str] | None = None):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Extrai as séries do IBGE e do BCB e grava as camadas bronze e prata.")
     parser.add_argument(
-        "--series", nargs="+", choices=list(SERIES), metavar="SERIE",
+        "--series", nargs="+", choices=list(Catalogo.SERIES), metavar="SERIE",
         help="extrai só estas séries; as demais são relidas da última extração salva",
     )
     main(parser.parse_args().series)

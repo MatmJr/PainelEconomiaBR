@@ -4,9 +4,10 @@ from sqlalchemy import create_engine, inspect
 
 import src.config as config
 from dashboard import graficos
-from src import analise
-from src.catalogo import GRUPOS, SERIES, descricao_fonte, link_fonte, series_placar
-from src.presidentes import EVENTOS, MANDATOS, mandatos_df
+from src.analise import Analise
+from src.catalogo import Catalogo
+from src.presidentes import Mandatos
+from src.textos import Textos
 
 st.set_page_config(page_title="Economia por presidente", page_icon="📊", layout="wide")
 
@@ -28,25 +29,24 @@ def carregar() -> tuple[pd.DataFrame, pd.DataFrame]:
     return obs, ext
 
 
+@st.cache_resource(ttl=3600)
+def analise() -> Analise:
+    """Uma única `Analise` por sessão do servidor: ela guarda as atribuições já calculadas."""
+    obs, _ = carregar()
+    return Analise(obs)
+
+
 @st.cache_data(ttl=3600)
 def calcular_placar(defasagem: int) -> pd.DataFrame:
-    obs, _ = carregar()
-    return analise.placar(obs, list(series_placar()), defasagem)
-
-
-@st.cache_data(ttl=3600)
-def atribuidas(defasagem: int) -> pd.DataFrame:
-    obs, _ = carregar()
-    return analise.atribuir(obs, defasagem)
+    return analise().tabela_resumos(Catalogo.ordem(), defasagem)
 
 
 def nome_serie(sid: str) -> str:
-    return f"{SERIES[sid]['grupo']} · {SERIES[sid]['nome']}"
+    return f"{Catalogo.SERIES[sid]['grupo']} · {Catalogo.SERIES[sid]['nome']}"
 
 
 def ordem_series() -> list[str]:
-    placar = series_placar()
-    return [sid for g in GRUPOS for sid in placar if placar[sid]["grupo"] == g]
+    return Catalogo.ordem()
 
 
 def defasagem_atual() -> int:
@@ -61,13 +61,13 @@ def aviso_defasagem() -> None:
 
 def cartao_metodologia(sid: str, ext: pd.DataFrame) -> None:
     """Bloco padrão com o que a série mede, de onde vem e como conferir."""
-    meta = SERIES[sid]
+    meta = Catalogo.SERIES[sid]
     st.markdown(f"**O que mede.** {meta['o_que_mede']}")
     st.markdown(f"**Fonte e método.** {meta['metodologia']}")
     if meta["cuidados"]:
         st.markdown("**Cuidados ao interpretar:**\n" + "\n".join(f"- {c}" for c in meta["cuidados"]))
     linha = ext[ext["serie_id"] == sid]
-    st.markdown(f"**Conferir na fonte:** [{descricao_fonte(sid)}]({link_fonte(sid)})")
+    st.markdown(f"**Conferir na fonte:** [{Catalogo.descricao_fonte(sid)}]({Catalogo.link_fonte(sid)})")
     if not linha.empty:
         e = linha.iloc[0]
         st.caption(
@@ -99,20 +99,20 @@ def pagina_placar():
     tabela = calcular_placar(defasagem_atual())
 
     def metrica_de(sid):
-        return analise.METRICA_MUDANCA[SERIES[sid]["tipo"]] if modo.startswith("Mudança") else "media"
+        return Analise.METRICA_MUDANCA[Catalogo.SERIES[sid]["tipo"]] if modo.startswith("Mudança") else "media"
 
     # Tabela compacta: mandatos nas linhas, indicadores nas colunas
     largura = {}
     for sid in ordem_series():
         m = metrica_de(sid)
         t = tabela[tabela["serie_id"] == sid].set_index("rotulo")
-        largura[f"{SERIES[sid]['nome']} ({analise.rotulo_unidade(sid, m)})"] = [
-            analise.fmt_metrica(sid, m, t.loc[r, m]) + analise.sufixo_anos(sid, m, t.loc[r, "n"])
+        largura[f"{Catalogo.SERIES[sid]['nome']} ({Textos.rotulo_unidade(sid, m)})"] = [
+            Textos.fmt_metrica(sid, m, t.loc[r, m]) + Textos.sufixo_anos(sid, m, t.loc[r, "n"])
             + STATUS_MARCA[t.loc[r, "status"]]
             if m in t.columns else "—"
-            for r in mandatos_df()["rotulo"]
+            for r in Mandatos.tabela()["rotulo"]
         ]
-    placar_largo = pd.DataFrame(largura, index=pd.Index(mandatos_df()["rotulo"], name="Mandato"))
+    placar_largo = pd.DataFrame(largura, index=pd.Index(Mandatos.tabela()["rotulo"], name="Mandato"))
     st.dataframe(placar_largo, width="stretch", height=460)
     st.caption(
         "\\* dados parciais ou mandato em curso · † sem valor herdado (a série começa depois da posse) · "
@@ -120,16 +120,16 @@ def pagina_placar():
     )
 
     st.subheader("Por indicador")
-    grupo = st.segmented_control("Grupo", GRUPOS, default=GRUPOS[0])
-    sids = [s for s in ordem_series() if SERIES[s]["grupo"] == grupo]
+    grupo = st.segmented_control("Grupo", Catalogo.GRUPOS, default=Catalogo.GRUPOS[0])
+    sids = [s for s in ordem_series() if Catalogo.SERIES[s]["grupo"] == grupo]
     colunas = st.columns(2)
     for i, sid in enumerate(sids):
         m = metrica_de(sid)
         with colunas[i % 2]:
-            st.markdown(f"**{SERIES[sid]['nome']}** — {analise.METRICAS[SERIES[sid]['tipo']][m].lower()}")
-            fig = graficos.barras_mandatos(tabela, sid, m, analise.rotulo_unidade(sid, m))
+            st.markdown(f"**{Catalogo.SERIES[sid]['nome']}** — {Analise.METRICAS[Catalogo.SERIES[sid]['tipo']][m].lower()}")
+            fig = graficos.barras_mandatos(tabela, sid, m, Textos.rotulo_unidade(sid, m))
             st.plotly_chart(fig, width="stretch", key=f"barra_{sid}")
-            if SERIES[sid].get("direcao") is None:
+            if Catalogo.SERIES[sid].get("direcao") is None:
                 st.caption("Série de contexto, sem critério de destaque.")
 
 
@@ -140,14 +140,14 @@ def pagina_series():
 
     c1, c2 = st.columns([2, 1])
     sid = c1.selectbox("Indicador", ordem_series(), format_func=nome_serie)
-    meta = SERIES[sid]
+    meta = Catalogo.SERIES[sid]
     df = obs[obs["serie_id"] == sid].sort_values("data_inicio").copy()
 
     titulo_y = meta["unidade"]
     if sid == "ipca":
         forma = c2.radio("Mostrar", ["Acumulado em 12 meses", "Variação mensal"], horizontal=True)
         if forma.startswith("Acumulado"):
-            df = analise.acumulado_12m(df)
+            df = Analise.acumulado_12m(df)
             titulo_y = "% em 12 meses"
 
     ano_min, ano_max = int(df["data_inicio"].dt.year.min()), int(df["data_fim"].dt.year.max())
@@ -185,8 +185,8 @@ def pagina_checar():
     defasagem = defasagem_atual()
     aviso_defasagem()
 
-    ids = [m["id"] for m in MANDATOS]
-    rotulos = {m["id"]: m["rotulo"] for m in MANDATOS}
+    ids = [m["id"] for m in Mandatos.MANDATOS]
+    rotulos = {m["id"]: m["rotulo"] for m in Mandatos.MANDATOS}
     qp = st.query_params
     c1, c2 = st.columns(2)
     mid = c1.selectbox("Mandato", ids, format_func=rotulos.get,
@@ -196,13 +196,12 @@ def pagina_checar():
                        index=opcoes.index(qp["serie"]) if qp.get("serie") in opcoes else opcoes.index("desocupacao"))
     st.query_params.update({"mandato": mid, "serie": sid})
 
-    meta = SERIES[sid]
-    m = next(x for x in MANDATOS if x["id"] == mid)
-    at = atribuidas(defasagem)
-    r = analise.resumo(at, sid, mid, defasagem)
+    meta = Catalogo.SERIES[sid]
+    m = next(x for x in Mandatos.MANDATOS if x["id"] == mid)
+    r = analise().resumo(sid, mid, defasagem)
 
     st.caption(f"{m['presidente']} · {m['inicio']:%d/%m/%Y} a {m['fim']:%d/%m/%Y}" + (f" · {m['nota']}" if m["nota"] else ""))
-    st.markdown(analise.frase(r))
+    st.markdown(Textos.frase(r))
 
     if r["status"] == "sem dados":
         st.warning("Esta série não cobre este mandato. Veja na página **Metodologia** o período de cada série.")
@@ -216,17 +215,17 @@ def pagina_checar():
     mt = r["metricas"]
     chaves = ["heranca", "final", "variacao", "media"] if meta["tipo"] == "nivel" else ["acumulado", "media"]
     for col, k in zip(st.columns(len(chaves)), chaves):
-        col.metric(analise.METRICAS[meta["tipo"]][k], analise.fmt_metrica(sid, k, mt.get(k)))
+        col.metric(Analise.METRICAS[meta["tipo"]][k], Textos.fmt_metrica(sid, k, mt.get(k)))
 
     # Posição entre os mandatos com dados completos
     tabela = calcular_placar(defasagem)
-    texto_ranking = analise.frase_ranking(tabela, sid, mid)
+    texto_ranking = Textos.frase_ranking(tabela, sid, mid)
     if texto_ranking:
         st.markdown(texto_ranking)
 
     # Como foi calculado
     with st.expander("Como este número foi calculado", expanded=True):
-        for linha in analise.explicar(r):
+        for linha in Textos.explicar(r):
             st.markdown(f"- {linha}")
         st.markdown(
             f"- **Regra de atribuição:** cada período conta para quem governou a maior parte dele "
@@ -235,14 +234,14 @@ def pagina_checar():
         )
 
     # A conclusão depende da defasagem?
-    k = analise.METRICA_MUDANCA[meta["tipo"]]
+    k = Analise.METRICA_MUDANCA[meta["tipo"]]
     robustez = []
     for d in DEFASAGENS:
-        rd = analise.resumo(atribuidas(d), sid, mid, d)
+        rd = analise().resumo(sid, mid, d)
         robustez.append({
             "Defasagem": f"{d} meses",
-            analise.METRICAS[meta["tipo"]][k]: analise.fmt_metrica(sid, k, rd["metricas"].get(k)),
-            analise.METRICAS[meta["tipo"]]["media"]: analise.fmt_metrica(sid, "media", rd["metricas"].get("media")),
+            Analise.METRICAS[meta["tipo"]][k]: Textos.fmt_metrica(sid, k, rd["metricas"].get(k)),
+            Analise.METRICAS[meta["tipo"]]["media"]: Textos.fmt_metrica(sid, "media", rd["metricas"].get("media")),
             "Períodos": f"{rd['n']} de {rd['esperado']}",
             "Status": rd["status"],
         })
@@ -252,7 +251,7 @@ def pagina_checar():
 
     # Comparação com os outros mandatos
     st.subheader("Comparação com os outros governos, a partir da posse")
-    traj = analise.trajetorias(at, sid, defasagem)
+    traj = analise().trajetorias(sid, defasagem)
     if not traj.empty and m["rotulo"] in traj["mandato"].values:
         pos = ids.index(mid)
         anterior = rotulos[ids[pos - 1]] if pos > 0 else None
@@ -268,7 +267,7 @@ def pagina_checar():
     df = obs[obs["serie_id"] == sid].sort_values("data_inicio").copy()
     df["data_meio"] = df["data_inicio"] + (df["data_fim"] + pd.Timedelta(days=1) - df["data_inicio"]) / 2
     if sid == "ipca":
-        df = analise.acumulado_12m(df)
+        df = Analise.acumulado_12m(df)
         df["data_meio"] = df["data_inicio"] + (df["data_fim"] + pd.Timedelta(days=1) - df["data_inicio"]) / 2
         df = df[df["data_inicio"] >= "1995-01-01"]
     st.plotly_chart(graficos.serie_historica(df, sid, "% em 12 meses" if sid == "ipca" else meta["unidade"],
@@ -341,12 +340,12 @@ def pagina_metodologia():
     st.markdown("onde *k* é o número de períodos por ano (12 para mensal, 1 para anual).")
 
     st.subheader("Conferência da conta de acumulação")
-    conf = analise.conferir_ipca_12m(obs)
+    conf = analise().conferir_ipca_12m()
     if not conf.empty:
         recente = conf[conf["periodo"] >= "199501"]
         c1, c2 = st.columns(2)
-        c1.metric("Maior diferença desde 1995", f"{analise.fmt(recente['diferenca'].abs().max(), 3)} p.p.")
-        c2.metric("Maior diferença na série toda", f"{analise.fmt(conf['diferenca'].abs().max(), 3)} p.p.")
+        c1.metric("Maior diferença desde 1995", f"{Textos.fmt(recente['diferenca'].abs().max(), 3)} p.p.")
+        c2.metric("Maior diferença na série toda", f"{Textos.fmt(conf['diferenca'].abs().max(), 3)} p.p.")
         st.caption(
             "O IPCA em 12 meses calculado pelo painel a partir das variações mensais, comparado com o publicado "
             "pelo IBGE (tabela 1737, variável 2265). As diferenças vêm do arredondamento das variações mensais "
@@ -380,7 +379,7 @@ def pagina_metodologia():
     )
 
     st.header("5. Mandatos")
-    md = mandatos_df()[["rotulo", "presidente", "inicio", "fim", "nota"]].rename(columns={
+    md = Mandatos.tabela()[["rotulo", "presidente", "inicio", "fim", "nota"]].rename(columns={
         "rotulo": "Mandato", "presidente": "Presidente", "inicio": "Início", "fim": "Fim", "nota": "Observação"})
     st.dataframe(md, hide_index=True, width="stretch", column_config={
         "Início": st.column_config.DateColumn(format="DD/MM/YYYY"),
@@ -388,13 +387,13 @@ def pagina_metodologia():
     st.caption("Nos impeachments, o vice é considerado no cargo desde o afastamento do titular, quando passa a exercer a Presidência.")
 
     st.header("6. Eventos de contexto")
-    st.dataframe(pd.DataFrame(EVENTOS, columns=["Data", "Evento"]), hide_index=True, width="stretch",
+    st.dataframe(pd.DataFrame(Mandatos.EVENTOS, columns=["Data", "Evento"]), hide_index=True, width="stretch",
                  column_config={"Data": st.column_config.DateColumn(format="DD/MM/YYYY")})
 
     st.header("7. Séries")
-    for sid in ordem_series() + [s for s in SERIES if SERIES[s].get("auxiliar")]:
-        with st.expander(nome_serie(sid) + (" (auxiliar)" if SERIES[sid].get("auxiliar") else "")):
-            meta = SERIES[sid]
+    for sid in ordem_series() + [s for s in Catalogo.SERIES if Catalogo.SERIES[s].get("auxiliar")]:
+        with st.expander(nome_serie(sid) + (" (auxiliar)" if Catalogo.SERIES[sid].get("auxiliar") else "")):
+            meta = Catalogo.SERIES[sid]
             st.markdown(
                 f"Unidade: **{meta['unidade']}** · Frequência: **{meta['frequencia'].replace('_', ' ')}** · "
                 f"Resumo por mandato: **{meta['tipo'].replace('_', ' ')}** · "
@@ -407,7 +406,7 @@ def pagina_metodologia():
         "Todo o código é aberto. Para refazer os números do zero:\n"
         "```bash\npip install -r requirements.txt\npython run_etl.py\npython -m streamlit run dashboard/app.py\n```\n"
         "As respostas brutas das APIs ficam em `data/bronze/<série>/<data>.json` e as tabelas tratadas em "
-        "`data/economia.db` (SQLite). Os cálculos por mandato estão em `src/analise.py` e têm testes em `tests/`."
+        "`data/economia.db` (SQLite). Os cálculos por mandato estão na classe `Analise` (`src/analise.py`) e têm testes em `tests/`."
     )
 
 
@@ -451,7 +450,7 @@ with st.sidebar:
     )
     st.caption(f"Última extração: {ext['data_extracao'].max()[:10]}")
     st.caption("Fontes: IBGE (SIDRA) e Banco Central (SGS).")
-    st.caption("Desenvolvido por Marco Mialaret Júnior com [Claude Code](https://claude.com/claude-code).")
+    st.caption("Desenvolvido por [Marco Mialaret Júnior](https://github.com/MatmJr) com [Claude Code](https://claude.com/claude-code).")
 
 pg = st.navigation([
     st.Page(pagina_placar, title="Resumo por mandato", icon="📋", default=True),

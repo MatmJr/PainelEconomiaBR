@@ -1,10 +1,8 @@
-import shutil
-
 import pandas as pd
 from sqlalchemy import create_engine
 
 import src.config as config
-from src.publicar import PASTA_SITE, exportar_dados, gerar_paginas, validar
+from src.publicar import Publicador
 
 
 def main():
@@ -14,14 +12,8 @@ def main():
     ext = pd.read_sql("SELECT * FROM extracoes", engine)
     engine.dispose()
 
-    print("Etapa 2: Conferindo os dados antes de publicar!")
-    validar(obs)
-
-    print("Etapa 3: Gerando o site!")
-    if PASTA_SITE.exists():
-        shutil.rmtree(PASTA_SITE)  # o site é sempre gerado do zero
-    contexto = exportar_dados(obs, ext)
-    gerar_paginas(contexto)
+    print("Etapa 2: Conferindo os dados e gerando o site do zero!")
+    Publicador(obs, ext).publicar()
 
 
 if __name__ == "__main__":

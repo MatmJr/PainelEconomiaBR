@@ -5,7 +5,7 @@ import requests
 from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
 
-from src.catalogo import SERIES, montar_url
+from src.catalogo import Catalogo
 
 
 class Extract:
@@ -64,9 +64,9 @@ class Extract:
         uma série do catálogo, para o Brasil (N1).
 
         Atributos:
-            serie_id: chave da série em `catalogo.SERIES` com fonte "ibge"
+            serie_id: chave da série em `Catalogo.SERIES` com fonte "ibge"
         """
-        url = montar_url(serie_id)
+        url = Catalogo.montar_url(serie_id)
         return {"urls": [url], "resposta": self._get(url)}
 
     def bcb(self, serie_id: str) -> dict:
@@ -75,13 +75,13 @@ class Extract:
         anos, e junta as respostas numa única lista.
 
         Atributos:
-            serie_id: chave da série em `catalogo.SERIES` com fonte "bcb"
+            serie_id: chave da série em `Catalogo.SERIES` com fonte "bcb"
         """
         urls, dados = [], []
         hoje = date.today()
         for ano in range(self.ANO_INICIAL_BCB, hoje.year + 1, self.ANOS_POR_CONSULTA_BCB):
             fim = min(ano + self.ANOS_POR_CONSULTA_BCB - 1, hoje.year)
-            url = montar_url(serie_id, f"01/01/{ano}", f"31/12/{fim}")
+            url = Catalogo.montar_url(serie_id, f"01/01/{ano}", f"31/12/{fim}")
             try:
                 dados.extend(self._get(url))
             except requests.HTTPError as erro:
@@ -96,7 +96,7 @@ class Extract:
         Extrai uma série do catálogo, qualquer que seja a fonte, e devolve o
         pacote bruto com a proveniência.
         """
-        fonte = SERIES[serie_id]["fonte"]
+        fonte = Catalogo.SERIES[serie_id]["fonte"]
         pacote = self.ibge(serie_id) if fonte == "ibge" else self.bcb(serie_id)
         pacote["serie_id"] = serie_id
         pacote["fonte"] = fonte

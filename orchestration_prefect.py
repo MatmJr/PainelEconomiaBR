@@ -1,7 +1,7 @@
 import pandas as pd
 from prefect import flow, get_run_logger, task
 
-from src.catalogo import SERIES
+from src.catalogo import Catalogo
 from src.extract import Extract
 from src.load import Load
 from src.transform import Transform
@@ -38,7 +38,7 @@ def load_prata(obs: pd.DataFrame, extracoes: pd.DataFrame):
 
 @flow(name="ETL Painel Economia BR", log_prints=True)
 def etl_economia_flow(series: list[str] | None = None):
-    series = series or list(SERIES)
+    series = series or list(Catalogo.SERIES)
 
     # As extrações são independentes: o Prefect as executa em paralelo
     futuros = {sid: extract.submit(sid) for sid in series}

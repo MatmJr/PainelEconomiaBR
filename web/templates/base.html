@@ -57,8 +57,8 @@
 
   <footer class="rodape">
     <p>Fontes: <a href="https://sidra.ibge.gov.br">IBGE (SIDRA)</a> e <a href="https://www3.bcb.gov.br/sgspub">Banco Central (SGS)</a>. Dados extraídos em {{ ultima_extracao | data_br }}.</p>
-    <p>O painel descreve o que aconteceu durante cada mandato; não mede o efeito causal das políticas de cada governo. <a href="/metodologia/">Veja a metodologia</a>{% if repo_url %} · <a href="{{ repo_url }}">código aberto</a> · <a href="{{ repo_url }}/issues">reportar um erro</a>{% endif %}.</p>
-    <p class="creditos">Desenvolvido por <strong>Marco Mialaret Júnior</strong> com <a href="https://claude.com/claude-code" rel="noopener">Claude Code</a>.</p>
+    <p>O painel descreve o que aconteceu durante cada mandato; não mede o efeito causal das políticas de cada governo. <a href="/metodologia/">Veja a metodologia</a>{% if repo_url %} · <a href="{{ repo_url }}">código aberto</a> (<a href="{{ repo_url }}/blob/main/LICENSE">licença MIT</a>) · <a href="{{ repo_url }}/issues">reportar um erro</a>{% endif %}.</p>
+    <p class="creditos">Desenvolvido por <a href="https://github.com/MatmJr" rel="noopener"><strong>Marco Mialaret Júnior</strong></a> com <a href="https://claude.com/claude-code" rel="noopener">Claude Code</a>.</p>
   </footer>
   {% block scripts %}{% endblock %}
 </body>

@@ -4,21 +4,22 @@ Site estático que extrai dados oficiais do **IBGE** e do **Banco Central** e re
 
 O objetivo é permitir **checar** afirmações do tipo *"a economia estava ruim com o presidente X"*: cada número do site mostra o cálculo passo a passo, os dados usados, a URL exata consultada na API, o link da fonte original e a metodologia aplicada.
 
-O projeto segue a mesma estrutura do [ProjEngDados](../ProjEngDados) (Extract → Load → Transform → Load, com camadas bronze e prata, orquestração com Prefect) e a ideia de catálogo de URLs com descrição do [ETL_IBGE_BCB](https://github.com/MatmJr/ETL_IBGE_BCB).
+O projeto segue a mesma estrutura do [ProjEngDados](https://github.com/MatmJr/ProjEngDados-202602) (Extract → Load → Transform → Load, com camadas bronze e prata, orquestração com Prefect) e a ideia de catálogo de URLs com descrição do [ETL_IBGE_BCB](https://github.com/MatmJr/ETL_IBGE_BCB).
 
 ## Estrutura do projeto
 
 ```
 src/
-  config.py       # caminhos e DATABASE_URL (opcional) lidos do .env
-  catalogo.py     # catálogo das séries: fonte, tabela/variável, unidade, metodologia e cuidados
-  presidentes.py  # mandatos (datas de posse/saída) e eventos de contexto
-  periodos.py     # converte códigos de período (202608, 201504, 2016...) em intervalos de datas
+  config.py       # configuração: caminhos e variáveis lidas do .env (DATABASE_URL, SITE_URL, REPO_URL)
+  catalogo.py     # Catalogo: as séries (fonte, tabela/variável, unidade, metodologia, cuidados) e suas URLs
+  presidentes.py  # Mandatos: datas de posse/saída e eventos de contexto
+  periodos.py     # Periodo: códigos de período (202608, 201504, 2016...) -> intervalos de datas
   extract.py      # Extract: busca as séries nas APIs do IBGE (SIDRA) e do BCB (SGS)
-  transform.py    # Transform: respostas brutas -> tabela longa (serie, período, valor); deflaciona
+  transform.py    # Transform: respostas brutas -> tabela longa (série, período, valor); deflaciona
   load.py         # Load: bronze em JSON, prata em SQLite (e no Neon, se configurado)
-  analise.py      # atribuição de cada dado a um mandato e métricas por mandato
-  publicar.py     # valida a camada prata e gera o site estático (dados + páginas)
+  analise.py      # Analise: atribuição de cada dado a um mandato, resumos, rankings e trajetórias
+  textos.py       # Textos: números no padrão brasileiro, frases-resumo e o passo a passo dos cálculos
+  publicar.py     # Publicador: valida a camada prata e gera o site estático (dados + páginas)
 web/
   templates/      # páginas HTML (Jinja2): resumo, comparar, checagem, séries, metodologia, dados
   static/         # CSS e JavaScript do site (o JS só exibe; não faz contas)
@@ -31,6 +32,19 @@ gerar_site.py             # gera a pasta site/ a partir da camada prata
 servir_site.py            # serve site/ localmente com os mesmos cabeçalhos do Netlify
 netlify.toml              # configuração do Netlify (pasta publicada e cabeçalhos)
 ```
+
+Cada arquivo de `src/` é uma classe com uma responsabilidade, como no projeto original (`Extract`, `Transform`, `Load`). As que guardam estado são criadas com os dados que usam:
+
+```python
+from src.analise import Analise
+from src.textos import Textos
+
+analise = Analise(obs)                                   # observações da camada prata
+r = analise.resumo("desocupacao", "bolsonaro", defasagem_meses=0)
+print(Textos.frase(r))                                   # "No mandato Bolsonaro, ... passou de 11,7% ..."
+```
+
+As demais (`Catalogo`, `Mandatos`, `Periodo`, `Textos`) agrupam regras e dados de referência e são usadas direto pela classe, sem criar instância (ex.: `Catalogo.SERIES`, `Periodo.intervalo(...)`).
 
 ### Camadas de dados
 
@@ -182,9 +196,13 @@ python -m pytest
 
 ## Créditos
 
-Desenvolvido por **Marco Mialaret Júnior** com [Claude Code](https://claude.com/claude-code).
+Desenvolvido por **[Marco Mialaret Júnior](https://github.com/MatmJr)** com [Claude Code](https://claude.com/claude-code).
 
 Dados: [IBGE](https://sidra.ibge.gov.br) (SIDRA) e [Banco Central do Brasil](https://www3.bcb.gov.br/sgspub) (SGS).
+
+## Licença
+
+O código está sob a [licença MIT](LICENSE): pode ser usado, copiado, modificado e redistribuído, inclusive para fins comerciais, desde que o aviso de autoria e de licença seja mantido. Os dados exibidos vêm do IBGE e do Banco Central do Brasil; são dados públicos, sujeitos às regras de uso dessas instituições, e não são cobertos por esta licença.
 
 ## Limitações
 

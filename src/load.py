@@ -5,8 +5,8 @@ import pandas as pd
 from sqlalchemy import create_engine
 
 import src.config as config
-from src.catalogo import SERIES, URL_BCB, descricao_fonte, link_fonte, montar_url
-from src.presidentes import mandatos_df
+from src.catalogo import Catalogo
+from src.presidentes import Mandatos
 
 
 class Load:
@@ -53,8 +53,7 @@ class Load:
         with open(caminho, encoding="utf-8") as f:
             pacote = json.load(f)
 
-        meta = SERIES[serie_id]
-        esperado = montar_url(serie_id) if meta["fonte"] == "ibge" else URL_BCB.format(codigo=meta["codigo"])
+        esperado = Catalogo.prefixo_url(serie_id)
         if not pacote["urls"][0].startswith(esperado):
             raise ValueError(
                 f"A última extração de '{serie_id}' usa outra configuração ({pacote['urls'][0]}): "
@@ -72,9 +71,9 @@ class Load:
             linhas.append(
                 {
                     "serie_id": sid,
-                    "nome": SERIES[sid]["nome"],
-                    "fonte": descricao_fonte(sid),
-                    "link_fonte": link_fonte(sid),
+                    "nome": Catalogo.SERIES[sid]["nome"],
+                    "fonte": Catalogo.descricao_fonte(sid),
+                    "link_fonte": Catalogo.link_fonte(sid),
                     "urls": "\n".join(pacote["urls"]),
                     "data_extracao": pacote["data_extracao"],
                     "arquivo_bronze": arquivos[sid],
@@ -90,7 +89,7 @@ class Load:
         tabelas = {
             "observacoes": obs,
             "extracoes": extracoes,
-            "mandatos": mandatos_df().drop(columns="ordem"),
+            "mandatos": Mandatos.tabela().drop(columns="ordem"),
         }
 
         destinos = {"SQLite": f"sqlite:///{config.CAMINHO_SQLITE.as_posix()}"}

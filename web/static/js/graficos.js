@@ -23,13 +23,31 @@ function cores() {
   return c;
 }
 
+// Telas de toque (celular, tablet) ou estreitas: o gráfico fica fixo. Arrastar o dedo
+// sobre ele rola a página em vez de dar zoom, e tocar só mostra o valor. Zoom e
+// arraste confundem quem não está acostumado e não têm botão óbvio para desfazer.
+const TOQUE = window.matchMedia("(pointer: coarse), (max-width: 600px)").matches;
+
 const CONFIG = {
   responsive: true,
   displaylogo: false,
-  // No celular a barra de ferramentas cobre os nomes dos mandatos
-  displayModeBar: window.matchMedia("(max-width: 600px)").matches ? false : "hover",
+  scrollZoom: false,
+  doubleClick: TOQUE ? false : "reset+autosize",
+  // No celular a barra de ferramentas cobre os nomes dos mandatos e só serve para zoom
+  displayModeBar: TOQUE ? false : "hover",
   modeBarButtonsToRemove: ["select2d", "lasso2d", "autoScale2d", "toggleSpikelines"],
 };
+
+/** No toque: sem zoom/arraste nos eixos e sem esconder séries ao tocar na legenda. */
+function fixarNoToque(layout) {
+  if (!TOQUE) return layout;
+  layout.dragmode = false;
+  layout.xaxis = { ...layout.xaxis, fixedrange: true };
+  layout.yaxis = { ...layout.yaxis, fixedrange: true };
+  if (layout.yaxis2) layout.yaxis2 = { ...layout.yaxis2, fixedrange: true };
+  layout.legend = { ...layout.legend, itemclick: false, itemdoubleclick: false };
+  return layout;
+}
 
 function layoutBase(c, tituloY, altura) {
   return {
@@ -104,7 +122,7 @@ export function serieHistorica(div, pontos, { anual, tituloY, mandatos, eventos,
   }
   layout.xaxis.type = "date";
   if (log) layout.yaxis.type = "log";
-  Plotly.react(div, tracos, layout, CONFIG);
+  Plotly.react(div, tracos, fixarNoToque(layout), CONFIG);
 }
 
 /**
@@ -157,7 +175,7 @@ export function barrasMandatos(div, entradas, metrica, mandatos, tituloY) {
     layout.shapes.push({ type: "line", xref: "paper", x0: 0, x1: 1, y0: 0, y1: 0, line: { color: c.cinza, width: 1 } });
   }
   layout.legend.y = -0.42;
-  Plotly.react(div, tracos, layout, CONFIG);
+  Plotly.react(div, tracos, fixarNoToque(layout), CONFIG);
   return log;
 }
 
@@ -197,5 +215,5 @@ export function trajetorias(div, pontos, destaque, anterior, tituloY, { iguais =
   layout.margin.b = 60;
   layout.xaxis = { ...layout.xaxis, title: { text: "meses desde a posse" }, dtick: 12, zeroline: false };
   layout.shapes.push({ type: "line", xref: "paper", x0: 0, x1: 1, y0: 0, y1: 0, line: { color: c.cinza, width: 1 } });
-  Plotly.react(div, tracos, layout, CONFIG);
+  Plotly.react(div, tracos, fixarNoToque(layout), CONFIG);
 }
